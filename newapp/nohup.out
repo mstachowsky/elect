@@ -1,0 +1,12 @@
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp']
+INFO:     Uvicorn running on http://0.0.0.0:8989 (Press CTRL+C to quit)
+INFO:     Started reloader process [3921339] using StatReload
+ERROR:    Error loading ASGI app. Attribute "app" not found in module "chat".
+Under a sky painted with twinkling stars, a gentle unicorn named Luna danced through moonlit meadows, sprinkling dreams of magic and kindness to all who believed.
+INFO:     Stopping reloader process [3921339]
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp']
+INFO:     Uvicorn running on http://0.0.0.0:8989 (Press CTRL+C to quit)
+INFO:     Started reloader process [4078489] using StatReload
+ERROR:    Error loading ASGI app. Could not import module "main".
+WARNING:  StatReload detected changes in 'backend/main.py'. Reloading...
+ERROR:    Error loading ASGI app. Could not import module "main".

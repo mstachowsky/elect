@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Learning Stories{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Learning Stories</a></h1>
+      {% if request.session.get("username") %}
+        <span class="welcome">Hi, {{ request.session.username }}!</span>
+        <a class="logout" href="/logout">Logout</a>
+      {% endif %}
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

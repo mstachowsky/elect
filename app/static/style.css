@@ -1,0 +1,76 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 1rem;
+  line-height: 1.5;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+a.button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #0066cc;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+a.button:hover {
+  background: #0066cc20;
+}
+button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #f3f3f3;
+  cursor: pointer;
+}
+button.danger {
+  border-color: #b62222;
+  color: #b62222;
+}
+button.danger:hover {
+  background: #b6222220;
+}
+form.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+input[type="text"],
+input[type="date"],
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.4rem;
+  margin-top: 0.2rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+pre.story-output {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 0.8rem;
+  white-space: pre-wrap;
+}
+.error {
+  color: #b62222;
+}
+.children li, .stories li {
+  margin-bottom: 0.6rem;
+}

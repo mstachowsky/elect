@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Your children</h2>
+  <ul class="children">
+    {% for c in children %}
+      <li><a href="/child/{{ c.id }}">{{ c.name }}</a> (born {{ c.birth_date }})</li>
+    {% else %}
+      <li>No profiles yet.</li>
+    {% endfor %}
+  </ul>
+  <p><a class="button" href="/child/new">+ Add child profile</a></p>
+{% endblock %}

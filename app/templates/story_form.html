@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Learning story for {{ child.name }}</h2>
+  <form method="post" action="/story/preview/{{ child.id }}" class="card">
+    <textarea name="story_text" rows="10" placeholder="Enter learning story here" required>{{ story_text }}</textarea>
+    <button type="submit">Preview</button>
+  </form>
+
+  {% if output is not none %}
+    <h3>Preview</h3>
+    <pre class="story-output">{{ output }}</pre>
+    <form method="post" action="/story/save/{{ child.id }}">
+      <input type="hidden" name="story_text" value="{{ story_text|tojson }}" />
+      <input type="hidden" name="output_text" value="{{ output|replace('\n', '&#10;')|e }}" />
+      <button type="submit">Save to database</button>
+    </form>
+  {% endif %}
+{% endblock %}

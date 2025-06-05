@@ -1,0 +1,101 @@
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8989 (Press CTRL+C to quit)
+INFO:     Started reloader process [3923510] using StatReload
+INFO:     Started server process [3923512]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:50327 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50327 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50327 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50327 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50327 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50327 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:49996 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3923512]
+INFO:     Started server process [4020306]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp/backend']
+ERROR:    [Errno 98] Address already in use
+INFO:     100.92.101.90:50388 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50388 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50388 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50389 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50390 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50391 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50392 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50393 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50394 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50395 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50397 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50396 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50404 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50404 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:58944 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4020306]
+INFO:     Started server process [4075906]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4075906]
+INFO:     Stopping reloader process [3923510]
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8989 (Press CTRL+C to quit)
+INFO:     Started reloader process [4079509] using StatReload
+INFO:     Started server process [4079511]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:59084 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59084 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59085 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [4079511]
+INFO:     Started server process [4082075]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:59088 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59088 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59087 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59090 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59093 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59094 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59095 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59095 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:59326 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.1.7:44584 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44584 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.1.7:44584 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44588 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44590 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44592 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44594 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44596 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44598 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44642 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44644 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44646 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44648 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:44654 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:48834 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.9:48834 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.1.9:48842 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:41082 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:58240 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:58906 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:57682 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:57642 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.9:34892 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:54179 - "GET /favicon.ico HTTP/1.1" 404 Not Found

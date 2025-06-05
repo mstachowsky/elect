@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>New child profile</h2>
+  <form method="post" action="/child/new" class="card">
+    <label>Name or nickname <input type="text" name="name" required /></label>
+    <label>Date of birth <input type="date" name="birth_date" required /></label>
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

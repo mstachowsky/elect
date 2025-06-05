@@ -1,0 +1,36 @@
+User: hi
+Bot: Hello! How can I assist you today?
+User: tell me about goats
+Bot: Certainly! Here's some information about goats:
+
+### General Overview
+- **Scientific Name:** Capra aegagrus hircus
+- **Domestication:** Goats were one of the first animals domesticated by humans, around 10,000 years ago.
+- **Family:** Bovidae (same as sheep, cows, and antelopes)
+- **Habitat:** Goats are highly adaptable and can live in a variety of environments, from mountainous regions and deserts to farms.
+
+### Physical Characteristics
+- **Size:** Varies by breed, typically 45-100 kg (100-220 lbs) for larger breeds.
+- **Coat:** Can be short or long-haired and comes in many colors and patterns.
+- **Horns:** Both males and females often have horns, though some breeds are naturally hornless.
+- **Eyes:** Horizontal, rectangular pupils provide a wide field of vision, helping goats to detect predators.
+
+### Behavior and Diet
+- **Diet:** Goats are browsers rather than grazers, preferring shrubs, weeds, and twigs over grass.
+- **Social Behavior:** They are social animals, living in herds with a clear social hierarchy.
+- **Intelligence:** Goats are known to be curious and intelligent, capable of problem-solving.
+
+### Uses
+- **Milk:** Goat milk is a common dairy product, often used to make cheese, yogurt, and soap.
+- **Meat:** Goat meat (chevon or cabrito) is consumed worldwide.
+- **Fiber:** Some breeds produce mohair (from Angora goats) or cashmere.
+- **Companionship:** Goats are also popular as pets or for weed control in agriculture.
+
+### Interesting Facts
+- Goats have excellent climbing abilities and can scale steep, rocky terrain.
+- A group of goats is called a "herd" or "trip."
+- They have rectangular pupils, which help them see 320-340 degrees around them.
+
+If you want to know about a specific breed or more details on any aspect, feel free to ask!
+User: Wait, are they social?
+Bot: Could you please clarify what you are referring to? Are you asking if a specific animal, person, or thing is social? That way, I can provide a more accurate answer!

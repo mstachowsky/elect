@@ -1,0 +1,25 @@
+INFO:     Started server process [2724349]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:22345 (Press CTRL+C to quit)
+⚠️  WARNING: Number of domain labels does not match BACKGROUNDS sections – output may misalign.
+INFO:     100.92.15.104:38626 - "GET / HTTP/1.1" 302 Found
+INFO:     100.92.15.104:38626 - "GET /login HTTP/1.1" 200 OK
+INFO:     100.92.15.104:38626 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     100.92.15.104:38626 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.15.104:38636 - "POST /login HTTP/1.1" 303 See Other
+INFO:     100.92.15.104:38636 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.15.104:38636 - "GET /logout HTTP/1.1" 303 See Other
+INFO:     100.92.15.104:38636 - "GET /login HTTP/1.1" 200 OK
+INFO:     100.92.15.104:39012 - "GET / HTTP/1.1" 302 Found
+INFO:     100.92.15.104:39012 - "GET /login HTTP/1.1" 200 OK
+INFO:     100.92.15.104:39012 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     100.92.15.104:39012 - "POST /login HTTP/1.1" 303 See Other
+INFO:     100.92.15.104:39012 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.15.104:39012 - "GET /child/1 HTTP/1.1" 200 OK
+INFO:     100.100.14.61:53597 - "GET /child/1 HTTP/1.1" 302 Found
+INFO:     100.100.14.61:53597 - "GET /login HTTP/1.1" 200 OK
+INFO:     100.100.14.61:53597 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     100.100.14.61:53597 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.100.14.61:52814 - "GET /login HTTP/1.1" 200 OK
+INFO:     100.100.14.61:52814 - "GET /static/style.css HTTP/1.1" 200 OK

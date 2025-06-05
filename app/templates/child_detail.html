@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ child.name }} <small>({{ child.birth_date }})</small></h2>
+  <p><a class="button" href="/story/new/{{ child.id }}">Write new learning story</a></p>
+  <h3>Previous stories</h3>
+  <ul class="stories">
+    {% for s in stories %}
+      <li id="story-{{ s.id }}">
+        <details>
+          <summary>{{ s.timestamp }} — {{ s.story_text[:50] }}…</summary>
+          <pre class="story-text">{{ s.story_text }}</pre>
+          <pre class="story-output">{{ s.output_text }}</pre>
+          <form method="post" action="/story/delete/{{ s.id }}" onsubmit="return confirm('Delete this story permanently?');">
+            <button class="danger" type="submit">Delete</button>
+          </form>
+        </details>
+      </li>
+    {% else %}
+      <li>No stories yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
