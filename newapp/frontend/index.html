@@ -103,6 +103,25 @@
       messagesDiv.appendChild(el);
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
+	// Auto-start conversation: LLM initiates when page loads or is refreshed
+	window.addEventListener('DOMContentLoaded', async () => {
+	  if (messages.length === 0) {
+		try {
+		  // Ask backend to start conversation (history: [])
+		  const res = await fetch('/chat', {
+			method: 'POST',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({ history: [] })
+		  });
+		  const data = await res.json();
+		  addMessage(data.response, 'bot');
+		  // Add assistant message to conversation history
+		  messages.push({ role: "assistant", content: data.response });
+		} catch (err) {
+		  addMessage('Sorry, something went wrong.', 'bot');
+		}
+	  }
+	});
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

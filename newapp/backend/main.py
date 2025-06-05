@@ -37,25 +37,33 @@ async def chat(request: ChatHistoryRequest):
     try:
         history = request.history
 
-        # Basic input validation
-        if not history or history[-1]['role'] != 'user':
+        # If no history, let the LLM begin!
+        if not history:
+            messages = [{"role": "system", "content": SYSTEM_PROMPT}]
+            response = client.chat.completions.create(
+                model="gpt-4.1-mini",
+                messages=messages
+            )
+            bot_message = response.choices[0].message.content
+            return {"response": bot_message}
+
+        # Normal flow for user-initiated messages
+        if history[-1]['role'] != 'user':
             return {"response": "Please enter a valid message."}
 
-        # Build the message list for OpenAI (prepend system prompt)
         messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
 
-        # Call OpenAI
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",  # or your preferred model
+            model="gpt-4.1-mini",
             messages=messages
         )
         bot_message = response.choices[0].message.content
-
         return {"response": bot_message}
 
     except Exception as e:
         print(f"Error: {str(e)}")
         return {"response": f"Error: {str(e)}"}
+
 
 from datetime import datetime
 

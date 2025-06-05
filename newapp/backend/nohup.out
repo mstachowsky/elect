@@ -363,3 +363,13 @@ INFO:     100.100.14.61:50101 - "GET / HTTP/1.1" 200 OK
 INFO:     100.100.14.61:50101 - "POST /chat HTTP/1.1" 200 OK
 INFO:     100.100.14.61:50101 - "POST /chat HTTP/1.1" 200 OK
 INFO:     100.100.14.61:50101 - "POST /save_chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3295608]
+INFO:     Started server process [3309021]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.100.14.61:50113 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50113 - "POST /chat HTTP/1.1" 200 OK
