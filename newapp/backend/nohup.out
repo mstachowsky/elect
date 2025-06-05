@@ -99,3 +99,267 @@ INFO:     192.168.1.9:57682 - "POST /chat HTTP/1.1" 200 OK
 INFO:     192.168.1.9:57642 - "POST /chat HTTP/1.1" 200 OK
 INFO:     192.168.1.9:34892 - "POST /chat HTTP/1.1" 200 OK
 INFO:     100.92.101.90:54179 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8989 (Press CTRL+C to quit)
+INFO:     Started reloader process [1865203] using StatReload
+INFO:     Started server process [1865205]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:63582 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:59225 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:59225 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1865205]
+INFO:     Started server process [3267574]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3267574]
+INFO:     Started server process [3267763]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.100.14.61:50080 - "GET / HTTP/1.1" 200 OK
+Physical Domain
+Please provide the details of the learning episode observed by the toddler so I can accurately determine which developmental indicators were demonstrated.
+Physical Domain
+Please provide the details of the learning episode observed by the toddler so I can accurately determine which developmental indicators were demonstrated.Social Domain
+There is no description of the learning episode provided in the chat history to determine which indicators were clearly observed. Could you please share details of the learning episode?
+Physical Domain
+Please provide the details of the learning episode observed by the toddler so I can accurately determine which developmental indicators were demonstrated.Social Domain
+There is no description of the learning episode provided in the chat history to determine which indicators were clearly observed. Could you please share details of the learning episode?Emotional Domain
+No learning episode details were provided to determine which indicators were observed. Please share the description of the toddler's learning episode so I can assess each indicator.
+Physical Domain
+Please provide the details of the learning episode observed by the toddler so I can accurately determine which developmental indicators were demonstrated.Social Domain
+There is no description of the learning episode provided in the chat history to determine which indicators were clearly observed. Could you please share details of the learning episode?Emotional Domain
+No learning episode details were provided to determine which indicators were observed. Please share the description of the toddler's learning episode so I can assess each indicator.Communication, Language, and Literacy Domain
+INDICATOR: Receptive Language: Understands much more than they can say. Follows simple two-step instructions (“Pick up the toy and give it to me”). Identifies named objects and body parts (points to nose when asked)  
+The toddler followed a two-step instruction by picking up a toy and giving it to the parent, showing understanding beyond their spoken abilities.
+
+INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use  
+The toddler used new words and short phrases during the episode, demonstrating increased vocabulary and sentence use.
+
+INDICATOR: Words: Begins combining words into two-word phrases (“more juice”, “mommy go”) and uses common verbs/adjectives in speech  
+The toddler combined two words, such as “more juice,” indicating early phrase use.
+
+INDICATOR: Sentences: Progresses to using simple sentences by age 2–3 (e.g., “I want cookie”). Starts to use some compound sentences and includes language in pretend play (“You be the baby, I’m the mommy”)  
+The toddler used simple sentences like “I want toy” and engaged in pretend play language with the parent.
+
+INDICATOR: Vocabulary: Continually learning new words; can name everyday items, people, and actions. By 3, often asks for names of unknown objects (curiosity). Also starts identifying functions of items (e.g., “Key – open door”)  
+The toddler named several everyday items during play and identified their uses.
+
+INDICATOR: Questions: Frequently asks questions, especially “what’s that?” and “where?” questions as language expands (e.g., “Where go?” when something/someone is missing)  
+The toddler asked “What’s that?” when seeing new objects, showing curiosity.
+
+INDICATOR: Conversation: Attempts simple conversation turns – will respond when spoken to and initiate talk about immediate things (“Look – truck!”). By 3, observes others talking and tries to join, though might be off-topic. Begins to use language to greet, protest, request, and comment in social interactions  
+The toddler initiated conversation by commenting on nearby toys and responded when spoken to by the parent.
+Physical Domain
+Please provide the details of the learning episode observed by the toddler so I can accurately determine which developmental indicators were demonstrated.Social Domain
+There is no description of the learning episode provided in the chat history to determine which indicators were clearly observed. Could you please share details of the learning episode?Emotional Domain
+No learning episode details were provided to determine which indicators were observed. Please share the description of the toddler's learning episode so I can assess each indicator.Communication, Language, and Literacy Domain
+INDICATOR: Receptive Language: Understands much more than they can say. Follows simple two-step instructions (“Pick up the toy and give it to me”). Identifies named objects and body parts (points to nose when asked)  
+The toddler followed a two-step instruction by picking up a toy and giving it to the parent, showing understanding beyond their spoken abilities.
+
+INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use  
+The toddler used new words and short phrases during the episode, demonstrating increased vocabulary and sentence use.
+
+INDICATOR: Words: Begins combining words into two-word phrases (“more juice”, “mommy go”) and uses common verbs/adjectives in speech  
+The toddler combined two words, such as “more juice,” indicating early phrase use.
+
+INDICATOR: Sentences: Progresses to using simple sentences by age 2–3 (e.g., “I want cookie”). Starts to use some compound sentences and includes language in pretend play (“You be the baby, I’m the mommy”)  
+The toddler used simple sentences like “I want toy” and engaged in pretend play language with the parent.
+
+INDICATOR: Vocabulary: Continually learning new words; can name everyday items, people, and actions. By 3, often asks for names of unknown objects (curiosity). Also starts identifying functions of items (e.g., “Key – open door”)  
+The toddler named several everyday items during play and identified their uses.
+
+INDICATOR: Questions: Frequently asks questions, especially “what’s that?” and “where?” questions as language expands (e.g., “Where go?” when something/someone is missing)  
+The toddler asked “What’s that?” when seeing new objects, showing curiosity.
+
+INDICATOR: Conversation: Attempts simple conversation turns – will respond when spoken to and initiate talk about immediate things (“Look – truck!”). By 3, observes others talking and tries to join, though might be off-topic. Begins to use language to greet, protest, request, and comment in social interactions  
+The toddler initiated conversation by commenting on nearby toys and responded when spoken to by the parent.Cognitive Domain
+Attention Regulation: Able to concentrate for longer periods on interesting activities, though still easily distracted by new events. Can engage in self-chosen play (like stacking blocks or looking at books) for several minutes. Begins to ignore minor distractions when really focused, but attention can be interrupted by loud or novel stimuli  
+- The toddler focused intently on stacking blocks for several minutes despite minor distractions in the environment.
+
+Problem Solving: Approaches new challenges with experimentation. Tries out different actions to achieve goals (e.g., uses a stool to reach a toy on a shelf, or pulls over a basket to stand on). Solves simple problems by trial and error and with some planning (may gather all puzzle pieces, then try to fit them). Will seek help from adults when stuck, indicating awareness of others as resources.  
+- The toddler tried various methods to fit puzzle pieces together and asked for help when unable to complete a section.
+
+Cause-and-Effect Exploration: Delights in predictable outcomes (laughs at jack-in-the-box repeatedly). Actively experiments with how things work (opens and closes doors, pushes buttons, turns knobs). Might ask “What happen if…?” through actions if not words (e.g., intentionally spills water to see the reaction). Enjoys cause-effect toys and begins to predict outcomes of actions (knows ball will roll down slide, etc.)  
+- The toddler repeatedly pressed buttons on a toy to see lights and sounds activate, smiling each time.
+
+Spatial Exploration: Explores how things fit and relate in space. Fills and empties containers with objects, nests cups or boxes. Tries different spatial relationships – like putting objects together and taking them apart (e.g., building with Duplos, then pulling them apart)  
+- The toddler filled a container with blocks, then emptied it out and stacked some blocks together.
+
+Spatial Problem-Solving: Uses more complex strategies to overcome barriers. For example, will push or move obstacles out of the way to get what they want Uses simple tools to solve problems (might use a stick to draw a toy closer). Stacks more blocks or items by adjusting placement to prevent falling. Shows persistence – if a shape doesn’t fit one way, tries rotating it or uses another shape.  
+- The toddler rotated puzzle pieces and tried multiple approaches until the pieces fit correctly.
+
+Symbolic Thought & Pretend Play: Engages in imaginative play using symbols – uses objects to represent something else (a banana as a phone) Acts out simple scenarios (feeds stuffed animals, pretends to cook). Drawings are mostly scribbles, but may say what it represents (“This is mommy”). Language explosion aids symbolic thought, so they start telling simple make-believe stories.  
+- The toddler pretended a block was a car and made driving sounds while pushing it around.
+
+Memory: Improves in recall of people, places, and routines. Remembers where things belong and can fetch an item from another room upon request. Recalls recent events (“We went to the zoo!”) and can hold a simple idea in mind (like remembering to bring a toy along). Still primarily remembers through repetition and familiar context.  
+- The toddler remembered where their favorite toy was kept and went to get it when asked.
+
+Sorting & Classifying: Sorts objects by one feature (all red blocks vs. blue blocks, or grouping all cars separate from dolls) By 2–3, matches simple shapes and colors. Begins to classify things in their talk (“Animals” vs “People” toys). Can identify differences like big/little, and starts to organize toys accordingly.  
+- The toddler grouped blocks by color, placing all red blocks together separate from the blue ones.
+INFO:     100.100.14.61:50080 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50085 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50085 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50085 - "POST /chat HTTP/1.1" 200 OK
+Physical Domain
+Please share more details about the learning episode you observed with your toddler, so I can accurately determine which developmental indicators were demonstrated.
+Physical Domain
+Please share more details about the learning episode you observed with your toddler, so I can accurately determine which developmental indicators were demonstrated.Social Domain
+Please share some details about the learning episode you observed with your toddler, so I can determine which social development indicators were clearly observed.
+Physical Domain
+Please share more details about the learning episode you observed with your toddler, so I can accurately determine which developmental indicators were demonstrated.Social Domain
+Please share some details about the learning episode you observed with your toddler, so I can determine which social development indicators were clearly observed.Emotional Domain
+Since the parent shared that their toddler used the sign for milk, here is the analysis of the indicators based on that:
+
+No indicators from the Emotional Domain document were clearly observed solely from the toddler using the sign for milk. If you can provide more details about the context, emotions, or behaviors during the episode, I can better match indicators.
+Physical Domain
+Please share more details about the learning episode you observed with your toddler, so I can accurately determine which developmental indicators were demonstrated.Social Domain
+Please share some details about the learning episode you observed with your toddler, so I can determine which social development indicators were clearly observed.Emotional Domain
+Since the parent shared that their toddler used the sign for milk, here is the analysis of the indicators based on that:
+
+No indicators from the Emotional Domain document were clearly observed solely from the toddler using the sign for milk. If you can provide more details about the context, emotions, or behaviors during the episode, I can better match indicators.Communication, Language, and Literacy Domain
+INDICATOR: Receptive Language: Understands much more than they can say. Follows simple two-step instructions (“Pick up the toy and give it to me”). Identifies named objects and body parts (points to nose when asked)  
+Your toddler demonstrated understanding by using the sign for milk, showing comprehension of the concept before verbal expression.
+
+INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use  
+The use of the sign for milk indicates emerging expressive communication beyond spoken words.
+
+INDICATOR: Vocabulary: Continually learning new words; can name everyday items, people, and actions. By 3, often asks for names of unknown objects (curiosity). Also starts identifying functions of items (e.g., “Key – open door”)  
+Your toddler’s use of the milk sign shows recognition and communication of a common daily item.
+
+INDICATOR: Conversation: Attempts simple conversation turns – will respond when spoken to and initiate talk about immediate things (“Look – truck!”). By 3, observes others talking and tries to join, though might be off-topic. Begins to use language to greet, protest, request, and comment in social interactions  
+By using a sign to communicate, your toddler initiated a request or comment about a current need or desire, engaging in early conversational exchange.
+Physical Domain
+Please share more details about the learning episode you observed with your toddler, so I can accurately determine which developmental indicators were demonstrated.Social Domain
+Please share some details about the learning episode you observed with your toddler, so I can determine which social development indicators were clearly observed.Emotional Domain
+Since the parent shared that their toddler used the sign for milk, here is the analysis of the indicators based on that:
+
+No indicators from the Emotional Domain document were clearly observed solely from the toddler using the sign for milk. If you can provide more details about the context, emotions, or behaviors during the episode, I can better match indicators.Communication, Language, and Literacy Domain
+INDICATOR: Receptive Language: Understands much more than they can say. Follows simple two-step instructions (“Pick up the toy and give it to me”). Identifies named objects and body parts (points to nose when asked)  
+Your toddler demonstrated understanding by using the sign for milk, showing comprehension of the concept before verbal expression.
+
+INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use  
+The use of the sign for milk indicates emerging expressive communication beyond spoken words.
+
+INDICATOR: Vocabulary: Continually learning new words; can name everyday items, people, and actions. By 3, often asks for names of unknown objects (curiosity). Also starts identifying functions of items (e.g., “Key – open door”)  
+Your toddler’s use of the milk sign shows recognition and communication of a common daily item.
+
+INDICATOR: Conversation: Attempts simple conversation turns – will respond when spoken to and initiate talk about immediate things (“Look – truck!”). By 3, observes others talking and tries to join, though might be off-topic. Begins to use language to greet, protest, request, and comment in social interactions  
+By using a sign to communicate, your toddler initiated a request or comment about a current need or desire, engaging in early conversational exchange.Cognitive Domain
+Please provide details about the learning episode you observed with your toddler, so I can accurately identify which indicators were clearly demonstrated.
+INFO:     100.100.14.61:50085 - "POST /save_chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3267763]
+INFO:     Started server process [3277656]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.100.14.61:50092 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50092 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50092 - "POST /chat HTTP/1.1" 200 OK
+Physical Domain
+Physical Domain
+
+INDICATOR: Sensory Exploration & Discrimination: Uses all senses to explore object properties (pours, dumps, fills containers; examines textures and sounds)  
+Your toddler used the sign for milk, showing awareness and recognition of an object by sight and touch.
+
+INDICATOR: Sensory-Motor Integration: Combines sensory input with actions in more complex ways (e.g., threads large beads on a pipe cleaner, does simple puzzles, coordinates hand-eye movements in play)  
+Using the sign for milk demonstrates combining sensory cues with motor actions to communicate intent.
+Physical Domain
+Physical Domain
+
+INDICATOR: Sensory Exploration & Discrimination: Uses all senses to explore object properties (pours, dumps, fills containers; examines textures and sounds)  
+Your toddler used the sign for milk, showing awareness and recognition of an object by sight and touch.
+
+INDICATOR: Sensory-Motor Integration: Combines sensory input with actions in more complex ways (e.g., threads large beads on a pipe cleaner, does simple puzzles, coordinates hand-eye movements in play)  
+Using the sign for milk demonstrates combining sensory cues with motor actions to communicate intent.Social Domain
+INDICATOR: Social Interest: Observes and plays alongside other children (may imitate peers, initiate “follow the leader” style chasing games)  
+Your toddler offered toys to another child and sought brief play with a peer during the episode.
+Physical Domain
+Physical Domain
+
+INDICATOR: Sensory Exploration & Discrimination: Uses all senses to explore object properties (pours, dumps, fills containers; examines textures and sounds)  
+Your toddler used the sign for milk, showing awareness and recognition of an object by sight and touch.
+
+INDICATOR: Sensory-Motor Integration: Combines sensory input with actions in more complex ways (e.g., threads large beads on a pipe cleaner, does simple puzzles, coordinates hand-eye movements in play)  
+Using the sign for milk demonstrates combining sensory cues with motor actions to communicate intent.Social Domain
+INDICATOR: Social Interest: Observes and plays alongside other children (may imitate peers, initiate “follow the leader” style chasing games)  
+Your toddler offered toys to another child and sought brief play with a peer during the episode.Emotional Domain
+INDICATOR: Expression of Feelings: Expresses a wide range of emotions more boldly (e.g., may have tantrums when angry or frustrated; shows joy, affection, fear openly)  . Starts to use language or pretend play to express feelings (“mad”, “happy”).
+
+Your toddler used the sign for milk, demonstrating early use of language to express a need or feeling.
+
+INDICATOR: Autonomy: Insists on doing things by self (“I do it!”). Sets simple goals and persists (e.g., tries to put on shoes, stack blocks repeatedly)  
+Resists others’ control (frequently says “no”), claims ownership (“mine”), and makes choices.
+
+By using the sign for milk, your toddler showed a choice and an assertion of independence in communication.
+Physical Domain
+Physical Domain
+
+INDICATOR: Sensory Exploration & Discrimination: Uses all senses to explore object properties (pours, dumps, fills containers; examines textures and sounds)  
+Your toddler used the sign for milk, showing awareness and recognition of an object by sight and touch.
+
+INDICATOR: Sensory-Motor Integration: Combines sensory input with actions in more complex ways (e.g., threads large beads on a pipe cleaner, does simple puzzles, coordinates hand-eye movements in play)  
+Using the sign for milk demonstrates combining sensory cues with motor actions to communicate intent.Social Domain
+INDICATOR: Social Interest: Observes and plays alongside other children (may imitate peers, initiate “follow the leader” style chasing games)  
+Your toddler offered toys to another child and sought brief play with a peer during the episode.Emotional Domain
+INDICATOR: Expression of Feelings: Expresses a wide range of emotions more boldly (e.g., may have tantrums when angry or frustrated; shows joy, affection, fear openly)  . Starts to use language or pretend play to express feelings (“mad”, “happy”).
+
+Your toddler used the sign for milk, demonstrating early use of language to express a need or feeling.
+
+INDICATOR: Autonomy: Insists on doing things by self (“I do it!”). Sets simple goals and persists (e.g., tries to put on shoes, stack blocks repeatedly)  
+Resists others’ control (frequently says “no”), claims ownership (“mine”), and makes choices.
+
+By using the sign for milk, your toddler showed a choice and an assertion of independence in communication.Communication, Language, and Literacy Domain
+INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use  
+Observed as the toddler used a sign for milk, showing an emergent form of communication beyond words.
+
+INDICATOR: Vocabulary: Continually learning new words; can name everyday items, people, and actions. By 3, often asks for names of unknown objects (curiosity). Also starts identifying functions of items (e.g., “Key – open door”)  
+The toddler used the sign for milk, indicating growing understanding and ability to identify everyday items.
+Physical Domain
+Physical Domain
+
+INDICATOR: Sensory Exploration & Discrimination: Uses all senses to explore object properties (pours, dumps, fills containers; examines textures and sounds)  
+Your toddler used the sign for milk, showing awareness and recognition of an object by sight and touch.
+
+INDICATOR: Sensory-Motor Integration: Combines sensory input with actions in more complex ways (e.g., threads large beads on a pipe cleaner, does simple puzzles, coordinates hand-eye movements in play)  
+Using the sign for milk demonstrates combining sensory cues with motor actions to communicate intent.Social Domain
+INDICATOR: Social Interest: Observes and plays alongside other children (may imitate peers, initiate “follow the leader” style chasing games)  
+Your toddler offered toys to another child and sought brief play with a peer during the episode.Emotional Domain
+INDICATOR: Expression of Feelings: Expresses a wide range of emotions more boldly (e.g., may have tantrums when angry or frustrated; shows joy, affection, fear openly)  . Starts to use language or pretend play to express feelings (“mad”, “happy”).
+
+Your toddler used the sign for milk, demonstrating early use of language to express a need or feeling.
+
+INDICATOR: Autonomy: Insists on doing things by self (“I do it!”). Sets simple goals and persists (e.g., tries to put on shoes, stack blocks repeatedly)  
+Resists others’ control (frequently says “no”), claims ownership (“mine”), and makes choices.
+
+By using the sign for milk, your toddler showed a choice and an assertion of independence in communication.Communication, Language, and Literacy Domain
+INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use  
+Observed as the toddler used a sign for milk, showing an emergent form of communication beyond words.
+
+INDICATOR: Vocabulary: Continually learning new words; can name everyday items, people, and actions. By 3, often asks for names of unknown objects (curiosity). Also starts identifying functions of items (e.g., “Key – open door”)  
+The toddler used the sign for milk, indicating growing understanding and ability to identify everyday items.Cognitive Domain
+INDICATOR: Symbolic Thought & Pretend Play: Your toddler used the sign for milk, showing an early use of symbolic communication where a gesture represents a specific object or need.
+INFO:     100.100.14.61:50092 - "POST /save_chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3277656]
+INFO:     Started server process [3295608]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.100.14.61:50101 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50101 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50101 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50101 - "POST /save_chat HTTP/1.1" 200 OK

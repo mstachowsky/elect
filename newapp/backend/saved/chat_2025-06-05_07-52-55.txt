@@ -1,0 +1,8 @@
+User: hi
+Assistant: Hello! What did your toddler do today?
+User: she asked for milk
+Assistant: That's great! When she asked for milk, how did she ask—was it with words, gestures, or maybe a combination?
+User: signs
+Assistant: Nice! How did she learn those signs—did you teach them recently, or did she pick them up from somewhere?
+User: we taught her
+Assistant: Wonderful! When she asked for milk using signs, how did you respond, and how did she react?

@@ -1,0 +1,2 @@
+User: hi
+Assistant: Hello! I’m excited to help you explore your toddler’s learning. To get started, can you tell me what your child did today?

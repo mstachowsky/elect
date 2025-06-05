@@ -1,0 +1,4 @@
+User: hi
+Assistant: Hello! I'd love to hear about your toddler's day. What did your child do today?
+User: Used the sign for milk
+Assistant: That's wonderful! Using signs is a great way for toddlers to communicate before they can speak clearly. Can you tell me more about the situation when your child used the sign for milk? For example, what were they doing or what happened right before?

@@ -1,0 +1,14 @@
+User: Hi!
+Assistant: Hello! What did your toddler do today?
+User: She asked for milk
+Assistant: That's wonderful! When she asked for milk, how did she ask? Was she using words, signs, or something else?
+User: using signs
+Assistant: Great! How did you and she interact when she used the signs to ask for milk?
+User: Happily
+Assistant: It's lovely that you had a happy interaction! Did she use the same sign each time, or did she try different signs?
+User: Same sign
+Assistant: Thank you for sharing! Would you like me to provide a summary of this learning moment and how it relates to her development, or would you prefer to explore more about her communication and interactions?
+User: yes summarize
+Assistant: Thank you! Your toddler’s use of a consistent sign to ask for milk demonstrates emerging communication skills typical for her age. Using signs shows she is beginning to understand symbolic communication, a key language milestone. The happy interaction with you supports her social-emotional development by encouraging positive exchanges and reinforcing her efforts to communicate. This learning episode reflects growth in receptive and expressive language, as well as social connection.
+
+To keep the learning going, you might try introducing a few more simple signs related to her daily needs and routines—like "eat," "more," or "all done." This can help expand her communication toolkit and strengthen her ability to express her needs and feelings. Playing interactive sign-and-say games during meals or playtime can make this fun and meaningful for her.

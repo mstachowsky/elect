@@ -1,0 +1,18 @@
+User: hi
+Assistant: Hello! What did your toddler do today?
+User: asked for milk by signing it
+Assistant: That’s wonderful! Can you tell me more about the situation? For example, where were you when your toddler signed for milk?
+User: I was in the kitchen preparing dinner
+Assistant: Great! How did your toddler use the sign for milk? Did they use it to get your attention or in any other way?
+User: she vocalized at the door to the kitchen, then used the sign once I saw her
+Assistant: Thank you for sharing that! How old is your toddler, and have you been practicing the milk sign with her before, or was this a new sign she used independently?
+User: yes we've been practicing
+Assistant: That’s excellent to hear! How did you respond when she signed for milk?
+User: I said "Oh, you want some milk" then got her some
+Assistant: Thank you for explaining! Would you like me to provide a summary of this learning episode and how it relates to her development, or would you prefer to explore more about her behaviors and interactions?
+User: summarize
+Assistant: Certainly! Today, your toddler used a practiced sign for milk to communicate her need while you were preparing dinner in the kitchen. She initially vocalized at the door to get your attention and then used the sign once you noticed her. Your responsive acknowledgment and provision of milk reinforced her communication attempt.
+
+This episode highlights key aspects of your toddler’s language and communication development, including the use of sign language as an expressive tool, intentional communication to meet needs, and shared attention in interaction with a caregiver. It also showcases early social development through turn-taking and responsiveness.
+
+To deepen this learning, you might try introducing a small routine of using signs during snack or drink times. For example, you can encourage her to sign for different favorite foods or drinks, enhancing her vocabulary and communication confidence. Providing consistent, positive responses will support her continued development in expressive language and social skills.

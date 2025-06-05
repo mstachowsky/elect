@@ -1,0 +1,4 @@
+User: hi
+Assistant: Hello! What did your toddler do today?
+User: Used the sign for milk
+Assistant: That's wonderful! How did your toddler use the sign for milk?
