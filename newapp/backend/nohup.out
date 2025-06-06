@@ -373,3 +373,47 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     100.100.14.61:50113 - "GET / HTTP/1.1" 200 OK
 INFO:     100.100.14.61:50113 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3309021]
+INFO:     Started server process [22704]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22704]
+INFO:     Started server process [23858]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:60244 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:60244 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60244 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60285 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60285 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [23858]
+INFO:     Started server process [27197]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:60438 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60456 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60459 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60463 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60464 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:60483 - "POST /save_chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [27197]
+INFO:     Started server process [40583]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:60487 - "POST /save_chat HTTP/1.1" 200 OK
