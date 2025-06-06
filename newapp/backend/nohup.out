@@ -1022,3 +1022,180 @@ INFO:     Finished server process [2852378]
 INFO:     Started server process [2853797]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2853797]
+INFO:     Started server process [2881929]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2881929]
+INFO:     Started server process [2883165]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2883165]
+INFO:     Started server process [2890253]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2890253]
+INFO:     Started server process [2901991]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2901991]
+INFO:     Started server process [2905114]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2905114]
+INFO:     Started server process [2956277]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2956277]
+INFO:     Started server process [2963804]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+## Summary:
+Today, your toddler showed wonderful social awareness and empathy by interacting gently with her younger baby cousin. Offering a block—even without words—demonstrates early sharing, an important skill in social and emotional development at this age. The way she patiently held out the block and waited shows that she is beginning to understand others have their own perspectives and needs, a key aspect of developing empathy. Watching her cousin's reactions, even if not responding directly, reflects her growing interest in observing and making sense of social cues.
+
+These actions are great examples of early social interaction, turn-taking, and emerging communication. Even without speaking, your toddler used her actions to include her cousin in her activity—an early step toward cooperative play, which becomes more prominent between ages 2-3. Her gentle approach also shows self-control and awareness of how to be careful around a younger child, skills that are just beginning to emerge at 18 months.
+
+This special moment supported your toddler’s growing capacity for empathy, communication, and social interaction—all foundational areas for healthy emotional and social development.
+
+Would you like a suggestion for a deepening activity to extend this kind of learning?
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2963804]
+INFO:     Started server process [3188247]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3188247]
+INFO:     Started server process [3191916]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3191916]
+INFO:     Started server process [3193850]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3193850]
+INFO:     Started server process [3194388]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3194388]
+INFO:     Started server process [3195409]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3195409]
+INFO:     Started server process [3195740]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3195740]
+INFO:     Started server process [3198184]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3198184]
+INFO:     Started server process [3206941]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3206941]
+INFO:     Started server process [3214683]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+## Summary:
+
+In this learning episode, your daughter was engaged in shared reading, picture recognition, and music, all of which are wonderful for her development at 18 months. When she pointed to the dragonfly but did actions for “Itsy Bitsy Spider,” she was demonstrating her growing ability to connect related ideas (insects and songs), even if she didn’t have the words yet. Her enjoyment, shown by smiling, and following the hand motions during the song showed social-emotional connection, imitation skills, and developing understanding of routines. When she pointed to the ant and then the snail, she was exploring her ability to communicate preferences and make choices, as well as showing curiosity and agency in learning. All these actions are signs of important milestones in communication, early literacy, and social-emotional development at her age. She is learning to use gestures and actions as language, make connections between pictures and songs, and express her interests to you.
+
+Would you like an idea for a deepening activity to keep this kind of learning going?
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3214683]
+INFO:     Started server process [3218802]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3218802]
+INFO:     Started server process [3231371]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

@@ -1673,3 +1673,773 @@ WHERE lower(user.email) = lower(%s)
 2025-06-06 14:17:55,229 INFO sqlalchemy.engine.Engine [cached since 141.4s ago] ('mstachow@uwaterloo.ca',)
 2025-06-06 14:17:55,311 INFO sqlalchemy.engine.Engine ROLLBACK
 INFO:     100.100.14.61:51940 - "POST /auth/jwt/login HTTP/1.1" 400 Bad Request
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2853799]
+INFO:     Started server process [2881939]
+INFO:     Waiting for application startup.
+2025-06-06 14:25:15,881 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:25:15,881 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:15,882 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:25:15,882 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:15,882 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:25:15,882 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:15,883 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:25:15,884 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:25:15,884 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:15,886 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2881939]
+INFO:     Started server process [2883164]
+INFO:     Waiting for application startup.
+2025-06-06 14:25:40,276 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:25:40,276 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:40,277 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:25:40,277 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:40,277 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:25:40,277 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:40,278 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:25:40,279 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:25:40,279 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:25:40,281 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2883164]
+INFO:     Started server process [2890252]
+INFO:     Waiting for application startup.
+2025-06-06 14:28:09,855 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:28:09,855 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:28:09,856 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:28:09,856 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:28:09,856 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:28:09,856 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:28:09,857 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:28:09,858 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:28:09,858 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:28:09,859 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2890252]
+INFO:     Started server process [2901992]
+INFO:     Waiting for application startup.
+2025-06-06 14:32:17,624 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:32:17,624 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:32:17,625 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:32:17,625 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:32:17,626 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:32:17,626 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:32:17,626 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:32:17,627 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:32:17,627 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:32:17,629 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:52014 - "GET / HTTP/1.1" 200 OK
+2025-06-06 14:32:28,307 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:32:28,318 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:32:28,318 INFO sqlalchemy.engine.Engine [generated in 0.00061s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:32:29,353 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52014 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:52015 - "GET /auth HTTP/1.1" 200 OK
+2025-06-06 14:32:38,231 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:32:38,231 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:32:38,232 INFO sqlalchemy.engine.Engine [cached since 9.914s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:32:38,235 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52015 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:32:46,145 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:32:46,146 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:32:46,146 INFO sqlalchemy.engine.Engine [cached since 17.83s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:32:46,831 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52016 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2901992]
+INFO:     Started server process [2905115]
+INFO:     Waiting for application startup.
+2025-06-06 14:33:23,841 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:33:23,842 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:33:23,842 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:33:23,842 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:33:23,843 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:33:23,843 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:33:23,844 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:33:23,844 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:33:23,844 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:33:23,845 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:33:27,277 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:33:27,286 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:33:27,286 INFO sqlalchemy.engine.Engine [generated in 0.00060s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+mstachow@uwaterloo.ca
+2025-06-06 14:33:28,367 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52019 - "POST /chat HTTP/1.1" 200 OK
+2025-06-06 14:33:57,099 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:33:57,100 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:33:57,100 INFO sqlalchemy.engine.Engine [cached since 29.81s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:33:57,103 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52022 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:49:50,510 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:49:50,511 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:49:50,511 INFO sqlalchemy.engine.Engine [cached since 983.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+mstachow@uwaterloo.ca
+2025-06-06 14:49:51,697 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52087 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:52088 - "GET /chat HTTP/1.1" 405 Method Not Allowed
+2025-06-06 14:50:41,742 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:50:41,742 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:50:41,742 INFO sqlalchemy.engine.Engine [cached since 1034s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+mstachow@uwaterloo.ca
+2025-06-06 14:50:42,901 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52088 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:52088 - "GET /auth HTTP/1.1" 200 OK
+2025-06-06 14:50:47,507 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:50:47,507 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:50:47,508 INFO sqlalchemy.engine.Engine [cached since 1040s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:50:47,508 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52088 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:50:49,028 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:50:49,029 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:50:49,031 INFO sqlalchemy.engine.Engine [cached since 1042s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:50:49,034 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52088 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2905115]
+INFO:     Started server process [2956278]
+INFO:     Waiting for application startup.
+2025-06-06 14:51:20,218 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:51:20,218 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:51:20,219 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:51:20,219 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:51:20,219 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:51:20,219 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:51:20,220 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:51:20,220 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:51:20,220 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:51:20,222 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:52091 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52093 - "POST /auth/jwt/logout HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52093 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.100.14.61:52093 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 14:51:42,495 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:51:42,508 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:51:42,508 INFO sqlalchemy.engine.Engine [generated in 0.00058s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:51:42,583 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52093 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:51:42,609 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:51:42,609 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:51:42,609 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:51:42,610 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52093 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:51:47,250 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:51:47,250 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:51:47,250 INFO sqlalchemy.engine.Engine [cached since 4.641s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+mstachow@uwaterloo.ca
+2025-06-06 14:51:47,998 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52093 - "POST /chat HTTP/1.1" 200 OK
+2025-06-06 14:51:58,867 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:51:58,867 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:51:58,868 INFO sqlalchemy.engine.Engine [cached since 16.26s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:51:58,870 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52096 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:52:01,444 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:52:01,445 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:52:01,445 INFO sqlalchemy.engine.Engine [cached since 18.84s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:52:01,448 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:52096 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:52096 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2956278]
+INFO:     Started server process [2963802]
+INFO:     Waiting for application startup.
+2025-06-06 14:53:56,630 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:53:56,630 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:53:56,631 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:53:56,631 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:53:56,631 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:53:56,631 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:53:56,632 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:53:56,632 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:53:56,633 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:53:56,635 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:52104 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52104 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52104 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52104 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52104 - "POST /auth/jwt/logout HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52108 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52121 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52124 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52177 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52177 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52177 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52177 - "POST /auth/jwt/logout HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:52177 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.100.14.61:52177 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 14:59:11,560 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:59:11,563 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:59:11,563 INFO sqlalchemy.engine.Engine [generated in 0.00019s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:59:11,636 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:50376 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:59:11,664 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:59:11,665 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:59:11,665 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:59:11,666 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:50376 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:59:16,107 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:59:16,108 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:59:16,108 INFO sqlalchemy.engine.Engine [cached since 4.443s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+mstachow@uwaterloo.ca
+2025-06-06 14:59:17,487 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:50376 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:50382 - "GET /auth HTTP/1.1" 200 OK
+2025-06-06 14:59:22,949 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:59:22,949 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:59:22,949 INFO sqlalchemy.engine.Engine [cached since 11.28s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:59:22,950 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:50382 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:59:24,837 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:59:24,838 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:59:24,838 INFO sqlalchemy.engine.Engine [cached since 13.17s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:59:24,841 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:50382 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:50382 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:60632 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:60636 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2963802]
+INFO:     Started server process [3188246]
+INFO:     Waiting for application startup.
+2025-06-06 16:12:43,061 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:12:43,061 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:12:43,062 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:12:43,062 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:12:43,062 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:12:43,062 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:12:43,063 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:12:43,063 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:12:43,063 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:12:43,065 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60653 - "POST /chat HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 59, in wrapped_app
+    response = await handler(conn, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 89, in http_exception_handler
+    raise exc  # Let FastAPI handle other cases
+    ^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 59, in wrapped_app
+    response = await handler(conn, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 89, in http_exception_handler
+    raise exc  # Let FastAPI handle other cases
+    ^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 192, in _authenticate
+    raise HTTPException(status_code=status_code)
+fastapi.exceptions.HTTPException: 401: Unauthorized
+INFO:     100.100.14.61:60654 - "POST /chat HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 59, in wrapped_app
+    response = await handler(conn, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 89, in http_exception_handler
+    raise exc  # Let FastAPI handle other cases
+    ^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 59, in wrapped_app
+    response = await handler(conn, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 89, in http_exception_handler
+    raise exc  # Let FastAPI handle other cases
+    ^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 192, in _authenticate
+    raise HTTPException(status_code=status_code)
+fastapi.exceptions.HTTPException: 401: Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3188246]
+INFO:     Started server process [3191915]
+INFO:     Waiting for application startup.
+2025-06-06 16:14:00,489 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:14:00,489 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:00,490 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:14:00,490 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:00,490 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:14:00,490 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:00,491 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:14:00,492 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:14:00,492 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:00,493 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60658 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3191915]
+INFO:     Started server process [3193849]
+INFO:     Waiting for application startup.
+2025-06-06 16:14:40,747 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:14:40,747 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:40,748 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:14:40,748 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:40,749 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:14:40,749 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:40,750 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:14:40,750 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:14:40,750 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:40,751 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3193849]
+INFO:     Started server process [3194387]
+INFO:     Waiting for application startup.
+2025-06-06 16:14:51,699 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:14:51,699 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:51,700 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:14:51,700 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:51,700 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:14:51,700 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:51,701 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:14:51,701 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:14:51,701 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:14:51,703 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60682 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3194387]
+INFO:     Started server process [3195408]
+INFO:     Waiting for application startup.
+2025-06-06 16:15:11,306 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:15:11,306 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:11,307 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:15:11,307 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:11,307 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:15:11,307 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:11,308 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:15:11,308 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:15:11,308 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:11,309 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3195408]
+INFO:     Started server process [3195741]
+INFO:     Waiting for application startup.
+2025-06-06 16:15:18,115 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:15:18,115 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:18,116 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:15:18,116 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:18,116 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:15:18,117 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:18,117 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:15:18,117 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:15:18,117 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:15:18,119 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60700 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3195741]
+INFO:     Started server process [3198120]
+INFO:     Waiting for application startup.
+2025-06-06 16:16:07,317 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:16:07,317 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:16:07,318 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:16:07,318 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:16:07,319 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:16:07,319 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:16:07,320 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:16:07,320 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:16:07,320 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:16:07,322 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60726 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3198120]
+INFO:     Started server process [3206958]
+INFO:     Waiting for application startup.
+2025-06-06 16:19:12,962 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:19:12,962 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:19:12,962 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:19:12,963 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:19:12,963 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:19:12,963 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:19:12,964 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:19:12,964 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:19:12,964 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:19:12,965 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60820 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:60871 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:60871 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.100.14.61:60871 - "GET / HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3206958]
+INFO:     Started server process [3214680]
+INFO:     Waiting for application startup.
+2025-06-06 16:21:57,171 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:21:57,171 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:21:57,171 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:21:57,171 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:21:57,172 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:21:57,172 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:21:57,173 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:21:57,173 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:21:57,173 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:21:57,175 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:60894 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     100.100.14.61:60894 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.100.14.61:60894 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:60894 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-06-06 16:22:02,585 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:02,596 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 16:22:02,596 INFO sqlalchemy.engine.Engine [generated in 0.00056s] ('mstachow@uwaterloo.ca',)
+2025-06-06 16:22:02,688 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60894 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 16:22:02,714 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:02,715 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:22:02,715 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:22:02,716 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60894 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 16:22:03,580 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:03,580 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:22:03,581 INFO sqlalchemy.engine.Engine [cached since 0.8657s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:22:03,582 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60894 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:60894 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     100.100.14.61:60894 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 16:22:10,999 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:11,000 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 16:22:11,000 INFO sqlalchemy.engine.Engine [cached since 8.404s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 16:22:11,090 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60894 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 16:22:11,117 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:11,118 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:22:11,118 INFO sqlalchemy.engine.Engine [cached since 8.403s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:22:11,119 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60894 - "GET /whoami HTTP/1.1" 200 OK
+INFO:     100.100.14.61:60894 - "GET /chat HTTP/1.1" 405 Method Not Allowed
+INFO:     100.100.14.61:60906 - "GET / HTTP/1.1" 307 Temporary Redirect
+2025-06-06 16:22:19,701 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:19,702 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:22:19,702 INFO sqlalchemy.engine.Engine [cached since 16.99s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:22:19,705 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60906 - "GET /whoami HTTP/1.1" 200 OK
+INFO:     100.100.14.61:60910 - "GET / HTTP/1.1" 307 Temporary Redirect
+2025-06-06 16:22:27,777 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:22:27,777 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:22:27,777 INFO sqlalchemy.engine.Engine [cached since 25.06s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:22:27,778 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60910 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3214680]
+INFO:     Started server process [3218801]
+INFO:     Waiting for application startup.
+2025-06-06 16:23:21,079 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:23:21,079 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:23:21,079 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:23:21,080 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:23:21,080 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:23:21,080 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:23:21,081 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:23:21,081 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:23:21,081 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:23:21,082 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 16:23:25,464 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:23:25,467 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:23:25,467 INFO sqlalchemy.engine.Engine [generated in 0.00023s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:23:25,469 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60938 - "GET / HTTP/1.1" 307 Temporary Redirect
+2025-06-06 16:23:25,627 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:23:25,628 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:23:25,628 INFO sqlalchemy.engine.Engine [cached since 0.1606s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:23:25,631 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60938 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 16:23:31,424 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:23:31,425 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:23:31,425 INFO sqlalchemy.engine.Engine [cached since 5.958s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:23:31,428 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60942 - "GET / HTTP/1.1" 307 Temporary Redirect
+2025-06-06 16:23:31,584 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:23:31,585 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:23:31,585 INFO sqlalchemy.engine.Engine [cached since 6.118s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:23:31,588 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:60942 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3218801]
+INFO:     Started server process [3231373]
+INFO:     Waiting for application startup.
+2025-06-06 16:27:45,132 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 16:27:45,132 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:27:45,133 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 16:27:45,133 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:27:45,133 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 16:27:45,133 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:27:45,134 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:27:45,134 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 16:27:45,134 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 16:27:45,136 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 16:27:46,807 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:27:46,816 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:27:46,816 INFO sqlalchemy.engine.Engine [generated in 0.00068s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:27:46,828 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61071 - "GET / HTTP/1.1" 200 OK
+2025-06-06 16:27:46,946 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:27:46,947 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:27:46,947 INFO sqlalchemy.engine.Engine [cached since 0.1314s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:27:46,950 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61071 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 16:28:02,293 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:28:02,294 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:28:02,294 INFO sqlalchemy.engine.Engine [cached since 15.48s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'hi?'}]
+2025-06-06 16:28:03,061 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61079 - "POST /chat HTTP/1.1" 200 OK
+2025-06-06 16:28:15,536 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:28:15,537 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:28:15,537 INFO sqlalchemy.engine.Engine [cached since 28.72s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:28:15,540 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 16:28:17,021 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:28:17,021 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:28:17,021 INFO sqlalchemy.engine.Engine [cached since 30.21s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:28:17,022 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61086 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 16:28:29,926 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:28:29,927 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 16:28:29,927 INFO sqlalchemy.engine.Engine [generated in 0.00015s] ('mstachow@uwaterloo.ca',)
+2025-06-06 16:28:29,999 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61086 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 16:28:30,020 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:28:30,020 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:28:30,020 INFO sqlalchemy.engine.Engine [cached since 43.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:28:30,021 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 16:28:34,057 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:28:34,058 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:28:34,058 INFO sqlalchemy.engine.Engine [cached since 47.24s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:28:34,060 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 200 OK

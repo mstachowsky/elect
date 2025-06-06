@@ -53,12 +53,19 @@ function showHello(username) {
   document.getElementById('hello').style.display = '';
   document.getElementById('username').textContent = username;
 }
-function logout() {
-  // Just delete the auth cookie (client-side only; JWT will expire naturally server-side)
-  document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  document.getElementById('forms').style.display = '';
-  document.getElementById('hello').style.display = 'none';
+async function logout() {
+  const res = await fetch('/auth/jwt/logout', {
+    method: 'POST',
+    credentials: 'include'
+  });
+  if (res.ok) {
+    document.getElementById('forms').style.display = '';
+    document.getElementById('hello').style.display = 'none';
+  } else {
+    alert("Logout failed.");
+  }
 }
+
 document.getElementById('to-register').onclick = showRegister;
 document.getElementById('to-login').onclick = showLogin;
 document.getElementById('logout-btn').onclick = logout;
