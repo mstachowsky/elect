@@ -784,3 +784,241 @@ INFO:     Finished server process [2297676]
 INFO:     Started server process [2298109]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+## Summary:
+In this learning episode, your child and his friends engaged in imaginative play by pretending a hockey stick was a gun. This kind of pretend play is very typical for toddlers around 18 months and shows their developing imagination and ability to use one object to represent another—an important cognitive milestone known as "symbolic thinking." When your child pointed the stick at friends and made up a scenario, he was exploring social roles and experimenting with what he observes in the world. The fact that his friends joined in suggests they are developing important social skills, like cooperation, imitation, and shared storytelling.
+
+When the daycare teacher intervened to redirect the play, this provided an opportunity for the children to learn about social norms and appropriate behavior in group settings. Even if children don’t fully understand the concepts of violence or rules, experiences like these help lay the groundwork for understanding boundaries and respecting community standards.
+
+So, in this single episode, your child was practicing language, social interaction, symbolic play, and beginning to learn about rules—all expected and healthy parts of toddler development.
+
+Would you like to hear an idea for a deepening activity to build on this learning?
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:53638 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:53638 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:0 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.100.14.61:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     129.97.124.166:0 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:0 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2298109]
+INFO:     Started server process [2723415]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2723415]
+INFO:     Started server process [2742991]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2742991]
+INFO:     Started server process [2744712]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2744712]
+INFO:     Started server process [2747626]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2747626]
+INFO:     Started server process [2748683]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2748683]
+INFO:     Started server process [2752469]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2752469]
+INFO:     Started server process [2754266]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2754266]
+INFO:     Started server process [2759934]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2759934]
+INFO:     Started server process [2761106]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2761106]
+INFO:     Started server process [2766975]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2766975]
+INFO:     Started server process [2769163]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2769163]
+INFO:     Started server process [2774786]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2774786]
+INFO:     Started server process [2775914]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2775914]
+INFO:     Started server process [2780319]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2780319]
+INFO:     Started server process [2785483]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2785483]
+INFO:     Started server process [2805711]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2805711]
+INFO:     Started server process [2827183]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2827183]
+INFO:     Started server process [2827883]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2827883]
+INFO:     Started server process [2828755]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2828755]
+INFO:     Started server process [2831808]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2831808]
+INFO:     Started server process [2831948]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2831948]
+INFO:     Started server process [2839949]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2839949]
+INFO:     Started server process [2842576]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2842576]
+INFO:     Started server process [2843431]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2843431]
+INFO:     Started server process [2852378]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2852378]
+INFO:     Started server process [2853797]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

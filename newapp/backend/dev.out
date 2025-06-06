@@ -1,0 +1,1675 @@
+nohup: ignoring input
+INFO:     Will watch for changes in these directories: ['/home/mike/elect/newapp/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8990 (Press CTRL+C to quit)
+INFO:     Started reloader process [2731344] using StatReload
+INFO:     Started server process [2731346]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.100.14.61:58449 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:58449 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2731346]
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 9, in <module>
+    from fastapi_users.manager import UserManager, BaseUserManager
+ImportError: cannot import name 'UserManager' from 'fastapi_users.manager' (/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py). Did you mean: 'BaseUserManager'?
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 9, in <module>
+    from fastapi_users.manager import UserManager, BaseUserManager
+ImportError: cannot import name 'UserManager' from 'fastapi_users.manager' (/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py). Did you mean: 'BaseUserManager'?
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 9, in <module>
+    from fastapi_users.manager import UserManager, BaseUserManager
+ImportError: cannot import name 'UserManager' from 'fastapi_users.manager' (/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py). Did you mean: 'BaseUserManager'?
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 9, in <module>
+    from fastapi_users.manager import UserManager, BaseUserManager
+ImportError: cannot import name 'UserManager' from 'fastapi_users.manager' (/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py). Did you mean: 'BaseUserManager'?
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 19, in <module>
+    app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
+    ^^^
+NameError: name 'app' is not defined
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 36, in <module>
+    class UserRead(fu_models.BaseUser[uuid.UUID]):
+                   ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fastapi_users.models' has no attribute 'BaseUser'
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [2759933]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 286, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "asyncmy/connection.pyx", line 1345, in _connect
+  File "asyncmy/connection.pyx", line 596, in connect
+  File "asyncmy/connection.pyx", line 574, in asyncmy.connection.Connection.connect
+  File "asyncmy/connection.pyx", line 833, in _request_authentication
+  File "asyncmy/connection.pyx", line 646, in read_packet
+  File "asyncmy/protocol.pyx", line 190, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/protocol.pyx", line 194, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/errors.pyx", line 128, in asyncmy.errors.raise_mysql_exception
+  File "asyncmy/errors.pyx", line 137, in asyncmy.errors.raise_mysql_exception
+asyncmy.errors.OperationalError: (1698, "Access denied for user 'mike'@'localhost'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 133, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 133, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 569, in __aenter__
+    await self._router.startup()
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 670, in startup
+    await handler()
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 118, in on_startup
+    async with engine.begin() as conn:
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 1066, in begin
+    async with conn:
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/base.py", line 121, in __aenter__
+    return await self.start(is_ctxmanager=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 274, in start
+    await greenlet_spawn(self.sync_engine.connect)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 286, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "asyncmy/connection.pyx", line 1345, in _connect
+  File "asyncmy/connection.pyx", line 596, in connect
+  File "asyncmy/connection.pyx", line 574, in asyncmy.connection.Connection.connect
+  File "asyncmy/connection.pyx", line 833, in _request_authentication
+  File "asyncmy/connection.pyx", line 646, in read_packet
+  File "asyncmy/protocol.pyx", line 190, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/protocol.pyx", line 194, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/errors.pyx", line 128, in asyncmy.errors.raise_mysql_exception
+  File "asyncmy/errors.pyx", line 137, in asyncmy.errors.raise_mysql_exception
+sqlalchemy.exc.OperationalError: (asyncmy.errors.OperationalError) (1698, "Access denied for user 'mike'@'localhost'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+ERROR:    Application startup failed. Exiting.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [2761031]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 286, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "asyncmy/connection.pyx", line 1345, in _connect
+  File "asyncmy/connection.pyx", line 596, in connect
+  File "asyncmy/connection.pyx", line 574, in asyncmy.connection.Connection.connect
+  File "asyncmy/connection.pyx", line 833, in _request_authentication
+  File "asyncmy/connection.pyx", line 646, in read_packet
+  File "asyncmy/protocol.pyx", line 190, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/protocol.pyx", line 194, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/errors.pyx", line 128, in asyncmy.errors.raise_mysql_exception
+  File "asyncmy/errors.pyx", line 137, in asyncmy.errors.raise_mysql_exception
+asyncmy.errors.OperationalError: (1698, "Access denied for user 'mike'@'localhost'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 693, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 133, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 133, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 569, in __aenter__
+    await self._router.startup()
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 670, in startup
+    await handler()
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 118, in on_startup
+    async with engine.begin() as conn:
+  File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 1066, in begin
+    async with conn:
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/base.py", line 121, in __aenter__
+    return await self.start(is_ctxmanager=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 274, in start
+    await greenlet_spawn(self.sync_engine.connect)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3274, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 148, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2439, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3298, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 177, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 901, in __connect
+    with util.safe_reraise():
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 897, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 646, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 625, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 286, in connect
+    await_only(creator_fn(*arg, **kw)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "asyncmy/connection.pyx", line 1345, in _connect
+  File "asyncmy/connection.pyx", line 596, in connect
+  File "asyncmy/connection.pyx", line 574, in asyncmy.connection.Connection.connect
+  File "asyncmy/connection.pyx", line 833, in _request_authentication
+  File "asyncmy/connection.pyx", line 646, in read_packet
+  File "asyncmy/protocol.pyx", line 190, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/protocol.pyx", line 194, in asyncmy.protocol.MysqlPacket.raise_for_error
+  File "asyncmy/errors.pyx", line 128, in asyncmy.errors.raise_mysql_exception
+  File "asyncmy/errors.pyx", line 137, in asyncmy.errors.raise_mysql_exception
+sqlalchemy.exc.OperationalError: (asyncmy.errors.OperationalError) (1698, "Access denied for user 'mike'@'localhost'")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+ERROR:    Application startup failed. Exiting.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [2766947]
+INFO:     Waiting for application startup.
+2025-06-06 13:45:17,089 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 13:45:17,089 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:45:17,089 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 13:45:17,090 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:45:17,090 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 13:45:17,090 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:45:17,091 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:45:17,091 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 13:45:17,091 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:45:17,094 INFO sqlalchemy.engine.Engine 
+CREATE TABLE user (
+	id VARCHAR(36) NOT NULL, 
+	email VARCHAR(320) NOT NULL, 
+	hashed_password VARCHAR(1024) NOT NULL, 
+	is_active BOOL NOT NULL, 
+	is_superuser BOOL NOT NULL, 
+	is_verified BOOL NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-06-06 13:45:17,094 INFO sqlalchemy.engine.Engine [no key 0.00011s] ()
+2025-06-06 13:45:17,116 INFO sqlalchemy.engine.Engine CREATE UNIQUE INDEX ix_user_email ON user (email)
+2025-06-06 13:45:17,117 INFO sqlalchemy.engine.Engine [no key 0.00011s] ()
+2025-06-06 13:45:17,141 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:51714 - "GET / HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 25, in serve_frontend
+    return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
+           ^^^^^^^^^^^^
+NameError: name 'FileResponse' is not defined
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2766947]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [2769164]
+INFO:     Waiting for application startup.
+2025-06-06 13:46:03,882 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 13:46:03,882 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:46:03,883 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 13:46:03,883 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:46:03,883 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 13:46:03,883 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:46:03,884 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:46:03,884 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 13:46:03,884 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:46:03,888 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:51748 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:51748 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 13:46:21,259 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:46:21,263 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 13:46:21,263 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('mstachow@uwaterloo.ca',)
+2025-06-06 13:46:21,264 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51749 - "POST /auth/register HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/router/register.py", line 55, in register
+    created_user = await user_manager.create(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 136, in create
+    user_create.create_update_dict()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/pydantic/main.py", line 896, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'UserCreate' object has no attribute 'create_update_dict'
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2769164]
+Process SpawnProcess-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 41, in <module>
+    class UserRead(fu_models.BaseUser[uuid.UUID]):
+                   ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'fastapi_users.models' has no attribute 'BaseUser'
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 40, in <module>
+    from fastapi_users import BaseUser
+ImportError: cannot import name 'BaseUser' from 'fastapi_users' (/home/mike/.local/lib/python3.12/site-packages/fastapi_users/__init__.py)
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 8, in <module>
+    from fastapi_users.schemas import UserRead, UserCreate, UserUpdate
+ImportError: cannot import name 'UserRead' from 'fastapi_users.schemas' (/home/mike/.local/lib/python3.12/site-packages/fastapi_users/schemas.py)
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Started server process [2785460]
+INFO:     Waiting for application startup.
+2025-06-06 13:51:45,166 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 13:51:45,166 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:51:45,166 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 13:51:45,166 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:51:45,167 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 13:51:45,167 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:51:45,168 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:51:45,168 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 13:51:45,168 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:51:45,170 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.100.14.61:51771 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:51771 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 13:51:57,560 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:51:57,568 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 13:51:57,568 INFO sqlalchemy.engine.Engine [generated in 0.00030s] ('mstachow@uwaterloo.ca',)
+2025-06-06 13:51:57,632 INFO sqlalchemy.engine.Engine INSERT INTO user (id, email, hashed_password, is_active, is_superuser, is_verified) VALUES (%s, %s, %s, %s, %s, %s)
+2025-06-06 13:51:57,632 INFO sqlalchemy.engine.Engine [generated in 0.00031s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695', 'mstachow@uwaterloo.ca', '$argon2id$v=19$m=65536,t=3,p=4$Tr4sDMKVp5INNanq8Qnvbg$eC1AMgKQVyxzxXeV38BvZt704qFM0TFHMXznowornoQ', 1, 0, 0)
+2025-06-06 13:51:57,633 INFO sqlalchemy.engine.Engine COMMIT
+2025-06-06 13:51:57,637 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:51:57,638 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 13:51:57,638 INFO sqlalchemy.engine.Engine [generated in 0.00015s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+>>> user mstachow@uwaterloo.ca registered (id=f2acd47d-fce7-4267-969b-2ebaaf4d2695)
+2025-06-06 13:51:57,639 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51773 - "POST /auth/register HTTP/1.1" 201 Created
+2025-06-06 13:52:06,200 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:52:06,200 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 13:52:06,200 INFO sqlalchemy.engine.Engine [cached since 8.632s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 13:52:06,273 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51775 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:51775 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-06 13:55:29,145 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:55:29,146 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 13:55:29,146 INFO sqlalchemy.engine.Engine [cached since 211.6s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 13:55:29,224 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51784 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:51784 - "GET /whoami HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2785460]
+INFO:     Started server process [2805710]
+INFO:     Waiting for application startup.
+2025-06-06 13:58:49,207 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 13:58:49,207 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:58:49,208 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 13:58:49,208 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:58:49,208 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 13:58:49,208 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:58:49,209 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:58:49,209 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 13:58:49,209 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 13:58:49,211 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 13:58:59,518 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:58:59,529 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 13:58:59,529 INFO sqlalchemy.engine.Engine [generated in 0.00039s] ('mstachow@uwaterloo.ca',)
+2025-06-06 13:58:59,593 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51793 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:51793 - "GET /whoami HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 177, in _authenticate
+    user = await strategy.read_token(token, user_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/strategy/jwt.py", line 60, in read_token
+    parsed_id = user_manager.parse_id(user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 62, in parse_id
+    raise NotImplementedError()  # pragma: no cover
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError
+INFO:     100.100.14.61:51794 - "GET / HTTP/1.1" 200 OK
+INFO:     100.100.14.61:51794 - "GET /whoami HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 177, in _authenticate
+    user = await strategy.read_token(token, user_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/strategy/jwt.py", line 60, in read_token
+    parsed_id = user_manager.parse_id(user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 62, in parse_id
+    raise NotImplementedError()  # pragma: no cover
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError
+2025-06-06 13:59:03,988 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 13:59:03,989 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 13:59:03,989 INFO sqlalchemy.engine.Engine [cached since 4.461s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 13:59:04,057 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51795 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:51795 - "GET /whoami HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 177, in _authenticate
+    user = await strategy.read_token(token, user_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/strategy/jwt.py", line 60, in read_token
+    parsed_id = user_manager.parse_id(user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 62, in parse_id
+    raise NotImplementedError()  # pragma: no cover
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2805710]
+INFO:     Started server process [2827182]
+INFO:     Waiting for application startup.
+2025-06-06 14:06:19,935 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:06:19,935 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:19,936 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:06:19,936 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:19,936 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:06:19,936 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:19,937 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:06:19,937 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:06:19,937 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:19,939 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2827182]
+Process SpawnProcess-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 38, in <module>
+    class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):     # 👈 add it FIRST
+                                                   ^^^^
+NameError: name 'User' is not defined
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Started server process [2828744]
+INFO:     Waiting for application startup.
+2025-06-06 14:06:50,259 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:06:50,259 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:50,260 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:06:50,260 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:50,260 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:06:50,260 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:50,261 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:06:50,261 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:06:50,261 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:06:50,263 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:06:54,824 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:06:54,827 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:06:54,827 INFO sqlalchemy.engine.Engine [generated in 0.00022s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:06:54,888 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51828 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:51828 - "GET /whoami HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 177, in _authenticate
+    user = await strategy.read_token(token, user_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/strategy/jwt.py", line 60, in read_token
+    parsed_id = user_manager.parse_id(user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 62, in parse_id
+    raise NotImplementedError()  # pragma: no cover
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2828744]
+Process SpawnProcess-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 49
+    return uuid.UUID(value)
+    ^^^^^^
+IndentationError: expected an indented block after function definition on line 48
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Started server process [2831931]
+INFO:     Waiting for application startup.
+2025-06-06 14:07:56,223 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:07:56,224 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:07:56,224 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:07:56,224 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:07:56,225 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:07:56,225 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:07:56,226 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:07:56,226 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:07:56,226 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:07:56,228 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:08:02,471 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:08:02,475 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:08:02,475 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:08:02,547 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51831 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+INFO:     100.100.14.61:51831 - "GET /whoami HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 291, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/dependencies/utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<makefun-gen-0>", line 2, in current_user_dependency
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 143, in current_user_dependency
+    user, _ = await self._authenticate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/authenticator.py", line 177, in _authenticate
+    user = await strategy.read_token(token, user_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/authentication/strategy/jwt.py", line 60, in read_token
+    parsed_id = user_manager.parse_id(user_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 62, in parse_id
+    raise NotImplementedError()  # pragma: no cover
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2831931]
+INFO:     Started server process [2839948]
+INFO:     Waiting for application startup.
+2025-06-06 14:10:43,888 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:10:43,888 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:10:43,889 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:10:43,889 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:10:43,889 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:10:43,889 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:10:43,890 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:10:43,890 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:10:43,890 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:10:43,892 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:10:48,695 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:10:48,706 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:10:48,706 INFO sqlalchemy.engine.Engine [generated in 0.00055s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:10:48,782 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51891 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:10:48,808 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:10:48,809 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:10:48,809 INFO sqlalchemy.engine.Engine [generated in 0.00017s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:10:48,810 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51891 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:10:52,697 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:10:52,698 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:10:52,698 INFO sqlalchemy.engine.Engine [cached since 3.993s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:10:52,760 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51891 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:10:52,779 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:10:52,779 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:10:52,779 INFO sqlalchemy.engine.Engine [cached since 3.971s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:10:52,780 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51891 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2839948]
+INFO:     Started server process [2842578]
+INFO:     Waiting for application startup.
+2025-06-06 14:11:37,065 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:11:37,065 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:37,066 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:11:37,066 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:37,067 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:11:37,067 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:37,067 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:11:37,067 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:11:37,067 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:37,070 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:11:39,215 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:11:39,225 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:11:39,225 INFO sqlalchemy.engine.Engine [generated in 0.00038s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:11:39,289 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51898 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:11:39,314 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:11:39,315 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:11:39,315 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 14:11:39,316 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51898 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2842578]
+INFO:     Started server process [2843429]
+INFO:     Waiting for application startup.
+2025-06-06 14:11:52,878 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:11:52,878 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:52,879 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:11:52,879 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:52,879 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:11:52,879 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:52,880 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:11:52,880 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:11:52,880 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:11:52,882 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:11:57,320 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:11:57,323 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:11:57,323 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:11:57,382 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51900 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:11:57,408 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:11:57,409 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:11:57,409 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x73909ff2f200>
+2025-06-06 14:11:57,410 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51900 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2843429]
+INFO:     Started server process [2852398]
+INFO:     Waiting for application startup.
+2025-06-06 14:15:01,632 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:15:01,632 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:01,633 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:15:01,633 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:01,633 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:15:01,634 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:01,634 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:15:01,634 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:15:01,634 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:01,637 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:15:07,305 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:15:07,311 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:15:07,311 INFO sqlalchemy.engine.Engine [generated in 0.00029s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:15:07,378 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51909 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:15:07,402 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:15:07,403 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:15:07,403 INFO sqlalchemy.engine.Engine [generated in 0.00017s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x741062433290>
+2025-06-06 14:15:07,404 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51909 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2852398]
+INFO:     Started server process [2853799]
+INFO:     Waiting for application startup.
+2025-06-06 14:15:30,515 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-06 14:15:30,516 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:30,516 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-06 14:15:30,516 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:30,517 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-06 14:15:30,517 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:30,518 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:15:30,518 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-06 14:15:30,518 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-06 14:15:30,519 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-06 14:15:33,869 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:15:33,879 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:15:33,879 INFO sqlalchemy.engine.Engine [generated in 0.00039s] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:15:33,942 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51911 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:15:33,968 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:15:33,969 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:15:33,969 INFO sqlalchemy.engine.Engine [generated in 0.00019s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x72eecb5e3500>
+mstachow@uwaterloo.ca
+2025-06-06 14:15:33,970 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51911 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:16:15,918 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:16:15,918 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:16:15,918 INFO sqlalchemy.engine.Engine [cached since 42.04s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:16:15,974 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51915 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:16:15,996 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:16:15,996 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:16:15,996 INFO sqlalchemy.engine.Engine [cached since 42.03s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x72eecb5e3e30>
+mstachow@uwaterloo.ca
+2025-06-06 14:16:15,997 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51915 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:16:21,149 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:16:21,150 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:16:21,150 INFO sqlalchemy.engine.Engine [cached since 47.27s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:16:21,253 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51916 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:16:21,279 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:16:21,280 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:16:21,280 INFO sqlalchemy.engine.Engine [cached since 47.31s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x72eecab24230>
+mstachow@uwaterloo.ca
+2025-06-06 14:16:21,281 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51916 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:17:20,078 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:17:20,079 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:17:20,079 INFO sqlalchemy.engine.Engine [cached since 106.2s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:17:20,162 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51922 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:17:20,189 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:17:20,190 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:17:20,190 INFO sqlalchemy.engine.Engine [cached since 106.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x72eecab24560>
+mstachow@uwaterloo.ca
+2025-06-06 14:17:20,191 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51922 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:17:31,301 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:17:31,302 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:17:31,302 INFO sqlalchemy.engine.Engine [cached since 117.4s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:17:31,384 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51928 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-06 14:17:31,411 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:17:31,411 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:17:31,411 INFO sqlalchemy.engine.Engine [cached since 117.4s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x72eecab246b0>
+mstachow@uwaterloo.ca
+2025-06-06 14:17:31,412 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51928 - "GET /whoami HTTP/1.1" 200 OK
+INFO:     100.100.14.61:51928 - "GET / HTTP/1.1" 200 OK
+2025-06-06 14:17:34,443 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:17:34,444 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 14:17:34,444 INFO sqlalchemy.engine.Engine [cached since 120.5s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+<main_dev.User object at 0x72eecab64b30>
+mstachow@uwaterloo.ca
+2025-06-06 14:17:34,447 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51928 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 14:17:55,228 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 14:17:55,228 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-06 14:17:55,229 INFO sqlalchemy.engine.Engine [cached since 141.4s ago] ('mstachow@uwaterloo.ca',)
+2025-06-06 14:17:55,311 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:51940 - "POST /auth/jwt/login HTTP/1.1" 400 Bad Request
