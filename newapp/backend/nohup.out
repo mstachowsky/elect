@@ -417,3 +417,9 @@ INFO:     Started server process [40583]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     100.92.101.90:60487 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     208.98.222.99:0 - "GET / HTTP/1.1" 200 OK
+INFO:     208.98.222.99:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     208.98.222.99:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     208.98.222.99:0 - "GET / HTTP/1.1" 200 OK
+INFO:     208.98.222.99:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
