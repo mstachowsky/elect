@@ -10,7 +10,12 @@ import os
 app = FastAPI()
 
 client = OpenAI()
-SYSTEM_PROMPT = "You are an expert early childhood educator, helping parents to explore the learning of their children. The first thing you always ask is what the child did today. Then you ask questions one at a time to guide the parent through describing the learning. Once you feel that there is enough information (maybe 3-5 questions maximum) you ask if the parent wants a summary of the learning episode or to keep exploring. If they want a summary, provide a summary of the learning episode, linking it to child development indicators in a way the parents, who are experts on their children but not necessarily child development, can understand. The child is a toddler. Then, you suggest a deepening activity that is age appropriate that can give the parent some ideas of how to keep the learning going."
+
+age_group = "toddler"
+age = 18
+age_unit = "months"
+
+SYSTEM_PROMPT = f"""You are an expert early childhood educator, helping parents to explore the learning of their children. The child is a {age_group}, about {age} {age_unit} old.  The first thing you always ask is what the child did today. Then you ask questions one at a time to guide the parent through describing the learning. Once you feel that there is enough information (maybe 3-5 questions maximum) you ask if the parent wants a summary of the learning episode or to keep exploring. If they want a summary, provide a summary of the learning episode, linking it to child development indicators in a way the parents, who are experts on their children but not necessarily child development, can understand. You must start your summary with the exact string: "## Summary:". Once you output the summary, never output another summary unless you are explicitly asked. Then, you suggest a deepening activity that is age appropriate that can give the parent some ideas of how to keep the learning going."""
 
 app.add_middleware(
     CORSMiddleware,
@@ -58,6 +63,33 @@ async def chat(request: ChatHistoryRequest):
             messages=messages
         )
         bot_message = response.choices[0].message.content
+        
+        if "## Summary:" in bot_message:
+            # Format chat as text
+            print(bot_message)
+            chat_lines = []
+            for msg in history:
+                role = msg.get("role", "unknown").capitalize()
+                content = msg.get("content", "")
+                chat_lines.append(f"{role}: {content}\n")
+            chat_text = "".join(chat_lines)
+            elect_info = analyze_elect(chat_text)
+            elect_summary = summarize_elect(bot_message.split("## Summary:")[1],elect_info)
+            bot_message = bot_message + "\n\n" + "Here's some information for you about how this interaction lines up with child development indicators: \n" + elect_summary
+            
+            cleanup_prompt = f"""
+                The following text contains a summary, some deepening questions/activities, and information about how the interaction lines up with child development. Rewrite it without changing any words so that the text starts with the summary, then the child development information, and finally deepening questions/activities are at the end. The text is:
+                    
+                    {bot_message}
+            """
+            
+            cleanup_messages = [{"role": "user", "content": cleanup_prompt}]
+            response = client.chat.completions.create(
+                    model="gpt-4.1-mini",
+                    messages=cleanup_messages
+                )
+            content = response.choices[0].message.content.strip()
+            bot_message = content
         return {"response": bot_message}
 
     except Exception as e:
@@ -84,7 +116,7 @@ def analyze_elect(chat_history):
             try:
                 extract_summary_prompt = f"""
                 You are an expert early childhood educator. You've just spoken with a parent about a learning episode that they saw their toddler experience. You will now go through a document of indicators of toddler development. For each indicator, determine if it was clearly observed in the learning episode. If so:
-                    1. Output the indicator name (the text following the word INDICATOR in the document)
+                    1. Output the string "INDICATOR" followed by the indicator name (the text following the word INDICATOR between the two colons in the document. Don't output the indicator description after that)
                     2. Output a very brief (1 sentence) explanation of how that indicator was observed
 
                 The document is: {bk}
@@ -106,6 +138,27 @@ def analyze_elect(chat_history):
             except Exception as e:
                 print(f"an error: {e}")
     return bot_message
+
+def summarize_elect(summary,elect_analysis):
+    prompt = f"""
+        Here's a summary of a conversation you had with a parent:
+            
+            {summary}
+        
+        And here is how you linked it to a child development document:
+            
+            {elect_analysis}
+            
+        Summarize the three most important indicators from the document given the interaction, and present them to the parent in an easy to understand way. Output only your summary, no extra text.
+    """
+    messages = [{"role": "user", "content": prompt}]
+    response = client.chat.completions.create(
+                    model="gpt-4.1",
+                    messages=messages
+                )
+    content = response.choices[0].message.content.strip()
+    return content
+    
 
 @app.post("/save_chat")
 async def save_chat(request: ChatHistoryRequest):

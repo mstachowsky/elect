@@ -1,0 +1,28 @@
+Assistant: Hello! To start, could you tell me what your toddler did today?
+User: signed for milk
+Assistant: That's wonderful! Did your child sign for milk at a specific time, like during a meal or snack, or was it more spontaneous during play or another activity?
+User: during play
+Assistant: Interesting! How did you respond when your child signed for milk during play? Did you talk about it, offer milk right away, or do something else?
+User: offered right away
+Assistant: Great! After you offered the milk, how did your child respond? Did they seem pleased, keep signing, or react in another way?
+User: happy
+Assistant: Thank you for sharing that! Would you like a summary of the learning episode, or would you like to keep exploring this experience?
+User: summary
+Assistant: ## Summary:
+
+Today, your toddler signed for milk during play, and you responded by offering milk right away. This short episode highlights several important areas of your child's development:
+
+- **Communication Skills**: By using the milk sign independently, your child is expressing their needs before they can do so with spoken words. This is a strong sign of growing communication abilities, showing they understand how to use gestures to get their needs met.  
+- **Social-Emotional Development**: Feeling happy after you responded shows your child is learning that they can trust you to understand and meet their requests. This kind of positive back-and-forth (they ask, you respond) builds a sense of security and connection.  
+- **Emergent Independence**: Recognizing and expressing needs during play shows that your child is becoming more aware of themselves and able to communicate even when absorbed in another activity.
+
+These moments, though small, are important steps in your child’s journey toward more complex language and social skills!
+
+Here's some information for you about how this interaction lines up with child development indicators:  
+1. **Expressive Communication:** Your child used sign language to let you know they wanted milk, which shows they are learning to express their needs before they can use spoken words.  
+
+2. **Social Connection:** By signing for milk and being happy when you responded, your child is building trust and learning that they can communicate with you and have their needs met.  
+
+3. **Problem Solving:** Your child recognized they were thirsty and remembered to use the sign for milk, showing they are already figuring out how to solve problems and get what they need.
+
+Would you like an idea for a deepening activity to keep supporting this kind of learning?

@@ -1,0 +1,23 @@
+Assistant: Hello! To start, could you tell me what your toddler did today?
+User: signed for milk
+Assistant: That’s wonderful—thank you for sharing! Was your child trying to get your attention before signing for milk, or did they use the sign right away when they wanted it?
+User: got my attention
+Assistant: Great observation! When your toddler got your attention before signing, how did they do that? For example, did they call out, come over to you, or use another gesture?
+User: came to me
+Assistant: Thank you for clarifying. Once your child came to you and signed for milk, how did you respond? Did you acknowledge their sign verbally, give them milk right away, or maybe both?
+User: got her milk
+Assistant: That’s helpful—thank you! Would you like a summary of what your child was learning during this episode, or would you like to keep exploring the experience together?
+User: summary
+Assistant: ## Summary:
+In today’s episode, your toddler demonstrated several important areas of development. First, when she wanted milk, she physically came to you—showing she understands how to seek out help or get needs met by approaching a familiar adult. Next, she used the sign for milk, demonstrating her communication skills and ability to use gestures to express her needs before she can fully speak. This is a strong indicator of developing language and social skills.
+
+By responding to her request, you reinforced her understanding that communication is effective and meaningful—helping her connect her actions (signing) to outcomes (getting milk). This supports her sense of agency and problem-solving abilities. All these behaviors are key markers in early childhood development, showing growth in social, emotional, and communication skills.
+
+Would you like an idea for a simple activity to deepen your child’s learning around communication and expressing needs?
+
+Here's some information for you about how this interaction lines up with child development indicators: 
+1. **Communication Skills:** Your child is learning to express her needs before she can fully talk—she showed this by using the milk sign, which means she’s building strong early language and social skills.
+
+2. **Problem Solving and Independence:** By coming to you and using a sign to ask for milk, she figured out how to get what she wanted on her own. This shows she’s developing independence and basic problem-solving abilities.
+
+3. **Emotional Regulation:** Instead of getting upset when she wanted something, your child calmly approached you and used signs to communicate. This means she’s starting to manage her feelings and express herself in positive ways.

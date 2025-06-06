@@ -33,7 +33,8 @@
     INDICATOR: Expression of Feelings: Expresses a wide range of emotions more boldly (e.g., may have tantrums when angry or frustrated; shows joy, affection, fear openly)     . Starts to use language or pretend play to express feelings (“mad”, “happy”).
 
     INDICATOR: Self-Regulation: Emotion Regulation: Begins using simple strategies or language to manage emotions (may seek a comfort object or adult, can calm down with prompts) 
- Behavior Regulation: Starts controlling impulses with help (e.g., responds to “stop” or safety cues; can wait briefly for a turn before losing patience) 
+ 
+	INDICATOR: Behavior Regulation: Starts controlling impulses with help (e.g., responds to “stop” or safety cues; can wait briefly for a turn before losing patience) 
  Attention Regulation: Attention span improves but is still easily interrupted; can focus on a toy or book a bit longer, though gets distracted by new stimuli 
 
 
@@ -50,8 +51,7 @@
 
 
 ### Communication, Language, and Literacy Domain
-    INDICATOR: Receptive Language: Understands much more than they can say. Follows simple two-step instructions (“Pick up the toy and give it to me”). Identifies named objects and body parts (points to nose when asked) 
- Understands basic pronouns (me, you) and common phrases. Listens to short stories and familiar nursery rhymes, demonstrating comprehension by pointing at pictures or mimicking actions.
+    INDICATOR: Receptive Language: Understands much more than they can say. Follows simple two-step instructions (“Pick up the toy and give it to me”). Identifies named objects and body parts (points to nose when asked). Understands basic pronouns (me, you) and common phrases. Listens to short stories and familiar nursery rhymes, demonstrating comprehension by pointing at pictures or mimicking actions.
 
     INDICATOR: Expressive Language: Rapid growth in spoken vocabulary and sentence use 
 
