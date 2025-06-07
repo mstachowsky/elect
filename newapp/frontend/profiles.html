@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Profiles</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#f0f6ff;margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .page{background:#fff;border-radius:1.5rem;box-shadow:0 8px 32px rgba(31,38,135,.15);width:420px;max-width:100vw;padding:2rem;display:flex;flex-direction:column;gap:1.75rem}
+  h2{margin:0}
+  label{font-weight:600;display:block;margin-bottom:.25rem}
+  input,textarea,button{font-size:1rem;padding:.65rem;border-radius:.75rem;border:1px solid #dbeafe;width:100%;box-sizing:border-box}
+  textarea{resize:vertical;min-height:60px}
+  button{background:#6366f1;color:#fff;border:none;cursor:pointer}
+  button:disabled{background:#a5b4fc}
+  .child{display:flex;align-items:center;gap:.5rem;margin-top:.5rem}
+  .child>input{flex:1}
+  .child .age-fields{display:flex;gap:4px;flex:0 0 140px;}
+  .child .age-fields input{max-width:60px;}
+  .child>button{flex:0 0 64px}
+  .divider{height:1px;background:#e5e7eb;margin:1rem 0}
+</style>
+</head>
+<body>
+<div class="page">
+  <h2>Parent Profile</h2>
+  <div>
+    <label for="parentName">Name</label>
+    <input id="parentName" placeholder="Your name"/>
+    <label for="parentPrefs">Preferences</label>
+    <textarea id="parentPrefs" placeholder="e.g. Montessori, outdoor play"></textarea>
+    <button id="saveParent">Save Parent</button>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Children</h2>
+  <div id="childrenList"></div>
+  <button id="addChildBtn">Add Child</button>
+</div>
+
+<script>
+const parentName   = document.getElementById("parentName");
+const parentPrefs  = document.getElementById("parentPrefs");
+const saveParent   = document.getElementById("saveParent");
+const childrenList = document.getElementById("childrenList");
+const addChildBtn  = document.getElementById("addChildBtn");
+
+async function authFetch(url,opt={}) {
+  opt.credentials="include";
+  const res=await fetch(url,opt);
+  if(res.status===401) { window.location.href="/auth"; throw new Error("unauth"); }
+  return res;
+}
+
+async function loadProfile(){
+  try{
+    const res = await authFetch("/api/parent");
+    if(!res.ok) return;
+    const data = await res.json();
+    parentName.value  = data.name;
+    parentPrefs.value = data.preferences || "";
+    childrenList.innerHTML = "";
+    (data.children || []).forEach(renderChild);
+  }catch(e){console.log(e);}
+}
+
+function renderChild(child = {}) {
+  const wrap = document.createElement("div");
+  wrap.className = "child";
+  wrap.dataset.id = child.id || "";
+
+  // Name field
+  const name = Object.assign(document.createElement("input"), {
+    value: child.name || "",
+    placeholder: "Child name"
+  });
+
+  // Age fields: years and months
+  const ageFields = document.createElement("div");
+  ageFields.className = "age-fields";
+  const ageYears = Object.assign(document.createElement("input"), {
+    type: "number",
+    min: 0,
+    value: child.age_years ?? "",
+    placeholder: "Years"
+  });
+  const ageMonths = Object.assign(document.createElement("input"), {
+    type: "number",
+    min: 0,
+    max: 11,
+    value: child.age_months ?? "",
+    placeholder: "Months"
+  });
+  ageFields.append(ageYears, ageMonths);
+
+  // Preferences
+  const prefs = Object.assign(document.createElement("input"), {
+    value: child.preferences || "",
+    placeholder: "Preferences"
+  });
+
+  // Save and Delete buttons
+  const save = Object.assign(document.createElement("button"), {
+    textContent: "Save"
+  });
+  const del = Object.assign(document.createElement("button"), {
+    textContent: "Delete",
+    disabled: !child.id // only allow delete for saved children
+  });
+
+  save.onclick = async () => {
+    // POST if no id, PUT if id exists
+    const payload = {
+      name: name.value,
+      age_years: +(ageYears.value||0),
+      age_months: +(ageMonths.value||0),
+      preferences: prefs.value
+    };
+    const method = child.id ? "PUT" : "POST";
+    const url = child.id ? `/api/children/${child.id}` : "/api/children";
+    const res = await authFetch(url, {
+      method,
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    // If this was a new child, set its id and enable Delete
+    if (!child.id && data.id) {
+      child.id = data.id;
+      wrap.dataset.id = data.id;
+      del.disabled = false;
+    }
+    alert("Child saved!");
+  };
+
+  del.onclick = async () => {
+    if(!child.id) {
+      wrap.remove();
+      return;
+    }
+    if(!confirm("Delete child?")) return;
+    await authFetch(`/api/children/${child.id}`, {method:"DELETE"});
+    wrap.remove();
+  };
+
+  wrap.append(name, ageFields, prefs, save, del);
+  childrenList.append(wrap);
+}
+
+addChildBtn.onclick = () => renderChild({});
+
+saveParent.onclick = async () => {
+  const payload = {
+    name: parentName.value,
+    preferences: parentPrefs.value
+  };
+  await authFetch("/api/parent", {
+    method: "POST",
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(payload)
+  });
+  alert("Parent profile saved!");
+};
+
+loadProfile();
+</script>
+</body>
+</html>

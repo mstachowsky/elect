@@ -1,206 +1,95 @@
-import os, uuid
+import os
+import uuid
 from typing import AsyncGenerator, Optional, List, Dict
-from datetime import datetime
-
-from fastapi import (
-    FastAPI, Depends, Request, HTTPException, status
-)
+from fastapi import FastAPI, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, RedirectResponse
-
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from openai import OpenAI
+from datetime import datetime
 
-# --- FastAPI-Users & Auth ---------------------------------------------------
+# --- FastAPI Users & Auth Setup ---
 from fastapi_users import FastAPIUsers, BaseUserManager, UUIDIDMixin
 from fastapi_users import schemas as fa_schemas
 from fastapi_users.authentication import (
     CookieTransport, JWTStrategy, AuthenticationBackend
 )
 from fastapi_users.db import SQLAlchemyBaseUserTableUUID, SQLAlchemyUserDatabase
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy.orm import DeclarativeBase
 
-# --- SQLAlchemy -------------------------------------------------------------
-from sqlalchemy import String, Text, Integer, ForeignKey, select
-from sqlalchemy.ext.asyncio import (
-    AsyncSession, async_sessionmaker, create_async_engine
-)
-from sqlalchemy.orm import (
-    DeclarativeBase, relationship, selectinload,
-    Mapped, mapped_column
-)
+DATABASE_URL = "mysql+asyncmy://mike:mitadp560@localhost/elect_app"  # CHANGE ME!
+SECRET = "SUPERSECRET"  # CHANGE ME!
 
-# ---------------------------------------------------------------------------
-
-DATABASE_URL = "mysql+asyncmy://mike:mitadp560@localhost/elect_app"  # CHANGE ME
-SECRET        = "SUPERSECRET"                                       # CHANGE ME
-
-# === Base & User ============================================================
+# --- SQLAlchemy models ---
 class Base(DeclarativeBase):
     pass
 
-
 class User(SQLAlchemyBaseUserTableUUID, Base):
-    """Inherits the default table name 'user' from FastAPI-Users."""
-
-
-# === NEW PROFILE TABLES =====================================================
-class ParentProfile(Base):
-    __tablename__ = "parent_profiles"
-
-    id:        Mapped[uuid.UUID] = mapped_column(
-        primary_key=True, default=uuid.uuid4
-    )
-    user_id:   Mapped[uuid.UUID] = mapped_column(
-        ForeignKey("user.id"), unique=True
-    )
-    name:       Mapped[str] = mapped_column(String(255))
-    preferences:Mapped[str] = mapped_column(Text, default="")
-
-    children:   Mapped[List["ChildProfile"]] = relationship(
-        back_populates="parent",
-        cascade="all, delete-orphan",
-        lazy="selectin",
-    )
-
-
-class ChildProfile(Base):
-    __tablename__ = "child_profiles"
-
-    id:        Mapped[uuid.UUID] = mapped_column(
-        primary_key=True, default=uuid.uuid4
-    )
-    parent_id: Mapped[uuid.UUID] = mapped_column(
-        ForeignKey("parent_profiles.id")
-    )
-    name:       Mapped[str] = mapped_column(String(255))
-    age_years:  Mapped[int] = mapped_column(Integer, default=0)
-    age_months: Mapped[int] = mapped_column(Integer, default=0)
-    preferences:Mapped[str] = mapped_column(Text, default="")
-
-    parent:     Mapped["ParentProfile"] = relationship(back_populates="children")
-
-
-# === Pydantic Schemas =======================================================
-class ChildBase(BaseModel):
-    name: str
-    age_years: int = 0
-    age_months: int = 0
-    preferences: str = ""
-
-
-
-class ChildRead(ChildBase):
-    id: uuid.UUID
-    class Config:
-        orm_mode = True
-
-
-class ChildCreate(ChildBase):
     pass
 
-
-class ChildUpdate(ChildBase):
-    pass
-
-
-class ParentBase(BaseModel):
-    name: str
-    preferences: str = ""
-
-
-class ParentRead(ParentBase):
-    id: uuid.UUID
-    children: List[ChildRead] = []
-
-    class Config:
-        orm_mode = True
-
-
-class ParentCreate(ParentBase):
-    pass
-
-
-class ParentUpdate(ParentBase):
-    pass
-
-
-# === User Manager / Sessions ===============================================
 class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
     reset_password_token_secret = SECRET
     verification_token_secret   = SECRET
-
-    def parse_id(self, value: str) -> uuid.UUID:  # needed by async-my
+    def parse_id(self, value: str) -> uuid.UUID:
         return uuid.UUID(value)
-
-    async def on_after_register(
-        self, user: User, request: Optional[Request] = None
-    ):
+    async def on_after_register(self, user: User, request: Optional[Request] = None):
         print(f">>> user {user.email} registered (id={user.id})")
 
-
-engine = create_async_engine(DATABASE_URL, echo=True, future=True)
+engine = create_async_engine(DATABASE_URL, echo=True)
 async_session_maker = async_sessionmaker(engine, expire_on_commit=False)
-
-
 async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
     async with async_session_maker() as session:
         yield session
 
-
 async def get_user_db(session: AsyncSession = Depends(get_async_session)):
     yield SQLAlchemyUserDatabase(session, User)
 
+class UserRead(fa_schemas.BaseUser[uuid.UUID]): pass
+class UserCreate(fa_schemas.BaseUserCreate): pass
+class UserUpdate(fa_schemas.BaseUserUpdate): pass
 
-cookie_transport = CookieTransport(
-    cookie_name="auth", cookie_max_age=3600, cookie_secure=False
-)
-
-
+cookie_transport = CookieTransport(cookie_name="auth", cookie_max_age=3600, cookie_secure=False)
 def get_jwt_strategy() -> JWTStrategy:
     return JWTStrategy(secret=SECRET, lifetime_seconds=3600)
-
-
 auth_backend = AuthenticationBackend(
-    name="jwt", transport=cookie_transport, get_strategy=get_jwt_strategy
+    name="jwt", transport=cookie_transport, get_strategy=get_jwt_strategy,
 )
-
-
 async def get_user_manager(user_db=Depends(get_user_db)):
     yield UserManager(user_db)
-
 
 fastapi_users = FastAPIUsers[User, uuid.UUID](get_user_manager, [auth_backend])
 current_active_user = fastapi_users.current_user(active=True)
 
-# === FastAPI App ============================================================
+# --- FastAPI App & Middleware ---
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # tighten in prod
+    allow_origins=["*"],  # For dev; restrict in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# --- Static / HTML ----------------------------------------------------------
-FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "../frontend")
-if not os.path.isdir(FRONTEND_DIR):
-    raise RuntimeError(f"Frontend directory missing: {FRONTEND_DIR}")
+# --- Serve Static and HTML ---
+frontend_dir = os.path.join(os.path.dirname(__file__), '../frontend')
+if not os.path.isdir(frontend_dir):
+    raise RuntimeError(f"Frontend directory missing: {frontend_dir}")
 
-app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
-
+app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
+from fastapi.responses import RedirectResponse
+from fastapi import Request
 
 @app.get("/", include_in_schema=False)
 async def root():
-    return FileResponse(os.path.join(FRONTEND_DIR, "index_dev.html"))
-
+    #return FileResponse(os.path.join(frontend_dir, "index_chat_dev.html"))
+    return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
 
 @app.get("/chat_redirect", include_in_schema=False)
 async def serve_chat_ui(user: User = Depends(current_active_user)):
-    return FileResponse(os.path.join(FRONTEND_DIR, "index_chat_dev.html"))
-
+    return FileResponse(os.path.join(frontend_dir, "index_chat_dev.html"))
 
 @app.get("/auth", include_in_schema=False)
 async def serve_auth_ui(request: Request):
@@ -210,153 +99,35 @@ async def serve_auth_ui(request: Request):
         user = None
     if user:
         return RedirectResponse("/chat_redirect")
-    return FileResponse(os.path.join(FRONTEND_DIR, "index_dev.html"))
+    return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
 
-
-@app.get("/profiles", include_in_schema=False)
-async def serve_profiles(user: User = Depends(current_active_user)):
-    return FileResponse(os.path.join(FRONTEND_DIR, "profiles.html"))
-
-# --- Auth Routers -----------------------------------------------------------
+"""
+@app.get("/auth/", include_in_schema=False)
+async def serve_auth_ui():
+    return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
+"""
+# --- Auth Routers ---
 app.include_router(
     fastapi_users.get_auth_router(auth_backend, requires_verification=False),
     prefix="/auth/jwt",
     tags=["auth"],
 )
 app.include_router(
-    fastapi_users.get_register_router(
-        fa_schemas.BaseUser[uuid.UUID], fa_schemas.BaseUserCreate
-    ),
+    fastapi_users.get_register_router(UserRead, UserCreate),
     prefix="/auth",
     tags=["auth"],
 )
 app.include_router(
-    fastapi_users.get_users_router(
-        fa_schemas.BaseUser[uuid.UUID], fa_schemas.BaseUserUpdate
-    ),
+    fastapi_users.get_users_router(UserRead, UserUpdate),
     prefix="/users",
     tags=["users"],
 )
 
-# --- Utility ----------------------------------------------------------------
+# --- Protected Endpoints ---
+
 @app.get("/whoami", tags=["users"])
 async def whoami(user: User = Depends(current_active_user)):
     return {"email": user.email}
-
-# === PROFILES REST API ======================================================
-# -- Parent -------------------------------------------------
-@app.get("/api/parent", response_model=ParentRead, tags=["profiles"])
-async def get_parent_profile(
-    session: AsyncSession = Depends(get_async_session),
-    user: User = Depends(current_active_user),
-):
-    result = await session.execute(
-        select(ParentProfile)
-        .filter_by(user_id=user.id)
-        .options(selectinload(ParentProfile.children))
-    )
-    parent = result.scalar_one_or_none()
-    if not parent:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail="Profile not found")
-    return parent
-
-
-@app.post("/api/parent", response_model=ParentRead, tags=["profiles"])
-async def create_or_update_parent(
-    payload: ParentCreate,
-    session: AsyncSession = Depends(get_async_session),
-    user: User = Depends(current_active_user),
-):
-    result = await session.execute(
-        select(ParentProfile).filter_by(user_id=user.id)
-    )
-    parent = result.scalar_one_or_none()
-    if parent:
-        parent.name = payload.name
-        parent.preferences = payload.preferences
-    else:
-        parent = ParentProfile(
-            user_id=user.id,
-            name=payload.name,
-            preferences=payload.preferences,
-        )
-        session.add(parent)
-    await session.commit()
-    await session.refresh(parent, ["children"])
-    return parent
-
-
-# -- Children ------------------------------------------------
-@app.post("/api/children", response_model=ChildRead, tags=["profiles"])
-async def add_child(
-    child: ChildCreate,
-    session: AsyncSession = Depends(get_async_session),
-    user: User = Depends(current_active_user),
-):
-    result = await session.execute(
-        select(ParentProfile).filter_by(user_id=user.id)
-    )
-    parent = result.scalar_one_or_none()
-    if not parent:
-        raise HTTPException(status_code=404, detail="Create parent profile first")
-    new_child = ChildProfile(
-        parent_id=parent.id,
-        name=child.name,
-        age_years=child.age_years,
-        age_months=child.age_months,
-        preferences=child.preferences,
-    )
-    session.add(new_child)
-    await session.commit()
-    await session.refresh(new_child)
-    return new_child
-
-
-@app.put("/api/children/{child_id}", response_model=ChildRead, tags=["profiles"])
-async def update_child(
-    child_id: uuid.UUID,
-    payload: ChildUpdate,
-    session: AsyncSession = Depends(get_async_session),
-    user: User = Depends(current_active_user),
-):
-    result = await session.execute(
-        select(ChildProfile)
-        .join(ParentProfile)
-        .filter(ChildProfile.id == child_id, ParentProfile.user_id == user.id)
-    )
-    
-    child = result.scalar_one_or_none()
-    if not child:
-        raise HTTPException(status_code=404, detail="Child not found")
-    child.name = payload.name
-    child.age_years = payload.age_years
-    child.age_months = payload.age_months
-    child.preferences = payload.preferences
-    await session.commit()
-    await session.refresh(child)
-    return child
-
-
-
-@app.delete("/api/children/{child_id}", status_code=204, tags=["profiles"])
-async def delete_child(
-    child_id: uuid.UUID,
-    session: AsyncSession = Depends(get_async_session),
-    user: User = Depends(current_active_user),
-):
-    result = await session.execute(
-        select(ChildProfile)
-        .join(ParentProfile)
-        .filter(ChildProfile.id == child_id, ParentProfile.user_id == user.id)
-    )
-    child = result.scalar_one_or_none()
-    if not child:
-        raise HTTPException(status_code=404, detail="Child not found")
-    await session.delete(child)
-    await session.commit()
-    return None
-
 
 # --- Chat API ---
 client = OpenAI()
