@@ -2443,3 +2443,577 @@ WHERE user.id = %s
 2025-06-06 16:28:34,058 INFO sqlalchemy.engine.Engine [cached since 47.24s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
 2025-06-06 16:28:34,060 INFO sqlalchemy.engine.Engine ROLLBACK
 INFO:     100.100.14.61:61086 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-06 16:30:57,017 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-06 16:30:57,018 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-06 16:30:57,018 INFO sqlalchemy.engine.Engine [cached since 190.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-06 16:30:57,021 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.100.14.61:61113 - "GET /whoami HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3231373]
+INFO:     Started server process [1560731]
+INFO:     Waiting for application startup.
+2025-06-07 07:13:24,670 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:13:24,670 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:13:24,670 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:13:24,671 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:13:24,671 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:13:24,671 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:13:24,672 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:13:24,672 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:13:24,672 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:13:24,676 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1560731]
+INFO:     Started server process [1562716]
+INFO:     Waiting for application startup.
+2025-06-07 07:14:05,935 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:14:05,935 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:05,936 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:14:05,936 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:05,936 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:14:05,936 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:05,937 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:14:05,937 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:14:05,937 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:05,939 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1562716]
+INFO:     Started server process [1563861]
+INFO:     Waiting for application startup.
+2025-06-07 07:14:30,518 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:14:30,519 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:30,519 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:14:30,519 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:30,520 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:14:30,520 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:30,521 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:14:30,521 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:14:30,521 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:14:30,523 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.92.101.90:50474 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50474 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50475 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50476 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50478 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50478 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50480 - "GET / HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50481 - "GET / HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1563861]
+INFO:     Started server process [1571084]
+INFO:     Waiting for application startup.
+2025-06-07 07:16:59,763 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:16:59,763 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:16:59,764 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:16:59,764 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:16:59,764 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:16:59,764 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:16:59,765 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:16:59,765 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:16:59,765 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:16:59,767 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.92.101.90:50501 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50500 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50500 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-07 07:17:31,843 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:17:31,856 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-07 07:17:31,857 INFO sqlalchemy.engine.Engine [generated in 0.00059s] ('mstachow@uwaterloo.ca',)
+2025-06-07 07:17:31,929 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50511 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-07 07:17:31,999 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:17:32,001 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:17:32,001 INFO sqlalchemy.engine.Engine [generated in 0.00052s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:17:32,004 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50511 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:17:32,078 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:17:32,079 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:17:32,079 INFO sqlalchemy.engine.Engine [cached since 0.07809s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:17:32,081 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50511 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:17:32,596 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:17:32,597 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:17:32,598 INFO sqlalchemy.engine.Engine [cached since 0.5969s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:17:32,601 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50511 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:17:38,352 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:17:38,353 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:17:38,353 INFO sqlalchemy.engine.Engine [cached since 6.352s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}]
+2025-06-07 07:17:38,854 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50517 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50540 - "GET /auth HTTP/1.1" 200 OK
+2025-06-07 07:17:57,123 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:17:57,123 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:17:57,123 INFO sqlalchemy.engine.Engine [cached since 25.12s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:17:57,124 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50540 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:18:01,182 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:18:01,183 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:18:01,183 INFO sqlalchemy.engine.Engine [cached since 29.18s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:18:01,184 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50540 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.92.101.90:50541 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50541 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50541 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50593 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50593 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50593 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-06-07 07:25:11,037 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:25:11,037 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-07 07:25:11,038 INFO sqlalchemy.engine.Engine [cached since 459.2s ago] ('mstachow@uwaterloo.ca',)
+2025-06-07 07:25:11,123 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50593 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-07 07:25:11,150 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:25:11,150 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:25:11,150 INFO sqlalchemy.engine.Engine [cached since 459.1s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:25:11,151 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50593 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:25:11,481 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:25:11,481 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:25:11,481 INFO sqlalchemy.engine.Engine [cached since 459.5s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:25:11,483 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50593 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:26:12,085 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:26:12,085 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:26:12,085 INFO sqlalchemy.engine.Engine [cached since 520.1s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:26:12,086 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50624 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:26:12,563 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:26:12,564 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:26:12,564 INFO sqlalchemy.engine.Engine [cached since 520.6s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:26:12,567 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50624 - "GET /whoami HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50624 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-06-07 07:26:14,337 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:26:14,338 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:26:14,338 INFO sqlalchemy.engine.Engine [cached since 522.3s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:26:14,341 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50624 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.92.101.90:50624 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50624 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50625 - "GET /chat_redirect HTTP/1.1" 401 Unauthorized
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1571084]
+INFO:     Started server process [1601432]
+INFO:     Waiting for application startup.
+2025-06-07 07:27:35,640 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:27:35,641 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:27:35,641 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:27:35,641 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:27:35,642 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:27:35,642 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:27:35,643 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:27:35,643 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:27:35,643 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:27:35,644 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1601432]
+INFO:     Started server process [1609194]
+INFO:     Waiting for application startup.
+2025-06-07 07:30:18,488 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:30:18,488 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:30:18,489 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:30:18,489 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:30:18,490 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:30:18,490 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:30:18,490 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:18,491 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:30:18,491 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:30:18,492 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-07 07:30:37,604 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:37,610 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-07 07:30:37,610 INFO sqlalchemy.engine.Engine [generated in 0.00030s] ('mstachow@uwaterloo.ca',)
+2025-06-07 07:30:37,684 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-07 07:30:37,730 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:37,731 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:37,731 INFO sqlalchemy.engine.Engine [generated in 0.00023s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:30:37,733 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:30:37,754 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:37,754 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:37,754 INFO sqlalchemy.engine.Engine [cached since 0.02338s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:30:37,768 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:30:37,921 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:37,922 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:37,922 INFO sqlalchemy.engine.Engine [cached since 0.1912s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:30:37,925 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:30:40,947 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:40,948 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:40,948 INFO sqlalchemy.engine.Engine [cached since 3.217s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}]
+2025-06-07 07:30:41,630 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:30:43,780 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:43,781 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:43,781 INFO sqlalchemy.engine.Engine [cached since 6.05s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': 'Hello! To get us started, can you tell me what your toddler did today?'}, {'role': 'user', 'content': 'signed for milk'}]
+2025-06-07 07:30:44,547 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:30:49,404 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:49,404 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:49,404 INFO sqlalchemy.engine.Engine [cached since 11.67s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': 'Hello! To get us started, can you tell me what your toddler did today?'}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Did your toddler sign for milk on their own, or did you prompt them to use the sign?"}, {'role': 'user', 'content': 'on her own'}]
+2025-06-07 07:30:50,363 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:30:54,600 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:30:54,601 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:30:54,601 INFO sqlalchemy.engine.Engine [cached since 16.87s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': 'Hello! To get us started, can you tell me what your toddler did today?'}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Did your toddler sign for milk on their own, or did you prompt them to use the sign?"}, {'role': 'user', 'content': 'on her own'}, {'role': 'assistant', 'content': "That's so exciting to hear! Can you tell me what happened right before she signed for milk? For example, was she playing, eating, waking up from a nap, or something else?"}, {'role': 'user', 'content': 'just playing'}]
+2025-06-07 07:30:55,888 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50754 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:31:06,488 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:06,488 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:06,488 INFO sqlalchemy.engine.Engine [cached since 28.76s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': 'Hello! To get us started, can you tell me what your toddler did today?'}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Did your toddler sign for milk on their own, or did you prompt them to use the sign?"}, {'role': 'user', 'content': 'on her own'}, {'role': 'assistant', 'content': "That's so exciting to hear! Can you tell me what happened right before she signed for milk? For example, was she playing, eating, waking up from a nap, or something else?"}, {'role': 'user', 'content': 'just playing'}, {'role': 'assistant', 'content': 'Great, thank you! After she signed for milk, how did you respond? Did you give her milk right away, acknowledge her sign, or do something else?'}, {'role': 'user', 'content': 'I acknowledge it, then went to get her milk'}]
+2025-06-07 07:31:08,755 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50755 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:31:12,897 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:12,897 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:12,899 INFO sqlalchemy.engine.Engine [cached since 35.17s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': 'Hello! To get us started, can you tell me what your toddler did today?'}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Did your toddler sign for milk on their own, or did you prompt them to use the sign?"}, {'role': 'user', 'content': 'on her own'}, {'role': 'assistant', 'content': "That's so exciting to hear! Can you tell me what happened right before she signed for milk? For example, was she playing, eating, waking up from a nap, or something else?"}, {'role': 'user', 'content': 'just playing'}, {'role': 'assistant', 'content': 'Great, thank you! After she signed for milk, how did you respond? Did you give her milk right away, acknowledge her sign, or do something else?'}, {'role': 'user', 'content': 'I acknowledge it, then went to get her milk'}, {'role': 'assistant', 'content': 'Thank you for sharing that. One more question: how did your toddler react when you responded—did she seem excited, calm, or show any other emotion when she saw you understood her sign?'}, {'role': 'user', 'content': 'happy'}]
+2025-06-07 07:31:13,899 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50755 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:31:15,815 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:15,816 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:15,816 INFO sqlalchemy.engine.Engine [cached since 38.09s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': 'Hello! To get us started, can you tell me what your toddler did today?'}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Did your toddler sign for milk on their own, or did you prompt them to use the sign?"}, {'role': 'user', 'content': 'on her own'}, {'role': 'assistant', 'content': "That's so exciting to hear! Can you tell me what happened right before she signed for milk? For example, was she playing, eating, waking up from a nap, or something else?"}, {'role': 'user', 'content': 'just playing'}, {'role': 'assistant', 'content': 'Great, thank you! After she signed for milk, how did you respond? Did you give her milk right away, acknowledge her sign, or do something else?'}, {'role': 'user', 'content': 'I acknowledge it, then went to get her milk'}, {'role': 'assistant', 'content': 'Thank you for sharing that. One more question: how did your toddler react when you responded—did she seem excited, calm, or show any other emotion when she saw you understood her sign?'}, {'role': 'user', 'content': 'happy'}, {'role': 'assistant', 'content': 'Would you like a summary of this learning episode, or would you prefer to keep exploring together?'}, {'role': 'user', 'content': 'summary'}]
+Error: name 'text' is not defined
+2025-06-07 07:31:38,225 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50755 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1609194]
+INFO:     Started server process [1613530]
+INFO:     Waiting for application startup.
+2025-06-07 07:31:49,916 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:31:49,916 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:31:49,916 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:31:49,916 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:31:49,917 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:31:49,917 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:31:49,918 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:49,918 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:31:49,918 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:31:49,919 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-07 07:31:51,225 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:51,228 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:51,229 INFO sqlalchemy.engine.Engine [generated in 0.00031s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:31:51,235 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50763 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:31:51,426 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:51,426 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:51,426 INFO sqlalchemy.engine.Engine [cached since 0.1978s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:31:51,427 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50763 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:31:54,763 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:54,764 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:54,764 INFO sqlalchemy.engine.Engine [cached since 3.536s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}]
+2025-06-07 07:31:55,903 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50763 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:31:58,661 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:31:58,661 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:31:58,661 INFO sqlalchemy.engine.Engine [cached since 7.433s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': "Hello! I'd love to hear more about your child’s day. What did your toddler do today?"}, {'role': 'user', 'content': 'signed for milk'}]
+2025-06-07 07:31:59,578 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50763 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:32:05,948 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:32:05,949 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:32:05,949 INFO sqlalchemy.engine.Engine [cached since 14.72s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': "Hello! I'd love to hear more about your child’s day. What did your toddler do today?"}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Signing is a great way for toddlers to communicate before they can speak clearly. Can you tell me what was happening when your child signed for milk? For example, were you in the kitchen, playing together, or doing something else?"}, {'role': 'user', 'content': 'she was just playing'}]
+2025-06-07 07:32:07,325 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50764 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:32:15,087 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:32:15,088 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:32:15,088 INFO sqlalchemy.engine.Engine [cached since 23.86s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': "Hello! I'd love to hear more about your child’s day. What did your toddler do today?"}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Signing is a great way for toddlers to communicate before they can speak clearly. Can you tell me what was happening when your child signed for milk? For example, were you in the kitchen, playing together, or doing something else?"}, {'role': 'user', 'content': 'she was just playing'}, {'role': 'assistant', 'content': 'Thank you! Was it the first time she’s used the milk sign while playing, or has she used this sign in other situations before?'}, {'role': 'user', 'content': "she's been using it more and more often"}]
+2025-06-07 07:32:16,675 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50767 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:32:26,599 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:32:26,599 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:32:26,599 INFO sqlalchemy.engine.Engine [cached since 35.37s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': "Hello! I'd love to hear more about your child’s day. What did your toddler do today?"}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Signing is a great way for toddlers to communicate before they can speak clearly. Can you tell me what was happening when your child signed for milk? For example, were you in the kitchen, playing together, or doing something else?"}, {'role': 'user', 'content': 'she was just playing'}, {'role': 'assistant', 'content': 'Thank you! Was it the first time she’s used the milk sign while playing, or has she used this sign in other situations before?'}, {'role': 'user', 'content': "she's been using it more and more often"}, {'role': 'assistant', 'content': 'That’s great to hear—she’s building confidence with her communication skills! When she signed for milk while playing, how did you respond? Did you talk with her, get her milk right away, or do something else?'}, {'role': 'user', 'content': 'I acknowledge the sign then got her milk'}]
+2025-06-07 07:32:27,641 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50768 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:32:34,343 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:32:34,344 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:32:34,346 INFO sqlalchemy.engine.Engine [cached since 43.12s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': "Hello! I'd love to hear more about your child’s day. What did your toddler do today?"}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Signing is a great way for toddlers to communicate before they can speak clearly. Can you tell me what was happening when your child signed for milk? For example, were you in the kitchen, playing together, or doing something else?"}, {'role': 'user', 'content': 'she was just playing'}, {'role': 'assistant', 'content': 'Thank you! Was it the first time she’s used the milk sign while playing, or has she used this sign in other situations before?'}, {'role': 'user', 'content': "she's been using it more and more often"}, {'role': 'assistant', 'content': 'That’s great to hear—she’s building confidence with her communication skills! When she signed for milk while playing, how did you respond? Did you talk with her, get her milk right away, or do something else?'}, {'role': 'user', 'content': 'I acknowledge the sign then got her milk'}, {'role': 'assistant', 'content': 'That sounds like a thoughtful response. When you acknowledged her sign, did you say the word “milk” out loud, use the sign yourself, or both?'}, {'role': 'user', 'content': 'both'}]
+2025-06-07 07:32:35,012 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50769 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:32:38,547 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:32:38,548 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:32:38,548 INFO sqlalchemy.engine.Engine [cached since 47.32s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'Hi'}, {'role': 'assistant', 'content': "Hello! I'd love to hear more about your child’s day. What did your toddler do today?"}, {'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! Signing is a great way for toddlers to communicate before they can speak clearly. Can you tell me what was happening when your child signed for milk? For example, were you in the kitchen, playing together, or doing something else?"}, {'role': 'user', 'content': 'she was just playing'}, {'role': 'assistant', 'content': 'Thank you! Was it the first time she’s used the milk sign while playing, or has she used this sign in other situations before?'}, {'role': 'user', 'content': "she's been using it more and more often"}, {'role': 'assistant', 'content': 'That’s great to hear—she’s building confidence with her communication skills! When she signed for milk while playing, how did you respond? Did you talk with her, get her milk right away, or do something else?'}, {'role': 'user', 'content': 'I acknowledge the sign then got her milk'}, {'role': 'assistant', 'content': 'That sounds like a thoughtful response. When you acknowledged her sign, did you say the word “milk” out loud, use the sign yourself, or both?'}, {'role': 'user', 'content': 'both'}, {'role': 'assistant', 'content': 'Would you like a summary of your child’s learning episode, or would you prefer to keep exploring?'}, {'role': 'user', 'content': 'summary'}]
+2025-06-07 07:32:57,332 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50769 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1613530]
+INFO:     Started server process [1621607]
+INFO:     Waiting for application startup.
+2025-06-07 07:34:39,353 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:34:39,353 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:34:39,354 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:34:39,354 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:34:39,354 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:34:39,354 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:34:39,355 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:39,355 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:34:39,355 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:34:39,357 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-07 07:34:39,365 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:39,368 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:34:39,368 INFO sqlalchemy.engine.Engine [generated in 0.00023s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:34:39,372 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50772 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:34:39,597 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:39,597 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:34:39,597 INFO sqlalchemy.engine.Engine [cached since 0.2293s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:34:39,598 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50772 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:34:44,654 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:44,654 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:34:44,654 INFO sqlalchemy.engine.Engine [cached since 5.286s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'signed for milk'}]
+2025-06-07 07:34:45,927 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:34:48,693 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:48,694 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:34:48,694 INFO sqlalchemy.engine.Engine [cached since 9.327s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! What a great way to communicate. Can you tell me a bit more about what was happening when your child signed for milk? For example, were you in the kitchen, was it mealtime, or did it happen during play?"}, {'role': 'user', 'content': 'playing'}]
+2025-06-07 07:34:49,494 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:34:52,441 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:52,442 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:34:52,442 INFO sqlalchemy.engine.Engine [cached since 13.07s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! What a great way to communicate. Can you tell me a bit more about what was happening when your child signed for milk? For example, were you in the kitchen, was it mealtime, or did it happen during play?"}, {'role': 'user', 'content': 'playing'}, {'role': 'assistant', 'content': 'Thank you! Was this the first time your child signed for milk while playing, or have they done it before? And how did you respond when they signed?'}, {'role': 'user', 'content': 'before'}]
+2025-06-07 07:34:53,442 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:34:56,203 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:34:56,204 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:34:56,204 INFO sqlalchemy.engine.Engine [cached since 16.84s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! What a great way to communicate. Can you tell me a bit more about what was happening when your child signed for milk? For example, were you in the kitchen, was it mealtime, or did it happen during play?"}, {'role': 'user', 'content': 'playing'}, {'role': 'assistant', 'content': 'Thank you! Was this the first time your child signed for milk while playing, or have they done it before? And how did you respond when they signed?'}, {'role': 'user', 'content': 'before'}, {'role': 'assistant', 'content': "Got it—they've signed for milk before during play. When your child signed for milk today, did they use the sign clearly and intentionally? Did you notice if they were looking at you or trying to get your attention in a specific way?"}, {'role': 'user', 'content': 'intentional'}]
+2025-06-07 07:34:59,500 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "POST /chat HTTP/1.1" 200 OK
+2025-06-07 07:35:16,043 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:35:16,044 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:35:16,044 INFO sqlalchemy.engine.Engine [cached since 36.68s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+history=[{'role': 'user', 'content': 'signed for milk'}, {'role': 'assistant', 'content': "That's wonderful! What a great way to communicate. Can you tell me a bit more about what was happening when your child signed for milk? For example, were you in the kitchen, was it mealtime, or did it happen during play?"}, {'role': 'user', 'content': 'playing'}, {'role': 'assistant', 'content': 'Thank you! Was this the first time your child signed for milk while playing, or have they done it before? And how did you respond when they signed?'}, {'role': 'user', 'content': 'before'}, {'role': 'assistant', 'content': "Got it—they've signed for milk before during play. When your child signed for milk today, did they use the sign clearly and intentionally? Did you notice if they were looking at you or trying to get your attention in a specific way?"}, {'role': 'user', 'content': 'intentional'}, {'role': 'assistant', 'content': "Great observation! It's wonderful that they used the sign intentionally. After you saw the sign, did you give them milk right away, or did you ask them something or talk to them about it first? How did your child react to your response? \n\nWould you like a summary of your child's learning, or shall we keep exploring?"}, {'role': 'user', 'content': 'I got it and she was happy. Summary please'}]
+## Summary:
+Today, your child intentionally used the milk sign during play to communicate with you. This is a great example of early language development and social-emotional growth. At around 18 months, children are learning that they can express their needs and wants in ways beyond crying or fussing. By signing intentionally, your child is showing she understands that her actions have meaning and can get a response from you. This also builds her confidence and encourages more communication. Responding promptly by giving her milk strengthened her trust that her communication is powerful and effective. 
+
+In summary, your child is practicing expressive communication, building social bonds, and gaining confidence in her ability to make her needs understood—all skills that are important for her growing independence and language development.
+
+Would you like an idea for a deepening activity to encourage more of this kind of learning?
+
+Here's some information for you about how this interaction lines up with child development indicators: 
+1. **Expressive Communication**: Your child used the milk sign on her own to let you know what she wanted. This shows she’s learning to express her needs in ways other than crying—an exciting step in her language development.
+
+2. **Emotion Regulation and Independence**: Instead of getting upset, your child calmly used the sign to ask for milk. By doing this on her own, she’s showing growing independence and the ability to manage her feelings.
+
+3. **Understanding Cause and Effect**: She signed for milk because she’s learned that this action gets a response. This means she’s beginning to understand that her actions can cause things to happen, which is a key cognitive skill.
+2025-06-07 07:35:38,046 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50773 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1621607]
+INFO:     Started server process [1629697]
+INFO:     Waiting for application startup.
+2025-06-07 07:37:28,269 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:37:28,270 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:37:28,270 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:37:28,270 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:37:28,271 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:37:28,271 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:37:28,272 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:37:28,272 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:37:28,272 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:37:28,274 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1629697]
+INFO:     Started server process [1632560]
+INFO:     Waiting for application startup.
+2025-06-07 07:38:27,874 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-07 07:38:27,874 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:38:27,875 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-07 07:38:27,875 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:38:27,875 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-07 07:38:27,875 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:38:27,876 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:38:27,877 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-07 07:38:27,877 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-07 07:38:27,879 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-07 07:38:58,172 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:38:58,181 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:38:58,181 INFO sqlalchemy.engine.Engine [generated in 0.00057s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:38:58,185 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50789 - "POST /auth/jwt/logout HTTP/1.1" 204 No Content
+INFO:     100.92.101.90:50789 - "GET /auth HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50789 - "GET /whoami HTTP/1.1" 401 Unauthorized
+2025-06-07 07:39:02,789 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:39:02,794 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-07 07:39:02,794 INFO sqlalchemy.engine.Engine [generated in 0.00066s] ('mstachow@uwaterloo.ca',)
+2025-06-07 07:39:02,886 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50789 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-07 07:39:02,906 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:39:02,906 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:39:02,906 INFO sqlalchemy.engine.Engine [cached since 4.726s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:39:02,909 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50789 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:39:02,974 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:39:02,974 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:39:02,975 INFO sqlalchemy.engine.Engine [cached since 4.794s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:39:02,977 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50789 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:39:03,084 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:39:03,085 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:39:03,085 INFO sqlalchemy.engine.Engine [cached since 4.905s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:39:03,088 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50789 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-07 07:40:01,919 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:40:01,920 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:40:01,920 INFO sqlalchemy.engine.Engine [cached since 63.74s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:40:01,921 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50802 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-07 07:40:02,005 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-07 07:40:02,006 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-07 07:40:02,006 INFO sqlalchemy.engine.Engine [cached since 63.83s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-07 07:40:02,007 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50802 - "GET /whoami HTTP/1.1" 200 OK

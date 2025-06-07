@@ -83,14 +83,29 @@ from fastapi.responses import RedirectResponse
 from fastapi import Request
 
 @app.get("/", include_in_schema=False)
+async def root():
+    #return FileResponse(os.path.join(frontend_dir, "index_chat_dev.html"))
+    return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
+
+@app.get("/chat_redirect", include_in_schema=False)
 async def serve_chat_ui(user: User = Depends(current_active_user)):
     return FileResponse(os.path.join(frontend_dir, "index_chat_dev.html"))
 
+@app.get("/auth", include_in_schema=False)
+async def serve_auth_ui(request: Request):
+    try:
+        user = await current_active_user(request)
+    except Exception:
+        user = None
+    if user:
+        return RedirectResponse("/chat_redirect")
+    return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
 
+"""
 @app.get("/auth/", include_in_schema=False)
 async def serve_auth_ui():
     return FileResponse(os.path.join(frontend_dir, "index_dev.html"))
-
+"""
 # --- Auth Routers ---
 app.include_router(
     fastapi_users.get_auth_router(auth_backend, requires_verification=False),
@@ -120,7 +135,7 @@ client = OpenAI()
 age_group = "toddler"
 age = 18
 age_unit = "months"
-SYSTEM_PROMPT = f"""You are an expert early childhood educator, helping parents to explore the learning of their children. The child is a {age_group}, about {age} {age_unit} old.  The first thing you always ask is what the child did today. Then you ask questions one at a time to guide the parent through describing the learning. Once you feel that there is enough information (maybe 3-5 questions maximum) you ask if the parent wants a summary of the learning episode or to keep exploring. If they want a summary, provide a summary of the learning episode, linking it to child development indicators in a way the parents, who are experts on their children but not necessarily child development, can understand. You must start your summary with the exact string: "## Summary:". Once you output the summary, never output another summary unless you are explicitly asked. Then, you suggest a deepening activity that is age appropriate that can give the parent some ideas of how to keep the learning going."""
+SYSTEM_PROMPT = f"""You are an expert early childhood educator, helping parents to explore the learning of their children. The child is a {age_group}, about {age} {age_unit} old.  The first thing you always ask is what the child did today. Then you ask questions one at a time to guide the parent through describing the learning. Once you feel that there is enough information (maybe 3-5 questions maximum) you ask if the parent wants a summary of the learning episode or to keep exploring. If they want a summary, provide a summary of the learning episode, linking it to child development indicators in a way the parents, who are experts on their children but not necessarily child development, can understand. You must start your summary with the exact string: "## Summary:". Once you output the summary, never output another summary unless you are explicitly asked. Then, you provide a deepening activity that is age appropriate that can give the parent some ideas of how to keep the learning going."""
 
 class ChatHistoryRequest(BaseModel):
     history: List[Dict[str, str]]
@@ -164,7 +179,7 @@ async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_
             elect_info = analyze_elect(chat_text)
             elect_summary = summarize_elect(bot_message.split("## Summary:")[1], elect_info)
             bot_message = bot_message + "\n\n" + "Here's some information for you about how this interaction lines up with child development indicators: \n" + elect_summary
-
+            print(bot_message)
             cleanup_prompt = f"""
                 The following text contains a summary, some deepening questions/activities, and information about how the interaction lines up with child development. Rewrite it without changing any words so that the text starts with the summary, then the child development information, and finally deepening questions/activities are at the end. The text is:
                     
@@ -178,6 +193,30 @@ async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_
             )
             content = response.choices[0].message.content.strip()
             bot_message = content
+            
+            # Create saved directory if it doesn't exist
+            saved_dir = os.path.join(os.path.dirname(__file__), 'saved')
+            os.makedirs(saved_dir, exist_ok=True)
+
+            # Timestamp for filename
+            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+            file_path = os.path.join(saved_dir, f"chat_{timestamp}.txt")
+
+            # Format chat as text
+            chat_lines = []
+            for msg in request.history:
+                role = msg.get("role", "unknown").capitalize()
+                content = msg.get("content", "")
+                chat_lines.append(f"{role}: {content}\n")
+            chat_text = "".join(chat_lines)
+            
+            #add the last message and elect summary
+            chat_text = "## Chat:\n" + chat_text + "\n" + bot_message + "\n\n## ELECT_ANALYSIS:\n"+elect_info
+
+            # Save file
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(chat_text)
+
         return {"response": bot_message}
 
     except Exception as e:

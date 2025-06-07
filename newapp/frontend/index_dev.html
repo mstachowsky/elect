@@ -105,7 +105,8 @@ document.getElementById('login-form').onsubmit = async function(e) {
     const who = await fetch('/whoami', {credentials:'include'});
     if (who.ok) {
       const data = await who.json();
-      showHello(data.username);
+	  window.location.href = "/chat_redirect";
+
     } else {
       alert('Could not fetch user info.');
     }

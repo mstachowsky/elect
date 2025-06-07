@@ -1,0 +1,7 @@
+Assistant: Hi! I’d love to hear about what your toddler did today. Could you tell me a little about something they did or explored?
+User: He loves the colour yellow, wants to know how things work, he enjoys building and he likes sensory play
+Assistant: That’s wonderful! Thanks for sharing those interests. Can you tell me about a specific activity your child did today—maybe something with building, exploring how things work, or sensory play?
+User: He built a tower using magnetic tiles and foam blocks
+Assistant: That sounds like a fun and creative activity! While he was building the tower, did you notice if he tried to fit certain pieces together in a particular way, or if he experimented with balancing the tower to keep it from falling?
+User: No
+Assistant: Thanks for letting me know! Did he talk to you or make any sounds as he was building, or did he seem focused and quiet during the activity?

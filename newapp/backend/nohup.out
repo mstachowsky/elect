@@ -1199,3 +1199,144 @@ INFO:     Finished server process [3218802]
 INFO:     Started server process [3231371]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     35.181.169.38:0 - "GET /.git/config HTTP/1.1" 404 Not Found
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     66.249.80.4:0 - "GET / HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "GET / HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+## Summary:
+During this play episode, your child was building a tower with magnetic tiles and foam blocks. This activity helped develop several important skills:
+
+- **Focus and Attention:** He showed sustained attention by being deeply engaged in building the tower, which is an early sign of developing concentration.
+- **Problem Solving & Physical Regulation:** He did not experiment with balance but demonstrated goal-directed behavior by stacking the blocks purposefully.
+- **Social-Emotional Development:** When he became frustrated about the potential disruption from another child, he managed the situation by moving the other child away. While this suggests he was able to externally solve his problem, it also highlights the early development of boundaries and expressing his needs, even if he is still learning prosocial ways to do so.
+
+At this age, it's common for toddlers to have big feelings and to respond physically when their play is threatened, because they are just learning about sharing space and negotiating with others.
+
+Would you like a suggestion for a deepening activity to support these skills?
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     166.48.20.199:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     4.227.36.92:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     20.171.207.92:0 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54836 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54836 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54840 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.1.7:54844 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54868 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54870 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54874 - "POST /chat HTTP/1.1" 200 OK
+## Summary:
+Your toddler is actively exploring and understanding the concept of "light." By pointing to different lights in various settings and checking with you for confirmation, she’s demonstrating early language development and cognitive skills. She’s associating the word "light" with the object across different situations, which is an example of generalization—a key cognitive milestone. This also shows social development, as she seeks your input and shares discoveries, strengthening communication skills and the parent-child bond.
+
+By consistently naming the object when she points, you’re supporting her vocabulary growth and helping her make meaningful connections between words and their referents, an essential foundation for future language development.
+
+Would you like an idea for a deepening activity to keep her learning about lights and language?
+INFO:     192.168.1.7:54876 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54878 - "POST /chat HTTP/1.1" 200 OK
+INFO:     192.168.1.7:54880 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50121 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50121 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50122 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50122 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3231371]
+INFO:     Started server process [1560732]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1560732]
+INFO:     Started server process [1562715]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1562715]
+INFO:     Started server process [1563860]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:50473 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50473 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1563860]
+INFO:     Started server process [1571083]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:50553 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50553 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50554 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50562 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50562 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50562 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50562 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50563 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50569 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50569 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50568 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50578 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50578 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1571083]
+INFO:     Started server process [1601442]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1601442]
+INFO:     Started server process [1609192]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1609192]
+INFO:     Started server process [1613531]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1613531]
+INFO:     Started server process [1621606]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1621606]
+INFO:     Started server process [1629695]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1629695]
+INFO:     Started server process [1632561]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

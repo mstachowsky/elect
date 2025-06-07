@@ -75,13 +75,28 @@
   </style>
 </head>
 <body>
+	<button id="logout-btn" style="
+	  position: fixed;
+	  top: 2rem;
+	  right: 2rem;
+	  background: #6366f1;
+	  color: #fff;
+	  border: none;
+	  border-radius: 999px;
+	  padding: 0.5rem 1.3rem;
+	  font-size: 1rem;
+	  cursor: pointer;
+	  box-shadow: 0 2px 8px rgba(80,80,160,0.08);
+	  z-index: 9990;
+	">Logout</button>
+
   <div class="chat-container">
     <div class="messages" id="messages"></div>
     <form id="chat-form" autocomplete="off">
       <input type="text" id="msg-input" placeholder="Type a message..." required />
       <button type="submit" id="send-btn">Send</button>
     </form>
-    <button id="save-btn" style="margin: 1rem;">Save Chat and Analysis</button>
+    <button id="save-btn" style="margin: 1rem;">Press when done to save</button>
     <pre id="elect-analysis" style="padding:1rem;margin:1rem;background:#f1f5f9;border-radius:1rem;white-space:pre-wrap;max-height:10rem;overflow:auto;display:none"></pre>
   </div>
   
@@ -216,6 +231,18 @@
       saveBtn.disabled = false;
       saveBtn.textContent = 'Save Chat';
     });
+	document.getElementById('logout-btn').onclick = async function() {
+	  try {
+		const res = await fetch('/auth/jwt/logout', {
+		  method: 'POST',
+		  credentials: 'include'
+		});
+		// On success or failure, go to login
+		window.location.href = "/auth";
+	  } catch (e) {
+		window.location.href = "/auth";
+	  }
+	};
 
   </script>
 </body>
