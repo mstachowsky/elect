@@ -1404,3 +1404,114 @@ INFO:     Finished server process [1790337]
 INFO:     Started server process [1806291]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     146.190.119.1:0 - "GET / HTTP/1.1" 200 OK
+INFO:     146.190.119.1:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     146.190.119.1:0 - "GET /ads.txt HTTP/1.1" 404 Not Found
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+## Summary:
+Today, your toddler explored the large slide at the park, showing enthusiasm and curiosity by saying "wow" as she went down. She communicated her desire to repeat the activity by using the "again" sign. When faced with the challenge of climbing the ladder, she attempted it on her own, showing initiative and problem-solving, but recognized her need for help and signaled to you using her sign language.
+
+In this episode, your child demonstrated several key developmental skills:
+- **Physical Development:** Climbing and sliding supported her growing motor skills and physical awareness, even though the ladder was too large for her to manage alone.
+- **Communication Development:** She effectively used gestures and signs to communicate her needs and interests, which is an important aspect of early language development.
+- **Cognitive Development:** Saying "wow" and repeatedly wanting to go down the slide shows her developing understanding of cause and effect and her willingness to engage with new experiences.
+- **Social-Emotional Development:** By seeking your help, she demonstrated trust in you and confidence in her ability to communicate her needs.
+
+This was a rich learning moment combining movement, communication, and emotional connection with you.
+
+Would you like some ideas for a deepening activity to build on what she learned at the park today?
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "GET / HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+## Summary:
+
+Today your toddler had an interaction with another child at the park, where he threw wood chips at her. This type of behavior is not typical for him, but it's common for children at this age to experiment with actions as they navigate new social situations. At 18 months, toddlers are naturally curious and are just beginning to learn about cause and effect, social boundaries, and expressing their feelings. They don’t always have the words to communicate, so they often use actions—sometimes testing what is okay or not okay. Your son’s repeated action (throwing wood chips), even after being moved, may be his way of exploring how to engage with peers, or simply experimenting to see what happens.
+
+He seemed unbothered when redirected, which shows he’s adaptable and able to handle changes in activity, another important developmental skill. These moments give your child a chance to learn about social cues, appropriate play, and how his actions affect others. Your calm intervention helps guide him toward more positive ways to interact.
+
+Would you like an idea for a simple activity to help your child keep learning about social interaction and gentle hands?
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /chat HTTP/1.1" 200 OK
+INFO:     104.247.247.211:0 - "POST /save_chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:62138 - "POST /chat HTTP/1.1" 200 OK
+INFO:     100.92.101.90:62146 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:62146 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1806291]
+INFO:     Started server process [1364558]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     100.92.101.90:62525 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:62525 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1364558]
+INFO:     Started server process [1367107]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1367107]
+INFO:     Started server process [1370416]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1370416]
+INFO:     Started server process [1373283]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1373283]
+INFO:     Started server process [1379472]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1379472]
+INFO:     Started server process [1380722]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1380722]
+INFO:     Started server process [1420008]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1420008]
+INFO:     Started server process [1423526]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

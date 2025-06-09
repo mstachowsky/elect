@@ -108,6 +108,18 @@ function renderChild(child = {}) {
     textContent: "Delete",
     disabled: !child.id // only allow delete for saved children
   });
+  const writeStory = Object.assign(document.createElement("button"), {
+  textContent: "Write a learning story"
+	});
+	writeStory.onclick = () => {
+	  // Pass the child ID in the query string if exists
+	  if (child.id) {
+		window.location.href = `/chat_redirect?child_id=${encodeURIComponent(child.id)}`;
+	  } else {
+		alert("Save the child before writing a learning story!");
+	  }
+	};
+
 
   save.onclick = async () => {
     // POST if no id, PUT if id exists
@@ -144,7 +156,7 @@ function renderChild(child = {}) {
     wrap.remove();
   };
 
-  wrap.append(name, ageFields, prefs, save, del);
+  wrap.append(name, ageFields, prefs, save, del,writeStory);
   childrenList.append(wrap);
 }
 

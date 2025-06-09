@@ -111,6 +111,13 @@
     let locked = false;
     const messages = [];
 
+	function getQueryParam(name) {
+	  const url = new URL(window.location.href);
+	  return url.searchParams.get(name);
+	}
+	const childId = getQueryParam("child_id");
+
+
     function addMessage(text, role) {
       const el = document.createElement('div');
       el.className = `msg ${role}`;
@@ -180,12 +187,16 @@
       locked = true;
 
       try {
-        const res = await authFetch('/chat', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ history: messages })
-        });
-        const data = await res.json();
+        const payload = { history: messages };
+		if (childId) payload.child_id = childId;
+
+		const chatRes = await authFetch('/chat', {
+		  method: 'POST',
+		  headers: {'Content-Type': 'application/json'},
+		  body: JSON.stringify(payload)
+		});
+
+        const data = await chatRes.json();
         addMessage(data.response, 'bot');
         messages.push({ role: "assistant", content: data.response });
       } catch (err) {

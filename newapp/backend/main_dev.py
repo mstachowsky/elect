@@ -35,6 +35,12 @@ from sqlalchemy.orm import (
 DATABASE_URL = "mysql+asyncmy://mike:mitadp560@localhost/elect_app"  # CHANGE ME
 SECRET        = "SUPERSECRET"                                       # CHANGE ME
 
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from sqlalchemy.orm import selectinload
+from fastapi import HTTPException, status
+
+
 # === Base & User ============================================================
 class Base(DeclarativeBase):
     pass
@@ -62,6 +68,24 @@ class ParentProfile(Base):
         cascade="all, delete-orphan",
         lazy="selectin",
     )
+
+
+async def get_parent_profile_by_user(
+    session: AsyncSession,
+    user_id: int,
+) -> ParentProfile:
+    result = await session.execute(
+        select(ParentProfile)
+        .filter_by(user_id=user_id)
+        .options(selectinload(ParentProfile.children))
+    )
+    parent = result.scalar_one_or_none()
+    if not parent:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Profile not found"
+        )
+    return parent
 
 
 class ChildProfile(Base):
@@ -368,10 +392,17 @@ SYSTEM_PROMPT = f"""You are an expert early childhood educator, helping parents 
 
 class ChatHistoryRequest(BaseModel):
     history: List[Dict[str, str]]
+    child_id: Optional[str] = None  # Add this field!
 
 @app.post("/chat", tags=["chat"])
-async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_user)):
-    print(request)
+async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_user),session: AsyncSession = Depends(get_async_session)):
+    print("PARENT: ")
+    parent_data = await get_parent_profile_by_user(session, user.id)
+    print(parent_data.name)
+    print(parent_data.preferences)
+    if(request.child_id):
+        print("CHILD: ")
+        print(request.child_id)
     try:
         history = request.history
 
