@@ -5331,3 +5331,734 @@ WHERE user.id = %s
 2025-06-10 07:11:34,940 INFO sqlalchemy.engine.Engine [cached since 47.77s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
 2025-06-10 07:12:46,891 INFO sqlalchemy.engine.Engine ROLLBACK
 INFO:     100.92.101.90:50440 - "POST /save_chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1269503]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1156675]
+INFO:     Waiting for application startup.
+2025-06-11 07:04:44,472 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-11 07:04:44,472 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,473 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-11 07:04:44,473 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,473 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-11 07:04:44,473 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,474 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:04:44,474 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-11 07:04:44,474 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,476 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-11 07:04:44,476 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,477 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-11 07:04:44,477 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,478 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`chat_sessions`
+2025-06-11 07:04:44,478 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,479 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`chat_messages`
+2025-06-11 07:04:44,479 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:04:44,480 INFO sqlalchemy.engine.Engine 
+CREATE TABLE chat_sessions (
+	id CHAR(32) NOT NULL, 
+	child_id CHAR(32) NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(child_id) REFERENCES child_profiles (id)
+)
+
+
+2025-06-11 07:04:44,480 INFO sqlalchemy.engine.Engine [no key 0.00013s] ()
+2025-06-11 07:04:44,500 INFO sqlalchemy.engine.Engine 
+CREATE TABLE chat_messages (
+	id CHAR(32) NOT NULL, 
+	session_id CHAR(32) NOT NULL, 
+	`role` VARCHAR(10) NOT NULL, 
+	content TEXT NOT NULL, 
+	timestamp DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(session_id) REFERENCES chat_sessions (id)
+)
+
+
+2025-06-11 07:04:44,501 INFO sqlalchemy.engine.Engine [no key 0.00020s] ()
+2025-06-11 07:04:44,525 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     100.92.101.90:50770 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50770 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50770 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-06-11 07:08:59,326 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:08:59,354 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-11 07:08:59,355 INFO sqlalchemy.engine.Engine [generated in 0.00042s] ('mstachow@uwaterloo.ca',)
+2025-06-11 07:08:59,418 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50770 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-11 07:08:59,438 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:08:59,439 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:08:59,439 INFO sqlalchemy.engine.Engine [generated in 0.00017s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:08:59,440 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50770 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:08:59,488 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:08:59,489 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:08:59,489 INFO sqlalchemy.engine.Engine [cached since 0.05056s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:08:59,492 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50770 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-11 07:08:59,648 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:08:59,648 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:08:59,649 INFO sqlalchemy.engine.Engine [cached since 0.2099s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:08:59,651 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50770 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:09:01,790 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:01,790 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:01,790 INFO sqlalchemy.engine.Engine [cached since 2.352s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:01,795 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:09:01,796 INFO sqlalchemy.engine.Engine [generated in 0.00025s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:01,799 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:09:01,799 INFO sqlalchemy.engine.Engine [generated in 0.00033s] ('af85239f25324d4c8ca911f5352fbe5f',)
+Error: 400: child_id required to initiate chat
+2025-06-11 07:09:01,802 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50770 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:09:10,551 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:10,552 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:10,552 INFO sqlalchemy.engine.Engine [cached since 11.11s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:10,555 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "GET /profiles HTTP/1.1" 200 OK
+2025-06-11 07:09:10,629 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:10,630 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:10,630 INFO sqlalchemy.engine.Engine [cached since 11.19s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:10,633 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:09:10,634 INFO sqlalchemy.engine.Engine [cached since 8.838s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:10,637 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:09:10,637 INFO sqlalchemy.engine.Engine [cached since 8.838s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:09:10,641 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "GET /api/parent HTTP/1.1" 200 OK
+2025-06-11 07:09:13,191 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:13,191 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:13,192 INFO sqlalchemy.engine.Engine [cached since 13.75s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:13,194 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-11 07:09:13,326 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:13,327 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:13,327 INFO sqlalchemy.engine.Engine [cached since 13.89s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:13,330 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50771 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:09:15,325 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:15,325 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:15,325 INFO sqlalchemy.engine.Engine [cached since 15.89s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:15,326 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:09:15,326 INFO sqlalchemy.engine.Engine [cached since 13.53s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:15,327 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:09:15,327 INFO sqlalchemy.engine.Engine [cached since 13.53s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:09:15,329 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:09:15,329 INFO sqlalchemy.engine.Engine [generated in 0.00025s] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:09:15,331 INFO sqlalchemy.engine.Engine INSERT INTO chat_sessions (id, child_id, created_at) VALUES (%s, %s, %s)
+2025-06-11 07:09:15,331 INFO sqlalchemy.engine.Engine [generated in 0.00019s] ('9e48f455e4424e1b92c8a673193e7fd6', '416c9c7f671b43448d0fe0b1653c0ba4', datetime.datetime(2025, 6, 11, 11, 9, 15, 331484))
+2025-06-11 07:09:15,332 INFO sqlalchemy.engine.Engine COMMIT
+2025-06-11 07:09:15,336 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:15,337 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id, chat_sessions.child_id, chat_sessions.created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:09:15,337 INFO sqlalchemy.engine.Engine [generated in 0.00024s] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:09:15,340 INFO sqlalchemy.engine.Engine SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE %s = chat_messages.session_id
+2025-06-11 07:09:15,340 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:09:16,501 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:09:16,502 INFO sqlalchemy.engine.Engine [generated in 0.00073s] ('a306c3aeb8ec429093afb9ddf235acf5', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'hi?', datetime.datetime(2025, 6, 11, 11, 9, 16, 501710))
+2025-06-11 07:09:16,506 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:09:16,506 INFO sqlalchemy.engine.Engine [cached since 0.005046s ago] ('efb3711110f54ddab1d679075126906a', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn about Laura’s day. What did Laura do today?', datetime.datetime(2025, 6, 11, 11, 9, 16, 506156))
+2025-06-11 07:09:16,508 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50771 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:09:24,242 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:09:24,243 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:09:24,243 INFO sqlalchemy.engine.Engine [cached since 24.8s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:24,244 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:09:24,244 INFO sqlalchemy.engine.Engine [cached since 22.45s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:09:24,245 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:09:24,245 INFO sqlalchemy.engine.Engine [cached since 22.45s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:09:24,247 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:09:24,247 INFO sqlalchemy.engine.Engine [cached since 8.918s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:09:24,248 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:09:24,248 INFO sqlalchemy.engine.Engine [generated in 0.00015s] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:09:24,250 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:09:24,250 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:09:26,144 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:09:26,145 INFO sqlalchemy.engine.Engine [cached since 9.644s ago] ('d026360e3a3b47ac85710443a6d4c5d8', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'hi?', datetime.datetime(2025, 6, 11, 11, 9, 26, 144699))
+2025-06-11 07:09:26,146 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:09:26,147 INFO sqlalchemy.engine.Engine [cached since 9.646s ago] ('6de8ee883f62468c8fd81254b534af0f', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn about Laura’s day. What did Laura do today?', datetime.datetime(2025, 6, 11, 11, 9, 26, 146794))
+2025-06-11 07:09:26,148 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:09:26,148 INFO sqlalchemy.engine.Engine [cached since 9.648s ago] ('5e60118c38d240539a73e3614265788f', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'signed for milk', datetime.datetime(2025, 6, 11, 11, 9, 26, 148655))
+2025-06-11 07:09:26,150 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:09:26,150 INFO sqlalchemy.engine.Engine [cached since 9.649s ago] ('2783137e10284595ac5cfea16fc94b4d', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'That’s wonderful! Signing for milk is a great way for Laura to communicate her needs. Can you tell me what was happening right before Laura signed for milk? For example, was she playing, eating, or maybe sitting with you?', datetime.datetime(2025, 6, 11, 11, 9, 26, 150439))
+2025-06-11 07:09:26,152 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50775 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:10:33,155 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:10:33,156 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:10:33,156 INFO sqlalchemy.engine.Engine [cached since 93.72s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:33,159 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50783 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-11 07:10:33,248 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:10:33,249 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:10:33,249 INFO sqlalchemy.engine.Engine [cached since 93.81s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:33,252 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50783 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:10:35,474 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:10:35,474 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:10:35,475 INFO sqlalchemy.engine.Engine [cached since 96.04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:35,478 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:10:35,478 INFO sqlalchemy.engine.Engine [cached since 93.68s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:35,482 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:10:35,482 INFO sqlalchemy.engine.Engine [cached since 93.68s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:10:35,485 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:10:35,486 INFO sqlalchemy.engine.Engine [cached since 80.16s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:10:35,489 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:10:35,489 INFO sqlalchemy.engine.Engine [cached since 71.24s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:10:35,492 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:10:35,492 INFO sqlalchemy.engine.Engine [cached since 71.24s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:10:36,505 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:10:36,505 INFO sqlalchemy.engine.Engine [cached since 80s ago] ('18786aaa3b8c40c6beb76ddf27c2baeb', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 10, 36, 505005))
+2025-06-11 07:10:36,507 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:10:36,507 INFO sqlalchemy.engine.Engine [cached since 80.01s ago] ('d88ba77b5b6d41afbb200a61eeb9418d', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn more about Laura and her day. \n\nWhat did Laura do today?', datetime.datetime(2025, 6, 11, 11, 10, 36, 507058))
+2025-06-11 07:10:36,509 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50783 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:10:41,276 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:10:41,276 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:10:41,277 INFO sqlalchemy.engine.Engine [cached since 101.8s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:41,278 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:10:41,278 INFO sqlalchemy.engine.Engine [cached since 99.48s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:41,279 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:10:41,279 INFO sqlalchemy.engine.Engine [cached since 99.48s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:10:41,280 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:10:41,280 INFO sqlalchemy.engine.Engine [cached since 85.95s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:10:41,281 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:10:41,281 INFO sqlalchemy.engine.Engine [cached since 77.03s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:10:41,282 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:10:41,282 INFO sqlalchemy.engine.Engine [cached since 77.03s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:10:43,128 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:10:43,128 INFO sqlalchemy.engine.Engine [cached since 86.63s ago] ('2c7a009166494fe5b966383c9ca427b1', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 10, 43, 128736))
+2025-06-11 07:10:43,130 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:10:43,130 INFO sqlalchemy.engine.Engine [cached since 86.63s ago] ('888d1a8fd5f842b490683c27e0a65690', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn more about Laura and her day. \n\nWhat did Laura do today?', datetime.datetime(2025, 6, 11, 11, 10, 43, 129955))
+2025-06-11 07:10:43,131 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:10:43,131 INFO sqlalchemy.engine.Engine [cached since 86.63s ago] ('207bf09b68fa4d99b88557038b1d5aeb', '9e48f455e4424e1b92c8a673193e7fd6', 'user', "nothing, let's talk about cars", datetime.datetime(2025, 6, 11, 11, 10, 43, 131021))
+2025-06-11 07:10:43,132 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:10:43,132 INFO sqlalchemy.engine.Engine [cached since 86.63s ago] ('497521f4ab0e4db0af3ce55ef3aff02c', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Absolutely, we can talk about cars! Cars can be so interesting for toddlers with all their colors, shapes, and sounds.\n\nHas Laura shown any interest in cars before, like when seeing them on walks, pointing at toy cars, or making car noises?', datetime.datetime(2025, 6, 11, 11, 10, 43, 132037))
+2025-06-11 07:10:43,133 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50783 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:10:57,822 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:10:57,823 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:10:57,823 INFO sqlalchemy.engine.Engine [cached since 118.4s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:57,827 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:10:57,827 INFO sqlalchemy.engine.Engine [cached since 116s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:10:57,830 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:10:57,830 INFO sqlalchemy.engine.Engine [cached since 116s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:10:57,834 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:10:57,834 INFO sqlalchemy.engine.Engine [cached since 102.5s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:10:57,837 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:10:57,837 INFO sqlalchemy.engine.Engine [cached since 93.59s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:10:57,841 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:10:57,841 INFO sqlalchemy.engine.Engine [cached since 93.59s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:11:00,485 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:00,485 INFO sqlalchemy.engine.Engine [cached since 104s ago] ('72cb693f9eea4cebaff3e22929dfc299', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 11, 0, 485269))
+2025-06-11 07:11:00,486 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:00,486 INFO sqlalchemy.engine.Engine [cached since 104s ago] ('833204e41d02447194d078d5b4ee0caf', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn more about Laura and her day. \n\nWhat did Laura do today?', datetime.datetime(2025, 6, 11, 11, 11, 0, 486158))
+2025-06-11 07:11:00,486 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:00,486 INFO sqlalchemy.engine.Engine [cached since 104s ago] ('775dd609eac846e7910b918aa643df82', '9e48f455e4424e1b92c8a673193e7fd6', 'user', "nothing, let's talk about cars", datetime.datetime(2025, 6, 11, 11, 11, 0, 486681))
+2025-06-11 07:11:00,487 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:00,487 INFO sqlalchemy.engine.Engine [cached since 104s ago] ('aa3ac6f1510b4001b0020ed42baf3de2', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Absolutely, we can talk about cars! Cars can be so interesting for toddlers with all their colors, shapes, and sounds.\n\nHas Laura shown any interest in cars before, like when seeing them on walks, pointing at toy cars, or making car noises?', datetime.datetime(2025, 6, 11, 11, 11, 0, 487499))
+2025-06-11 07:11:00,488 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:00,488 INFO sqlalchemy.engine.Engine [cached since 104s ago] ('3976beca4e0d43fdad34c0b216f982e6', '9e48f455e4424e1b92c8a673193e7fd6', 'user', "I mean, let's you and I talk about cars, like real muscle cars, vroom vroom", datetime.datetime(2025, 6, 11, 11, 11, 0, 488171))
+2025-06-11 07:11:00,488 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:00,488 INFO sqlalchemy.engine.Engine [cached since 104s ago] ('08d32d344c794145b22046b9abe8d697', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'That sounds fun—muscle cars are definitely exciting with their big engines and loud "vroom vroom" sounds! Since I\'m here to support you with Laura\' ... (133 characters truncated) ...  on how to introduce the fun of cars (muscle cars, sounds, colors) to Laura in a toddler-friendly way? Or did you want to keep chatting just for fun?', datetime.datetime(2025, 6, 11, 11, 11, 0, 488694))
+2025-06-11 07:11:00,489 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50784 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:11:12,952 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:11:12,953 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:11:12,953 INFO sqlalchemy.engine.Engine [cached since 133.5s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:11:12,956 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:11:12,957 INFO sqlalchemy.engine.Engine [cached since 131.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:11:12,960 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:11:12,960 INFO sqlalchemy.engine.Engine [cached since 131.2s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:11:12,963 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:11:12,963 INFO sqlalchemy.engine.Engine [cached since 117.6s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:11:12,966 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:11:12,966 INFO sqlalchemy.engine.Engine [cached since 108.7s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:11:12,969 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:11:12,969 INFO sqlalchemy.engine.Engine [cached since 108.7s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:11:14,533 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,533 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('3bea2d12ec5a4d3f9bcd77ee01c1bd21', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 11, 14, 533223))
+2025-06-11 07:11:14,534 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,534 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('10d9b4c8f4ad4e639c2fbcd2173daf19', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn more about Laura and her day. \n\nWhat did Laura do today?', datetime.datetime(2025, 6, 11, 11, 11, 14, 534035))
+2025-06-11 07:11:14,534 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,534 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('789e01dfbea14a33bc7a5632c0730f87', '9e48f455e4424e1b92c8a673193e7fd6', 'user', "nothing, let's talk about cars", datetime.datetime(2025, 6, 11, 11, 11, 14, 534646))
+2025-06-11 07:11:14,535 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,535 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('000c2d4c29a4414682bbe25002e157c9', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Absolutely, we can talk about cars! Cars can be so interesting for toddlers with all their colors, shapes, and sounds.\n\nHas Laura shown any interest in cars before, like when seeing them on walks, pointing at toy cars, or making car noises?', datetime.datetime(2025, 6, 11, 11, 11, 14, 535296))
+2025-06-11 07:11:14,535 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,535 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('d140a57ae293420a81ef3f97d41fe3ea', '9e48f455e4424e1b92c8a673193e7fd6', 'user', "I mean, let's you and I talk about cars, like real muscle cars, vroom vroom", datetime.datetime(2025, 6, 11, 11, 11, 14, 535904))
+2025-06-11 07:11:14,536 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,536 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('65d759220bc94df1836e37e1f70bdfef', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'That sounds fun—muscle cars are definitely exciting with their big engines and loud "vroom vroom" sounds! Since I\'m here to support you with Laura\' ... (133 characters truncated) ...  on how to introduce the fun of cars (muscle cars, sounds, colors) to Laura in a toddler-friendly way? Or did you want to keep chatting just for fun?', datetime.datetime(2025, 6, 11, 11, 11, 14, 536457))
+2025-06-11 07:11:14,537 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,537 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('55c37dc095ef433c924eb180365d5e7f', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'just for fun', datetime.datetime(2025, 6, 11, 11, 11, 14, 537094))
+2025-06-11 07:11:14,539 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:11:14,539 INFO sqlalchemy.engine.Engine [cached since 118s ago] ('d924c6f50b714fc1a6f16d216c696253', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Got it! Muscle cars are seriously cool—the colors, the power, the noise… Do you have a favorite muscle car, or one you remember from your own childhood?', datetime.datetime(2025, 6, 11, 11, 11, 14, 539853))
+2025-06-11 07:11:14,540 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50785 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:12:43,473 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:12:43,473 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:12:43,474 INFO sqlalchemy.engine.Engine [cached since 224s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:12:43,477 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:12:43,477 INFO sqlalchemy.engine.Engine [cached since 221.7s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:12:43,480 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:12:43,481 INFO sqlalchemy.engine.Engine [cached since 221.7s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:12:43,484 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50797 - "GET /api/parent HTTP/1.1" 200 OK
+2025-06-11 07:12:46,627 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:12:46,627 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:12:46,627 INFO sqlalchemy.engine.Engine [cached since 227.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:12:46,629 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50797 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-11 07:12:46,676 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:12:46,676 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:12:46,676 INFO sqlalchemy.engine.Engine [cached since 227.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:12:46,677 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50797 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:12:48,581 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:12:48,581 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:12:48,581 INFO sqlalchemy.engine.Engine [cached since 229.1s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:12:48,583 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:12:48,583 INFO sqlalchemy.engine.Engine [cached since 226.8s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:12:48,584 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:12:48,584 INFO sqlalchemy.engine.Engine [cached since 226.8s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:12:48,586 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:12:48,586 INFO sqlalchemy.engine.Engine [cached since 213.3s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:12:48,587 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:12:48,587 INFO sqlalchemy.engine.Engine [cached since 204.3s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:12:48,588 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:12:48,588 INFO sqlalchemy.engine.Engine [cached since 204.3s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:12:49,506 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:12:49,506 INFO sqlalchemy.engine.Engine [cached since 213s ago] ('4c6a29e626c8405fa209ef1c36ed88e0', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'test', datetime.datetime(2025, 6, 11, 11, 12, 49, 505933))
+2025-06-11 07:12:49,508 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:12:49,508 INFO sqlalchemy.engine.Engine [cached since 213s ago] ('e97323d32616412990b43a16841aff85', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! To get started, can you tell me what Laura did today?', datetime.datetime(2025, 6, 11, 11, 12, 49, 508156))
+2025-06-11 07:12:49,510 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50797 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:13:53,995 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:13:53,995 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:13:53,995 INFO sqlalchemy.engine.Engine [cached since 294.6s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:53,999 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50801 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:13:55,607 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:13:55,607 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:13:55,607 INFO sqlalchemy.engine.Engine [cached since 296.2s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:55,609 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:13:55,609 INFO sqlalchemy.engine.Engine [cached since 293.8s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:55,610 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:13:55,610 INFO sqlalchemy.engine.Engine [cached since 293.8s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:13:55,611 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50801 - "GET /api/parent HTTP/1.1" 200 OK
+2025-06-11 07:13:57,294 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:13:57,295 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:13:57,295 INFO sqlalchemy.engine.Engine [cached since 297.9s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:57,299 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50801 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-11 07:13:57,357 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:13:57,357 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:13:57,357 INFO sqlalchemy.engine.Engine [cached since 297.9s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:57,358 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50801 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:13:58,916 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:13:58,917 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:13:58,917 INFO sqlalchemy.engine.Engine [cached since 299.5s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:58,920 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:13:58,920 INFO sqlalchemy.engine.Engine [cached since 297.1s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:13:58,924 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:13:58,924 INFO sqlalchemy.engine.Engine [cached since 297.1s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:13:58,927 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:13:58,927 INFO sqlalchemy.engine.Engine [cached since 283.6s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:13:58,930 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:13:58,930 INFO sqlalchemy.engine.Engine [cached since 274.7s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:13:58,933 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:13:58,933 INFO sqlalchemy.engine.Engine [cached since 274.7s ago] ('9e48f455e4424e1b92c8a673193e7fd6',)
+2025-06-11 07:13:59,869 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:13:59,869 INFO sqlalchemy.engine.Engine [cached since 283.4s ago] ('04110049e9fd4bfa9a6c08e54c645d2c', '9e48f455e4424e1b92c8a673193e7fd6', 'user', 'test', datetime.datetime(2025, 6, 11, 11, 13, 59, 869458))
+2025-06-11 07:13:59,871 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:13:59,871 INFO sqlalchemy.engine.Engine [cached since 283.4s ago] ('b2ab2cfa7a11424c8c23e58f66d4eb0c', '9e48f455e4424e1b92c8a673193e7fd6', 'assistant', 'Hello! I’m excited to learn more about Laura and her interests. To get started, could you tell me what Laura did today?', datetime.datetime(2025, 6, 11, 11, 13, 59, 871471))
+2025-06-11 07:13:59,873 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50801 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1156675]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1193271]
+INFO:     Waiting for application startup.
+2025-06-11 07:17:35,338 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-11 07:17:35,338 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,339 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-11 07:17:35,339 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,339 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-11 07:17:35,339 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,340 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:17:35,340 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-11 07:17:35,340 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,342 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-11 07:17:35,342 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,343 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-11 07:17:35,343 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,344 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`chat_sessions`
+2025-06-11 07:17:35,344 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,345 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`chat_messages`
+2025-06-11 07:17:35,346 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-11 07:17:35,347 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-11 07:19:23,964 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:19:23,984 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:19:23,985 INFO sqlalchemy.engine.Engine [generated in 0.00029s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:19:23,990 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50816 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-11 07:19:24,113 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:19:24,114 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:19:24,114 INFO sqlalchemy.engine.Engine [cached since 0.1295s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:19:24,117 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50816 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:19:26,197 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:19:26,197 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:19:26,198 INFO sqlalchemy.engine.Engine [cached since 2.213s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:19:26,209 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:19:26,210 INFO sqlalchemy.engine.Engine [generated in 0.00055s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:19:26,219 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:19:26,219 INFO sqlalchemy.engine.Engine [generated in 0.00067s] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:19:26,225 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:19:26,225 INFO sqlalchemy.engine.Engine [generated in 0.00051s] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:19:26,230 INFO sqlalchemy.engine.Engine INSERT INTO chat_sessions (id, child_id, created_at) VALUES (%s, %s, %s)
+2025-06-11 07:19:26,230 INFO sqlalchemy.engine.Engine [generated in 0.00048s] ('d7c4c64de96a4209bac02104f65d3791', '416c9c7f671b43448d0fe0b1653c0ba4', datetime.datetime(2025, 6, 11, 11, 19, 26, 230672))
+2025-06-11 07:19:26,232 INFO sqlalchemy.engine.Engine COMMIT
+2025-06-11 07:19:26,240 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:19:26,242 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id, chat_sessions.child_id, chat_sessions.created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:19:26,242 INFO sqlalchemy.engine.Engine [generated in 0.00025s] ('d7c4c64de96a4209bac02104f65d3791',)
+2025-06-11 07:19:26,245 INFO sqlalchemy.engine.Engine SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE %s = chat_messages.session_id
+2025-06-11 07:19:26,246 INFO sqlalchemy.engine.Engine [generated in 0.00032s] ('d7c4c64de96a4209bac02104f65d3791',)
+2025-06-11 07:19:27,007 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:19:27,008 INFO sqlalchemy.engine.Engine [generated in 0.00027s] ('e8e3e3af76314818b842c20d336fba41', 'd7c4c64de96a4209bac02104f65d3791', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 19, 27, 7895))
+2025-06-11 07:19:27,008 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:19:27,009 INFO sqlalchemy.engine.Engine [cached since 0.001254s ago] ('14ebf2ae46e74826a4986d1887a6adda', 'd7c4c64de96a4209bac02104f65d3791', 'assistant', 'Hello! I’m excited to chat with you about Laura’s day and her learning. What did Laura do today?', datetime.datetime(2025, 6, 11, 11, 19, 27, 8861))
+2025-06-11 07:19:27,009 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50816 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:19:29,873 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:19:29,873 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:19:29,874 INFO sqlalchemy.engine.Engine [cached since 5.889s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:19:29,875 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:19:29,875 INFO sqlalchemy.engine.Engine [cached since 3.666s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:19:29,876 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:19:29,876 INFO sqlalchemy.engine.Engine [cached since 3.657s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:19:29,877 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:19:29,877 INFO sqlalchemy.engine.Engine [cached since 3.653s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:19:29,878 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:19:29,879 INFO sqlalchemy.engine.Engine [generated in 0.00018s] ('d7c4c64de96a4209bac02104f65d3791',)
+2025-06-11 07:19:29,880 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:19:29,880 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('d7c4c64de96a4209bac02104f65d3791',)
+2025-06-11 07:19:30,811 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:19:30,812 INFO sqlalchemy.engine.Engine [cached since 3.804s ago] ('017fadd81b6241e5b6914a390a8e8af4', 'd7c4c64de96a4209bac02104f65d3791', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 19, 30, 811608))
+2025-06-11 07:19:30,813 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:19:30,814 INFO sqlalchemy.engine.Engine [cached since 3.806s ago] ('8a29b524f14341978270999397dbff19', 'd7c4c64de96a4209bac02104f65d3791', 'assistant', 'Hello! I’m excited to chat with you about Laura’s day and her learning. What did Laura do today?', datetime.datetime(2025, 6, 11, 11, 19, 30, 813802))
+2025-06-11 07:19:30,815 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:19:30,815 INFO sqlalchemy.engine.Engine [cached since 3.808s ago] ('168f787e90e041d09d6954ee2f3ab610', 'd7c4c64de96a4209bac02104f65d3791', 'user', 'donkeys', datetime.datetime(2025, 6, 11, 11, 19, 30, 815634))
+2025-06-11 07:19:30,817 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:19:30,817 INFO sqlalchemy.engine.Engine [cached since 3.81s ago] ('c6de93e9c5b94e37b50623bd9fa5e34e', 'd7c4c64de96a4209bac02104f65d3791', 'assistant', 'That sounds interesting! Can you tell me a little more about what Laura did with the donkeys? For example, did she see them in person, look at pictures, read a story, or something else?', datetime.datetime(2025, 6, 11, 11, 19, 30, 817396))
+2025-06-11 07:19:30,819 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50816 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:20:31,071 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:20:31,072 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:20:31,072 INFO sqlalchemy.engine.Engine [cached since 67.09s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:20:31,076 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:20:31,076 INFO sqlalchemy.engine.Engine [cached since 64.87s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:20:31,079 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:20:31,079 INFO sqlalchemy.engine.Engine [cached since 64.86s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:20:31,083 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:20:31,083 INFO sqlalchemy.engine.Engine [cached since 64.86s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:20:31,086 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:20:31,086 INFO sqlalchemy.engine.Engine [cached since 61.21s ago] ('d7c4c64de96a4209bac02104f65d3791',)
+2025-06-11 07:20:31,089 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:20:31,089 INFO sqlalchemy.engine.Engine [cached since 61.21s ago] ('d7c4c64de96a4209bac02104f65d3791',)
+2025-06-11 07:20:32,770 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:20:32,770 INFO sqlalchemy.engine.Engine [cached since 65.76s ago] ('1970aa272cc140748837a524ba835190', 'd7c4c64de96a4209bac02104f65d3791', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 20, 32, 770631))
+2025-06-11 07:20:32,771 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:20:32,771 INFO sqlalchemy.engine.Engine [cached since 65.76s ago] ('6b8edfecb82843c0adf0649b8ea47217', 'd7c4c64de96a4209bac02104f65d3791', 'assistant', 'Hello! I’m excited to chat with you about Laura’s day and her learning. What did Laura do today?', datetime.datetime(2025, 6, 11, 11, 20, 32, 771457))
+2025-06-11 07:20:32,772 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:20:32,772 INFO sqlalchemy.engine.Engine [cached since 65.76s ago] ('df9b6fa68eb34980b5f9171bcffa41b4', 'd7c4c64de96a4209bac02104f65d3791', 'user', 'donkeys', datetime.datetime(2025, 6, 11, 11, 20, 32, 772049))
+2025-06-11 07:20:32,772 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:20:32,772 INFO sqlalchemy.engine.Engine [cached since 65.76s ago] ('aa30425cdb3044249788545b63ceae4e', 'd7c4c64de96a4209bac02104f65d3791', 'assistant', 'That sounds interesting! Can you tell me a little more about what Laura did with the donkeys? For example, did she see them in person, look at pictures, read a story, or something else?', datetime.datetime(2025, 6, 11, 11, 20, 32, 772529))
+2025-06-11 07:20:32,773 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:20:32,773 INFO sqlalchemy.engine.Engine [cached since 65.77s ago] ('23e5489a315a4b449e2ab028646ae81e', 'd7c4c64de96a4209bac02104f65d3791', 'user', 'looked at them', datetime.datetime(2025, 6, 11, 11, 20, 32, 773161))
+2025-06-11 07:20:32,773 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:20:32,773 INFO sqlalchemy.engine.Engine [cached since 65.77s ago] ('694d5d8257dd42208a5428b9e84393ed', 'd7c4c64de96a4209bac02104f65d3791', 'assistant', 'Wonderful! Did Laura seem curious about the donkeys? For example, did she make any sounds, point, try to get closer, or show any other reactions when she was looking at them?', datetime.datetime(2025, 6, 11, 11, 20, 32, 773680))
+2025-06-11 07:20:32,774 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50821 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:22:45,656 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:22:45,656 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:22:45,656 INFO sqlalchemy.engine.Engine [cached since 201.7s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:22:45,657 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50825 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-11 07:22:45,762 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:22:45,762 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:22:45,762 INFO sqlalchemy.engine.Engine [cached since 201.8s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:22:45,763 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50825 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-11 07:22:48,288 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:22:48,288 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:22:48,288 INFO sqlalchemy.engine.Engine [cached since 204.3s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:22:48,289 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:22:48,289 INFO sqlalchemy.engine.Engine [cached since 202.1s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:22:48,291 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:22:48,291 INFO sqlalchemy.engine.Engine [cached since 202.1s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:22:48,292 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:22:48,292 INFO sqlalchemy.engine.Engine [cached since 202.1s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:22:48,294 INFO sqlalchemy.engine.Engine INSERT INTO chat_sessions (id, child_id, created_at) VALUES (%s, %s, %s)
+2025-06-11 07:22:48,294 INFO sqlalchemy.engine.Engine [cached since 202.1s ago] ('171b46fc947140288082c46c74abc10b', '416c9c7f671b43448d0fe0b1653c0ba4', datetime.datetime(2025, 6, 11, 11, 22, 48, 294281))
+2025-06-11 07:22:48,295 INFO sqlalchemy.engine.Engine COMMIT
+2025-06-11 07:22:48,299 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:22:48,299 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id, chat_sessions.child_id, chat_sessions.created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:22:48,299 INFO sqlalchemy.engine.Engine [cached since 202.1s ago] ('171b46fc947140288082c46c74abc10b',)
+2025-06-11 07:22:48,300 INFO sqlalchemy.engine.Engine SELECT chat_messages.id AS chat_messages_id, chat_messages.session_id AS chat_messages_session_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE %s = chat_messages.session_id
+2025-06-11 07:22:48,300 INFO sqlalchemy.engine.Engine [cached since 202.1s ago] ('171b46fc947140288082c46c74abc10b',)
+2025-06-11 07:22:49,239 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:22:49,239 INFO sqlalchemy.engine.Engine [cached since 202.2s ago] ('21e1014cac85447f8c2ebae0dc136dc2', '171b46fc947140288082c46c74abc10b', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 22, 49, 239074))
+2025-06-11 07:22:49,241 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:22:49,241 INFO sqlalchemy.engine.Engine [cached since 202.2s ago] ('2a9533e623b64bae9abface9d05c12da', '171b46fc947140288082c46c74abc10b', 'assistant', 'Hello! I’m excited to chat with you about Laura and her learning adventures. Can you tell me what Laura did today?', datetime.datetime(2025, 6, 11, 11, 22, 49, 241447))
+2025-06-11 07:22:49,243 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50825 - "POST /chat HTTP/1.1" 200 OK
+2025-06-11 07:23:02,912 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-11 07:23:02,913 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-11 07:23:02,913 INFO sqlalchemy.engine.Engine [cached since 218.9s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:23:02,916 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-11 07:23:02,917 INFO sqlalchemy.engine.Engine [cached since 216.7s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-11 07:23:02,921 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-11 07:23:02,921 INFO sqlalchemy.engine.Engine [cached since 216.7s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-11 07:23:02,924 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-11 07:23:02,924 INFO sqlalchemy.engine.Engine [cached since 216.7s ago] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+2025-06-11 07:23:02,927 INFO sqlalchemy.engine.Engine SELECT chat_sessions.id AS chat_sessions_id, chat_sessions.child_id AS chat_sessions_child_id, chat_sessions.created_at AS chat_sessions_created_at 
+FROM chat_sessions 
+WHERE chat_sessions.id = %s
+2025-06-11 07:23:02,927 INFO sqlalchemy.engine.Engine [cached since 213s ago] ('171b46fc947140288082c46c74abc10b',)
+2025-06-11 07:23:02,930 INFO sqlalchemy.engine.Engine SELECT chat_messages.session_id AS chat_messages_session_id, chat_messages.id AS chat_messages_id, chat_messages.`role` AS chat_messages_role, chat_messages.content AS chat_messages_content, chat_messages.timestamp AS chat_messages_timestamp 
+FROM chat_messages 
+WHERE chat_messages.session_id IN (%s)
+2025-06-11 07:23:02,931 INFO sqlalchemy.engine.Engine [cached since 213.1s ago] ('171b46fc947140288082c46c74abc10b',)
+2025-06-11 07:23:04,991 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:23:04,991 INFO sqlalchemy.engine.Engine [cached since 218s ago] ('0b94371626704511a02479c86cea8461', '171b46fc947140288082c46c74abc10b', 'user', 'hi', datetime.datetime(2025, 6, 11, 11, 23, 4, 991619))
+2025-06-11 07:23:04,993 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:23:04,993 INFO sqlalchemy.engine.Engine [cached since 218s ago] ('05a839a6b31f439ab910a511d013bc9a', '171b46fc947140288082c46c74abc10b', 'assistant', 'Hello! I’m excited to chat with you about Laura and her learning adventures. Can you tell me what Laura did today?', datetime.datetime(2025, 6, 11, 11, 23, 4, 993685))
+2025-06-11 07:23:04,995 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:23:04,995 INFO sqlalchemy.engine.Engine [cached since 218s ago] ('ee7db4fd31cc4791a76ec4c166da0564', '171b46fc947140288082c46c74abc10b', 'user', 'ate cheese', datetime.datetime(2025, 6, 11, 11, 23, 4, 995550))
+2025-06-11 07:23:04,997 INFO sqlalchemy.engine.Engine INSERT INTO chat_messages (id, session_id, `role`, content, timestamp) VALUES (%s, %s, %s, %s, %s)
+2025-06-11 07:23:04,997 INFO sqlalchemy.engine.Engine [cached since 218s ago] ('3cd32cfab5bf4cc895c595baf58419c2', '171b46fc947140288082c46c74abc10b', 'assistant', 'Yum! Cheese can be such a fun and interesting food for little ones. While Laura was eating cheese, how did she interact with it? For example, did she try to pick it up herself, smell it, squish it with her fingers, or make any sounds or faces?', datetime.datetime(2025, 6, 11, 11, 23, 4, 997339))
+2025-06-11 07:23:04,999 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     100.92.101.90:50826 - "POST /chat HTTP/1.1" 200 OK

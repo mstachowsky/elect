@@ -417,115 +417,135 @@ def make_prompt(age_years,age_months,name,preferences):
     
     return [prompt,elect_doc]
 
+"""
 class ChatHistoryRequest(BaseModel):
     history: List[Dict[str, str]]
     child_id: Optional[str] = None  # Add this field!
+"""
+
+# === DB Models (Additions) ===================================================
+class ChatSession(Base):
+    __tablename__ = "chat_sessions"
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    child_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("child_profiles.id"))
+    created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+
+    messages: Mapped[List["ChatMessage"]] = relationship(
+        back_populates="session",
+        cascade="all, delete-orphan",
+        lazy="selectin"
+    )
 
 
+class ChatMessage(Base):
+    __tablename__ = "chat_messages"
 
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    session_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("chat_sessions.id"))
+    role: Mapped[str] = mapped_column(String(10))  # 'user' or 'assistant'
+    content: Mapped[str] = mapped_column(Text)
+    timestamp: Mapped[datetime] = mapped_column(default=datetime.utcnow)
+
+    session: Mapped[ChatSession] = relationship(back_populates="messages")
+
+
+# === ChatHistoryRequest Update ==============================================
+class ChatHistoryRequest(BaseModel):
+    history: List[Dict[str, str]]
+    child_id: Optional[str] = None
+    chat_id: Optional[str] = None
+
+
+# === Updated /chat Endpoint =================================================
 @app.post("/chat", tags=["chat"])
-async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_user),session: AsyncSession = Depends(get_async_session)):
-    print("PARENT: ")
-    parent_data = await get_parent_profile_by_user(session, user.id)
-    print(parent_data.name)
-    print(parent_data.preferences)
-    child_data = None
-    if request.child_id:
-        child_uuid = uuid.UUID(str(request.child_id))  # Explicit conversion
-        child_data = await get_child_by_id(session, child_uuid)
-        if child_data:
-            print("CHILD:")
-            print(child_data.name)
-            print(child_data.age_years)
-            print(child_data.age_months)
-            print(child_data.preferences)
-        else:
-            print("Child not found.")
-
+async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_user), session: AsyncSession = Depends(get_async_session)):
     try:
-        history = request.history
-        if child_data is not None:
-            [SYSTEM_PROMPT,elect_doc] = make_prompt(child_data.age_years,child_data.age_months,child_data.name,child_data.preferences)
-            print("Loaded it up")
-        else:
-            #default to toddler
-            [SYSTEM_PROMPT,elect_doc] = make_prompt(1,0,"","normal toddler things")
-        # If no history, let the LLM begin!
-        if not history:
-            messages = [{"role": "system", "content": SYSTEM_PROMPT}]
-            response = client.chat.completions.create(
-                model="gpt-4.1-mini",
-                messages=messages
-            )
-            bot_message = response.choices[0].message.content
-            return {"response": bot_message}
+        parent_data = await get_parent_profile_by_user(session, user.id)
 
-        # Normal flow for user-initiated messages
-        if history[-1]['role'] != 'user':
+        child_data = None
+        if request.child_id:
+            child_uuid = uuid.UUID(str(request.child_id))
+            child_data = await get_child_by_id(session, child_uuid)
+
+        [SYSTEM_PROMPT, elect_doc] = make_prompt(
+            child_data.age_years if child_data else 1,
+            child_data.age_months if child_data else 0,
+            child_data.name if child_data else "",
+            child_data.preferences if child_data else "normal toddler things"
+        )
+
+        messages = request.history
+        chat_session = None
+
+        # If no chat_id, create one
+        if not request.chat_id:
+            if not child_data:
+                raise HTTPException(status_code=400, detail="child_id required to initiate chat")
+            chat_session = ChatSession(child_id=child_data.id)
+            session.add(chat_session)
+            await session.commit()
+            await session.refresh(chat_session)
+        else:
+            chat_session = await session.get(ChatSession, uuid.UUID(request.chat_id))
+            if not chat_session:
+                raise HTTPException(status_code=404, detail="chat session not found")
+
+        if not messages:
+            # System-initiated message
+            bot_response = client.chat.completions.create(
+                model="gpt-4.1-mini",
+                messages=[{"role": "system", "content": SYSTEM_PROMPT}]
+            ).choices[0].message.content
+
+            msg = ChatMessage(session_id=chat_session.id, role="assistant", content=bot_response)
+            session.add(msg)
+            await session.commit()
+            return {"response": bot_response, "chat_id": str(chat_session.id)}
+
+        if messages[-1]['role'] != 'user':
             return {"response": "Please enter a valid message."}
 
-        messages = [{"role": "system", "content": SYSTEM_PROMPT}] + history
-
-        response = client.chat.completions.create(
+        full_messages = [{"role": "system", "content": SYSTEM_PROMPT}] + messages
+        bot_response = client.chat.completions.create(
             model="gpt-4.1",
-            messages=messages
-        )
-        bot_message = response.choices[0].message.content
+            messages=full_messages
+        ).choices[0].message.content
 
-        if "## Summary:" in bot_message:
-            # Format chat as text
-            chat_lines = []
-            for msg in history:
-                role = msg.get("role", "unknown").capitalize()
-                content = msg.get("content", "")
-                chat_lines.append(f"{role}: {content}\n")
-            chat_text = "".join(chat_lines)
-            elect_info = analyze_elect(chat_text,elect_doc)
-            elect_summary = summarize_elect(bot_message.split("## Summary:")[1], elect_info)
-            bot_message = bot_message + "\n\n" + "Here's some information for you about how this interaction lines up with child development indicators: \n" + elect_summary
-            print(bot_message)
-            cleanup_prompt = f"""
-                The following text contains a summary, some deepening questions/activities, and information about how the interaction lines up with child development. Rewrite it without changing any words so that the text starts with the summary, then the child development information, and finally deepening questions/activities are at the end. The text is:
-                    
-                    {bot_message}
-            """
-
-            cleanup_messages = [{"role": "user", "content": cleanup_prompt}]
-            response = client.chat.completions.create(
-                model="gpt-4.1-mini",
-                messages=cleanup_messages
+        # Save all messages in DB
+        for msg in messages:
+            m = ChatMessage(
+                session_id=chat_session.id,
+                role=msg["role"],
+                content=msg["content"]
             )
-            content = response.choices[0].message.content.strip()
-            bot_message = content
-            
-            # Create saved directory if it doesn't exist
-            saved_dir = os.path.join(os.path.dirname(__file__), 'saved')
-            os.makedirs(saved_dir, exist_ok=True)
+            session.add(m)
+        session.add(ChatMessage(session_id=chat_session.id, role="assistant", content=bot_response))
 
-            # Timestamp for filename
-            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            file_path = os.path.join(saved_dir, f"chat_{timestamp}.txt")
+        await session.commit()
 
-            # Format chat as text
-            chat_lines = []
-            for msg in request.history:
-                role = msg.get("role", "unknown").capitalize()
-                content = msg.get("content", "")
-                chat_lines.append(f"{role}: {content}\n")
-            chat_text = "".join(chat_lines)
-            
-            #add the last message and elect summary
-            chat_text = "## Chat:\n" + chat_text + "\n" + bot_message + "\n\n## ELECT_ANALYSIS:\n"+elect_info
-
-            # Save file
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(chat_text)
-
-        return {"response": bot_message}
+        return {"response": bot_response, "chat_id": str(chat_session.id)}
 
     except Exception as e:
         print(f"Error: {str(e)}")
         return {"response": f"Error: {str(e)}"}
+
+
+# === API to Fetch Chat Sessions ============================================
+@app.get("/api/chat_sessions/{child_id}", tags=["chat"])
+async def get_chat_sessions_for_child(
+    child_id: uuid.UUID,
+    user: User = Depends(current_active_user),
+    session: AsyncSession = Depends(get_async_session)
+):
+    result = await session.execute(
+        select(ChatSession).join(ChildProfile).join(ParentProfile).where(
+            ChildProfile.id == child_id,
+            ParentProfile.user_id == user.id
+        ).order_by(ChatSession.created_at.desc())
+    )
+    sessions = result.scalars().all()
+    return [{"id": str(s.id), "created_at": s.created_at.isoformat()} for s in sessions]
 
 @app.post("/save_chat", tags=["chat"])
 async def save_chat(request: ChatHistoryRequest, user: User = Depends(current_active_user)):

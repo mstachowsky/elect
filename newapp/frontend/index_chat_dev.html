@@ -100,161 +100,169 @@
     <pre id="elect-analysis" style="padding:1rem;margin:1rem;background:#f1f5f9;border-radius:1rem;white-space:pre-wrap;max-height:10rem;overflow:auto;display:none"></pre>
   </div>
   
-    <script>
-    const form = document.getElementById('chat-form');
-    const input = document.getElementById('msg-input');
-    const messagesDiv = document.getElementById('messages');
-    const sendBtn = document.getElementById('send-btn');
-    const saveBtn = document.getElementById('save-btn');
-    const analysisBox = document.getElementById('elect-analysis');
-    const chatContainer = document.getElementById('chat-container');
-    let locked = false;
-    const messages = [];
+<script>
+  const form = document.getElementById('chat-form');
+  const input = document.getElementById('msg-input');
+  const messagesDiv = document.getElementById('messages');
+  const sendBtn = document.getElementById('send-btn');
+  const saveBtn = document.getElementById('save-btn');
+  const analysisBox = document.getElementById('elect-analysis');
+  const chatContainer = document.getElementById('chat-container');
 
-	function getQueryParam(name) {
-	  const url = new URL(window.location.href);
-	  return url.searchParams.get(name);
-	}
-	const childId = getQueryParam("child_id");
+  let messages = [];
+  localStorage.removeItem("lastChatId");
+let chatId = null; // Always start with a fresh session
 
+  //let chatId = localStorage.getItem("lastChatId") || null;
+  let locked = false;
 
-    function addMessage(text, role) {
-      const el = document.createElement('div');
-      el.className = `msg ${role}`;
-      el.textContent = text;
-      messagesDiv.appendChild(el);
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  function getQueryParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+  }
+  const childId = getQueryParam("child_id");
+
+  function addMessage(text, role) {
+    const el = document.createElement('div');
+    el.className = `msg ${role}`;
+    el.textContent = text;
+    messagesDiv.appendChild(el);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
+
+  async function authFetch(url, options = {}) {
+    options.credentials = 'include';
+    let res;
+    try {
+      res = await fetch(url, options);
+    } catch (e) {
+      window.location.href = "/auth";
+      throw e;
     }
-
-    // Helper: fetch with 401 redirect handling
-    async function authFetch(url, options = {}) {
-      options.credentials = 'include'; // always send cookies
-      let res;
-      try {
-        res = await fetch(url, options);
-      } catch (e) {
-        // network or CORS error
-        window.location.href = "/auth";
-        throw e;
-      }
-      if (res.status === 401) {
-        window.location.href = "/auth";
-        throw new Error("Unauthorized");
-      }
-      return res;
+    if (res.status === 401) {
+      window.location.href = "/auth";
+      throw new Error("Unauthorized");
     }
+    return res;
+  }
 
-    // On page load: check auth
-    window.addEventListener('DOMContentLoaded', async () => {
-      try {
-        const whoami = await authFetch('/whoami');
-        if (!whoami.ok) {
-          // This should be unreachable, but just in case
-          window.location.href = "/auth";
-          return;
-        }
-        chatContainer.style.display = ""; // Show UI only if logged in
-
-        // Start chat
-        if (messages.length === 0) {
-          const chatRes = await authFetch('/chat', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ history: [] })
-          });
-          const data = await chatRes.json();
-          addMessage(data.response, 'bot');
-          messages.push({ role: "assistant", content: data.response });
-        }
-      } catch (err) {
-        // We already redirect on error in authFetch
+  window.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const whoami = await authFetch('/whoami');
+      if (!whoami.ok) {
+        window.location.href = "/auth";
         return;
       }
-    });
+      chatContainer.style.display = "";
 
-    // Chat submission
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      if (locked || !input.value.trim()) return;
+      if (messages.length === 0) {
+        const payload = { history: [] };
+        if (childId) payload.child_id = childId;
+        if (chatId) payload.chat_id = chatId;
 
-      const userText = input.value.trim();
-      addMessage(userText, 'user');
-      messages.push({ role: "user", content: userText });
-
-      input.value = '';
-      input.disabled = true;
-      sendBtn.disabled = true;
-      locked = true;
-
-      try {
-        const payload = { history: messages };
-		if (childId) payload.child_id = childId;
-
-		const chatRes = await authFetch('/chat', {
-		  method: 'POST',
-		  headers: {'Content-Type': 'application/json'},
-		  body: JSON.stringify(payload)
-		});
-
-        const data = await chatRes.json();
-        addMessage(data.response, 'bot');
-        messages.push({ role: "assistant", content: data.response });
-      } catch (err) {
-        // If 401, page will already redirect
-        if (err.message !== "Unauthorized") {
-          addMessage('Sorry, something went wrong.', 'bot');
-        }
-      }
-      input.disabled = false;
-      sendBtn.disabled = false;
-      input.focus();
-      locked = false;
-    });
-
-    // Save chat
-    saveBtn.addEventListener('click', async () => {
-      saveBtn.disabled = true;
-      saveBtn.textContent = 'Saving...';
-      try {
-        const res = await authFetch('/save_chat', {
+        const chatRes = await authFetch('/chat', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ history: messages })
+          body: JSON.stringify(payload)
         });
-        const data = await res.json();
-        if (data.success) {
-          alert('Chat saved as: ' + data.filename);
-          if (data.elect_analysis) {
-            analysisBox.style.display = "block";
-            analysisBox.textContent = data.elect_analysis;
-          }
-        } else {
-          alert('Failed to save: ' + (data.error || 'Unknown error'));
-          analysisBox.style.display = "none";
+        const data = await chatRes.json();
+        if (data.chat_id) {
+          chatId = data.chat_id;
+          localStorage.setItem("lastChatId", chatId);
         }
-      } catch (err) {
-        // 401 triggers redirect; for other errors:
-        if (err.message !== "Unauthorized") {
-          alert('Error saving chat.');
-          analysisBox.style.display = "none";
-        }
+        addMessage(data.response, 'bot');
+        messages.push({ role: "assistant", content: data.response });
       }
-      saveBtn.disabled = false;
-      saveBtn.textContent = 'Save Chat';
-    });
-	document.getElementById('logout-btn').onclick = async function() {
-	  try {
-		const res = await fetch('/auth/jwt/logout', {
-		  method: 'POST',
-		  credentials: 'include'
-		});
-		// On success or failure, go to login
-		window.location.href = "/auth";
-	  } catch (e) {
-		window.location.href = "/auth";
-	  }
-	};
+    } catch (err) {
+      return;
+    }
+  });
 
-  </script>
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (locked || !input.value.trim()) return;
+
+    const userText = input.value.trim();
+    addMessage(userText, 'user');
+    messages.push({ role: "user", content: userText });
+
+    input.value = '';
+    input.disabled = true;
+    sendBtn.disabled = true;
+    locked = true;
+
+    try {
+      const payload = { history: messages };
+      if (childId) payload.child_id = childId;
+      if (chatId) payload.chat_id = chatId;
+
+      const chatRes = await authFetch('/chat', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+
+      const data = await chatRes.json();
+      if (data.chat_id) {
+        chatId = data.chat_id;
+        localStorage.setItem("lastChatId", chatId);
+      }
+      addMessage(data.response, 'bot');
+      messages.push({ role: "assistant", content: data.response });
+    } catch (err) {
+      if (err.message !== "Unauthorized") {
+        addMessage('Sorry, something went wrong.', 'bot');
+      }
+    }
+
+    input.disabled = false;
+    sendBtn.disabled = false;
+    input.focus();
+    locked = false;
+  });
+
+  saveBtn.addEventListener('click', async () => {
+    saveBtn.disabled = true;
+    saveBtn.textContent = 'Saving...';
+    try {
+      const res = await authFetch('/save_chat', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ history: messages })
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert('Chat saved as: ' + data.filename);
+        if (data.elect_analysis) {
+          analysisBox.style.display = "block";
+          analysisBox.textContent = data.elect_analysis;
+        }
+      } else {
+        alert('Failed to save: ' + (data.error || 'Unknown error'));
+        analysisBox.style.display = "none";
+      }
+    } catch (err) {
+      if (err.message !== "Unauthorized") {
+        alert('Error saving chat.');
+        analysisBox.style.display = "none";
+      }
+    }
+    saveBtn.disabled = false;
+    saveBtn.textContent = 'Save Chat';
+  });
+
+  document.getElementById('logout-btn').onclick = async function () {
+    try {
+      await fetch('/auth/jwt/logout', {
+        method: 'POST',
+        credentials: 'include'
+      });
+      window.location.href = "/auth";
+    } catch (e) {
+      window.location.href = "/auth";
+    }
+  };
+</script>
+
 </body>
 </html>

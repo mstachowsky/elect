@@ -1605,3 +1605,19 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     4.227.36.2:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
 INFO:     20.171.207.168:0 - "GET / HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1269504]
+INFO:     Started server process [1156676]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1156676]
+INFO:     Started server process [1193270]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
