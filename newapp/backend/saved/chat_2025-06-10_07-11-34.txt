@@ -1,0 +1,2 @@
+User: hi
+Assistant: Hello! I’m excited to help you explore Laura’s learning today. What did Laura do today?

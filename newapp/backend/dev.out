@@ -4554,3 +4554,780 @@ CHILD:
 2025-06-09 07:35:24,879 INFO sqlalchemy.engine.Engine ROLLBACK
 INFO:     100.92.101.90:62693 - "POST /chat HTTP/1.1" 200 OK
 INFO:     100.100.14.61:60249 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     100.92.101.90:50176 - "GET / HTTP/1.1" 200 OK
+INFO:     100.92.101.90:50176 - "GET /whoami HTTP/1.1" 401 Unauthorized
+INFO:     100.92.101.90:50176 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2025-06-10 06:49:42,355 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:42,360 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-10 06:49:42,360 INFO sqlalchemy.engine.Engine [generated in 0.00053s] ('mstachow@uwaterloo.ca',)
+INFO:     100.92.101.90:50203 - "POST /auth/jwt/login HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 107, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy/cursors.pyx", line 179, in execute
+  File "asyncmy/cursors.pyx", line 364, in _query
+  File "asyncmy/connection.pyx", line 496, in query
+  File "asyncmy/connection.pyx", line 684, in _read_query_result
+  File "asyncmy/connection.pyx", line 1071, in read
+  File "asyncmy/connection.pyx", line 625, in read_packet
+asyncmy.errors.OperationalError: (2013, 'Lost connection to MySQL server during query')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/router/auth.py", line 55, in login
+    user = await user_manager.authenticate(credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 647, in authenticate
+    user = await self.get_by_email(credentials.username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users/manager.py", line 87, in get_by_email
+    user = await self.user_db.get_by_email(user_email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users_db_sqlalchemy/__init__.py", line 128, in get_by_email
+    return await self._get_user(statement)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi_users_db_sqlalchemy/__init__.py", line 189, in _get_user
+    results = await self.session.execute(statement)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 95, in execute
+    return self.await_(self._execute_async(operation, parameters))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/dialects/mysql/asyncmy.py", line 107, in _execute_async
+    result = await self._cursor.execute(operation, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncmy/cursors.pyx", line 179, in execute
+  File "asyncmy/cursors.pyx", line 364, in _query
+  File "asyncmy/connection.pyx", line 496, in query
+  File "asyncmy/connection.pyx", line 684, in _read_query_result
+  File "asyncmy/connection.pyx", line 1071, in read
+  File "asyncmy/connection.pyx", line 625, in read_packet
+sqlalchemy.exc.OperationalError: (asyncmy.errors.OperationalError) (2013, 'Lost connection to MySQL server during query')
+[SQL: SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)]
+[parameters: ('mstachow@uwaterloo.ca',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-10 06:49:49,814 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:49,814 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE lower(user.email) = lower(%s)
+2025-06-10 06:49:49,815 INFO sqlalchemy.engine.Engine [cached since 7.455s ago] ('mstachow@uwaterloo.ca',)
+2025-06-10 06:49:49,895 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50219 - "POST /auth/jwt/login HTTP/1.1" 204 No Content
+2025-06-10 06:49:49,906 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:49,906 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:49:49,906 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:49:49,907 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50219 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-10 06:49:49,924 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:49,924 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:49:49,924 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:49:49,925 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50219 - "GET /chat_redirect HTTP/1.1" 200 OK
+2025-06-10 06:49:49,984 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:49,985 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:49:49,985 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:49:49,987 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50219 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-10 06:49:57,447 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:57,448 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:49:57,448 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:49:57,449 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50221 - "GET /profiles HTTP/1.1" 200 OK
+2025-06-10 06:49:57,506 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:49:57,507 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:49:57,507 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:49:57,511 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-10 06:49:57,512 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:49:57,515 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-10 06:49:57,515 INFO sqlalchemy.engine.Engine [cached since 8.39e+04s ago] ('af85239f25324d4c8ca911f5352fbe5f',)
+2025-06-10 06:49:57,519 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50221 - "GET /api/parent HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1423527]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1214275]
+INFO:     Waiting for application startup.
+2025-06-10 06:51:21,806 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 06:51:21,807 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:51:21,807 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 06:51:21,807 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:51:21,808 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 06:51:21,808 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:51:21,809 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:51:21,809 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 06:51:21,809 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:51:21,810 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 06:51:21,810 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:51:21,811 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 06:51:21,811 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:51:21,813 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1214275]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1225376]
+INFO:     Waiting for application startup.
+2025-06-10 06:55:17,307 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 06:55:17,307 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:17,307 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 06:55:17,308 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:17,308 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 06:55:17,308 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:17,309 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:55:17,309 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 06:55:17,309 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:17,310 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 06:55:17,310 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:17,312 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 06:55:17,312 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:17,313 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1225376]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1227209]
+INFO:     Waiting for application startup.
+2025-06-10 06:55:55,596 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 06:55:55,596 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:55,597 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 06:55:55,597 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:55,597 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 06:55:55,598 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:55,598 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:55:55,598 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 06:55:55,598 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:55,600 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 06:55:55,600 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:55,601 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 06:55:55,601 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:55:55,603 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-10 06:56:04,363 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:56:04,381 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:56:04,381 INFO sqlalchemy.engine.Engine [generated in 0.00033s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:56:04,387 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50375 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-10 06:56:04,559 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:56:04,560 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:56:04,560 INFO sqlalchemy.engine.Engine [cached since 0.1796s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:56:04,561 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50375 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-10 06:56:06,483 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:56:06,484 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:56:06,484 INFO sqlalchemy.engine.Engine [cached since 2.103s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+PARENT: 
+2025-06-10 06:56:06,487 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-10 06:56:06,487 INFO sqlalchemy.engine.Engine [generated in 0.00019s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:56:06,490 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-10 06:56:06,490 INFO sqlalchemy.engine.Engine [generated in 0.00022s] ('af85239f25324d4c8ca911f5352fbe5f',)
+Mike
+Science
+2025-06-10 06:56:06,492 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50375 - "POST /chat HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1812, in _execute_context
+    context = constructor(
+              ^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1487, in _init_compiled
+    flattened_processors[key](compiled_params[key])
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 3712, in process
+    value = value.hex
+            ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'hex'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/mike/.local/lib/python3.12/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 409, in chat
+    child_data = await get_child_by_id(session, request.child_id)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 110, in get_child_by_id
+    result = await session.execute(select(ChildProfile).where(ChildProfile.id == child_id))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 463, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1818, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1812, in _execute_context
+    context = constructor(
+              ^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1487, in _init_compiled
+    flattened_processors[key](compiled_params[key])
+  File "/home/mike/.local/lib/python3.12/site-packages/sqlalchemy/sql/sqltypes.py", line 3712, in process
+    value = value.hex
+            ^^^^^^^^^
+sqlalchemy.exc.StatementError: (builtins.AttributeError) 'str' object has no attribute 'hex'
+[SQL: SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s]
+[parameters: [{}]]
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1227209]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1235241]
+INFO:     Waiting for application startup.
+2025-06-10 06:58:44,748 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 06:58:44,748 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:58:44,748 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 06:58:44,749 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:58:44,749 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 06:58:44,749 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:58:44,750 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:58:44,750 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 06:58:44,750 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:58:44,751 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 06:58:44,751 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:58:44,752 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 06:58:44,752 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 06:58:44,754 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-10 06:58:50,589 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 06:58:50,596 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 06:58:50,596 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+PARENT: 
+2025-06-10 06:58:50,600 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-10 06:58:50,600 INFO sqlalchemy.engine.Engine [generated in 0.00020s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 06:58:50,603 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-10 06:58:50,603 INFO sqlalchemy.engine.Engine [generated in 0.00022s] ('af85239f25324d4c8ca911f5352fbe5f',)
+Mike
+Science
+2025-06-10 06:58:50,605 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-10 06:58:50,605 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+CHILD:
+Laura
+1
+4
+unicorns,cows
+2025-06-10 06:59:03,039 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50407 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1235241]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1244795]
+INFO:     Waiting for application startup.
+2025-06-10 07:02:05,938 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 07:02:05,939 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:02:05,939 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 07:02:05,939 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:02:05,940 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 07:02:05,940 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:02:05,941 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:02:05,941 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 07:02:05,941 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:02:05,942 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 07:02:05,942 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:02:05,943 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 07:02:05,943 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:02:05,945 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1244795]
+Process SpawnProcess-76:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 407
+    return [prompt,
+           ^
+SyntaxError: '[' was never closed
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+Process SpawnProcess-77:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1516, in uvloop.loop.Loop.run_until_complete
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mike/.local/lib/python3.12/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/mike/elect/newapp/backend/main_dev.py", line 416
+    return [prompt,
+           ^
+SyntaxError: '[' was never closed
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1260755]
+INFO:     Waiting for application startup.
+2025-06-10 07:07:40,454 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 07:07:40,454 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:07:40,455 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 07:07:40,455 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:07:40,455 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 07:07:40,455 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:07:40,456 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:07:40,456 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 07:07:40,456 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:07:40,458 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 07:07:40,458 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:07:40,459 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 07:07:40,459 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:07:40,460 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1260755]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1261884]
+INFO:     Waiting for application startup.
+2025-06-10 07:08:04,904 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 07:08:04,904 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:04,905 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 07:08:04,905 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:04,906 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 07:08:04,906 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:04,906 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:08:04,906 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 07:08:04,906 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:04,908 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 07:08:04,908 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:04,909 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 07:08:04,909 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:04,911 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1261884]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1263557]
+INFO:     Waiting for application startup.
+2025-06-10 07:08:38,499 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 07:08:38,499 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:38,500 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 07:08:38,500 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:38,500 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 07:08:38,500 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:38,501 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:08:38,501 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 07:08:38,501 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:38,502 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 07:08:38,502 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:38,504 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 07:08:38,504 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:08:38,505 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-10 07:08:46,763 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:08:46,769 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:08:46,769 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:08:46,776 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50432 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-10 07:08:46,949 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:08:46,950 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:08:46,950 INFO sqlalchemy.engine.Engine [cached since 0.1808s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:08:46,953 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50432 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-10 07:08:49,599 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:08:49,600 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:08:49,600 INFO sqlalchemy.engine.Engine [cached since 2.831s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+PARENT: 
+2025-06-10 07:08:49,603 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-10 07:08:49,603 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:08:49,606 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-10 07:08:49,606 INFO sqlalchemy.engine.Engine [generated in 0.00019s] ('af85239f25324d4c8ca911f5352fbe5f',)
+Mike
+Science
+2025-06-10 07:08:49,607 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-10 07:08:49,607 INFO sqlalchemy.engine.Engine [generated in 0.00015s] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+CHILD:
+Laura
+1
+4
+unicorns,cows
+Error: make_prompt() missing 4 required positional arguments: 'age_years', 'age_months', 'name', and 'preferences'
+2025-06-10 07:08:49,608 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50432 - "POST /chat HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'main_dev.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1263557]
+/home/mike/.local/lib/python3.12/site-packages/pydantic/_internal/_config.py:345: UserWarning: Valid config keys have changed in V2:
+* 'orm_mode' has been renamed to 'from_attributes'
+  warnings.warn(message, UserWarning)
+INFO:     Started server process [1269503]
+INFO:     Waiting for application startup.
+2025-06-10 07:10:44,165 INFO sqlalchemy.engine.Engine SELECT DATABASE()
+2025-06-10 07:10:44,165 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:10:44,166 INFO sqlalchemy.engine.Engine SELECT @@sql_mode
+2025-06-10 07:10:44,166 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:10:44,166 INFO sqlalchemy.engine.Engine SELECT @@lower_case_table_names
+2025-06-10 07:10:44,166 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:10:44,167 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:10:44,167 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`user`
+2025-06-10 07:10:44,167 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:10:44,168 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`parent_profiles`
+2025-06-10 07:10:44,168 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:10:44,169 INFO sqlalchemy.engine.Engine DESCRIBE `elect_app`.`child_profiles`
+2025-06-10 07:10:44,169 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-06-10 07:10:44,171 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+2025-06-10 07:10:47,158 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:10:47,175 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:10:47,175 INFO sqlalchemy.engine.Engine [generated in 0.00032s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:10:47,181 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50439 - "GET /chat_redirect?child_id=416c9c7f-671b-4344-8d0f-e0b1653c0ba4 HTTP/1.1" 200 OK
+2025-06-10 07:10:47,279 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:10:47,280 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:10:47,280 INFO sqlalchemy.engine.Engine [cached since 0.1054s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:10:47,283 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50439 - "GET /whoami HTTP/1.1" 200 OK
+2025-06-10 07:10:49,727 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:10:49,728 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:10:49,728 INFO sqlalchemy.engine.Engine [cached since 2.554s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+PARENT: 
+2025-06-10 07:10:49,741 INFO sqlalchemy.engine.Engine SELECT parent_profiles.id, parent_profiles.user_id, parent_profiles.name, parent_profiles.preferences 
+FROM parent_profiles 
+WHERE parent_profiles.user_id = %s
+2025-06-10 07:10:49,742 INFO sqlalchemy.engine.Engine [generated in 0.00062s] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:10:49,752 INFO sqlalchemy.engine.Engine SELECT child_profiles.parent_id AS child_profiles_parent_id, child_profiles.id AS child_profiles_id, child_profiles.name AS child_profiles_name, child_profiles.age_years AS child_profiles_age_years, child_profiles.age_months AS child_profiles_age_months, child_profiles.preferences AS child_profiles_preferences 
+FROM child_profiles 
+WHERE child_profiles.parent_id IN (%s)
+2025-06-10 07:10:49,752 INFO sqlalchemy.engine.Engine [generated in 0.00096s] ('af85239f25324d4c8ca911f5352fbe5f',)
+Mike
+Science
+2025-06-10 07:10:49,758 INFO sqlalchemy.engine.Engine SELECT child_profiles.id, child_profiles.parent_id, child_profiles.name, child_profiles.age_years, child_profiles.age_months, child_profiles.preferences 
+FROM child_profiles 
+WHERE child_profiles.id = %s
+2025-06-10 07:10:49,759 INFO sqlalchemy.engine.Engine [generated in 0.00050s] ('416c9c7f671b43448d0fe0b1653c0ba4',)
+CHILD:
+Laura
+1
+4
+unicorns,cows
+Loaded it up
+2025-06-10 07:10:59,807 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50439 - "POST /chat HTTP/1.1" 200 OK
+2025-06-10 07:11:34,939 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-06-10 07:11:34,940 INFO sqlalchemy.engine.Engine SELECT user.id, user.email, user.hashed_password, user.is_active, user.is_superuser, user.is_verified 
+FROM user 
+WHERE user.id = %s
+2025-06-10 07:11:34,940 INFO sqlalchemy.engine.Engine [cached since 47.77s ago] ('f2acd47d-fce7-4267-969b-2ebaaf4d2695',)
+2025-06-10 07:12:46,891 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     100.92.101.90:50440 - "POST /save_chat HTTP/1.1" 200 OK

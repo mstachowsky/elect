@@ -88,6 +88,8 @@ async def get_parent_profile_by_user(
     return parent
 
 
+
+
 class ChildProfile(Base):
     __tablename__ = "child_profiles"
 
@@ -104,6 +106,9 @@ class ChildProfile(Base):
 
     parent:     Mapped["ParentProfile"] = relationship(back_populates="children")
 
+async def get_child_by_id(session: AsyncSession, child_id: uuid.UUID):
+    result = await session.execute(select(ChildProfile).where(ChildProfile.id == child_id))
+    return result.scalar_one_or_none()
 
 # === Pydantic Schemas =======================================================
 class ChildBase(BaseModel):
@@ -385,14 +390,38 @@ async def delete_child(
 # --- Chat API ---
 client = OpenAI()
 
-age_group = "toddler"
-age = 18
-age_unit = "months"
-SYSTEM_PROMPT = f"""You are an expert early childhood educator, helping parents to explore the learning of their children. The child is a {age_group}, about {age} {age_unit} old.  The first thing you always ask is what the child did today. Then you ask questions one at a time to guide the parent through describing the learning. Once you feel that there is enough information (maybe 3-5 questions maximum) you ask if the parent wants a summary of the learning episode or to keep exploring. If they want a summary, provide a summary of the learning episode, linking it to child development indicators in a way the parents, who are experts on their children but not necessarily child development, can understand. You must start your summary with the exact string: "## Summary:". Once you output the summary, never output another summary unless you are explicitly asked. Then, you provide a deepening activity that is age appropriate that can give the parent some ideas of how to keep the learning going."""
+def make_prompt(age_years,age_months,name,preferences):
+    total_months = age_years * 12 + age_months
+    
+    age_group = "infant"
+    
+    if total_months > 14 and total_months < 36:
+        age_group = "toddler"
+    if total_months >= 36 and total_months < 72:
+        age_group = "preschool"
+    if total_months > 72:
+        age_group = "school age"
+    
+    prompt = f"""You are an expert early childhood educator, helping parents to explore the learning of their children. The child is in the {age_group} age group, about {age_years} years and {age_months} months old. The child's name is {name} and they like {preferences}. 
+    
+    The first thing you always ask is what the child did today. Then you ask questions one at a time to guide the parent through describing the learning. Once you feel that there is enough information (maybe 3-5 questions maximum) you ask if the parent wants a summary of the learning episode or to keep exploring. If they want a summary, provide a summary of the learning episode, linking it to child development indicators in a way the parents, who are experts on their children but not necessarily child development, can understand. You must start your summary with the exact string: "## Summary:". Once you output the summary, never output another summary unless you are explicitly asked. Then, you provide a deepening activity that is age appropriate that can give the parent some ideas of how to keep the learning going."""
+    
+    elect_path = "elect_documents"
+    elect_doc = f"{elect_path}/infant.txt"
+    if age_group == "toddler":
+        elect_doc = f"{elect_path}/toddler.txt"
+    if age_group == "preschool":
+        elect_doc = f"{elect_path}/preschool.txt"
+    if age_group == "school age":
+        elect_doc = f"{elect_path}/schoolage.txt"
+    
+    return [prompt,elect_doc]
 
 class ChatHistoryRequest(BaseModel):
     history: List[Dict[str, str]]
     child_id: Optional[str] = None  # Add this field!
+
+
 
 @app.post("/chat", tags=["chat"])
 async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_user),session: AsyncSession = Depends(get_async_session)):
@@ -400,12 +429,27 @@ async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_
     parent_data = await get_parent_profile_by_user(session, user.id)
     print(parent_data.name)
     print(parent_data.preferences)
-    if(request.child_id):
-        print("CHILD: ")
-        print(request.child_id)
+    child_data = None
+    if request.child_id:
+        child_uuid = uuid.UUID(str(request.child_id))  # Explicit conversion
+        child_data = await get_child_by_id(session, child_uuid)
+        if child_data:
+            print("CHILD:")
+            print(child_data.name)
+            print(child_data.age_years)
+            print(child_data.age_months)
+            print(child_data.preferences)
+        else:
+            print("Child not found.")
+
     try:
         history = request.history
-
+        if child_data is not None:
+            [SYSTEM_PROMPT,elect_doc] = make_prompt(child_data.age_years,child_data.age_months,child_data.name,child_data.preferences)
+            print("Loaded it up")
+        else:
+            #default to toddler
+            [SYSTEM_PROMPT,elect_doc] = make_prompt(1,0,"","normal toddler things")
         # If no history, let the LLM begin!
         if not history:
             messages = [{"role": "system", "content": SYSTEM_PROMPT}]
@@ -436,7 +480,7 @@ async def chat(request: ChatHistoryRequest, user: User = Depends(current_active_
                 content = msg.get("content", "")
                 chat_lines.append(f"{role}: {content}\n")
             chat_text = "".join(chat_lines)
-            elect_info = analyze_elect(chat_text)
+            elect_info = analyze_elect(chat_text,elect_doc)
             elect_summary = summarize_elect(bot_message.split("## Summary:")[1], elect_info)
             bot_message = bot_message + "\n\n" + "Here's some information for you about how this interaction lines up with child development indicators: \n" + elect_summary
             print(bot_message)
@@ -523,8 +567,8 @@ async def save_chat(request: ChatHistoryRequest, user: User = Depends(current_ac
         return {"success": False, "error": str(e)}
 
 # --- Analysis Helpers ---
-def analyze_elect(chat_history):
-    BACKGROUND_FILE_PATH = "elect_documents/toddler.txt"
+def analyze_elect(chat_history,BACKGROUND_FILE_PATH = "elect_documents/toddler.txt"):
+
     try:
         with open(BACKGROUND_FILE_PATH, 'r', encoding='utf-8', errors='ignore') as reader:
             BACKGROUNDS = reader.read().split("###")
